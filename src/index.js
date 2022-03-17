@@ -1,17 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App.jsx";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import MoviePage from "./components/main/MoviePage/MoviePage";
+import SearchingResults from "./components/main/SearchingResults/SearchingResults";
+import AllReviews from "./components/main/MoviePage/Reviews/AllReviews/AllReviews";
+import Rankings from "./components/main/Rankings/Rankings";
+import PersonPage from "./components/main/PersonPage/PersonPage";
+import "../node_modules/slick-carousel/slick/slick.css";
+import "../node_modules/slick-carousel/slick/slick-theme.css";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />}></Route>
+      <Route path="/movies">
+        <Route path=":movieId" element={<MoviePage />}></Route>
+      </Route>
+      <Route path="/reviews">
+        <Route exact path=":reviewMovieId" element={<AllReviews />}></Route>
+      </Route>
+      <Route path="/results">
+        <Route path=":query" element={<SearchingResults />}></Route>
+      </Route>
+      <Route path="/person">
+        <Route path=":personId" element={<PersonPage />}></Route>
+      </Route>
+      <Route path="/films" element={<Rankings />}></Route>
+    </Routes>
+  </BrowserRouter>,
+  document.getElementById("root")
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
