@@ -21,6 +21,11 @@
     "swiper": "^7.4.1",
     "web-vitals": "^2.1.3"
   },
+
+  "engines": {
+    "node": "17.1.0"
+  },
+
   "scripts": {
     "start:backend": "nodemon ./src/server/index.js",
     "start": "react-scripts start",
