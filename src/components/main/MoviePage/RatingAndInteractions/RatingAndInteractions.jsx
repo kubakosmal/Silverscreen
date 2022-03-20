@@ -1,4 +1,3 @@
-import defaultProps from "react-slick/lib/default-props";
 import TMDBLogo from "./tmdb-short-logo.svg";
 import { AiFillStar } from "react-icons/ai";
 import { IconContext } from "react-icons/lib";
