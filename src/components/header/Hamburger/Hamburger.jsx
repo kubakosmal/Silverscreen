@@ -4,7 +4,7 @@ import { IconContext } from "react-icons/lib";
 
 const HamburgerSpans = () => {
   return (
-    <div className="space-y-1 top-0 right-0">
+    <div className="space-y-1">
       <span className="block h-0.5 w-5 animate-pulse bg-white"></span>
       <span className="block h-0.5 w-5 animate-pulse bg-white"></span>
       <span className="block h-0.5 w-5 animate-pulse bg-white"></span>

@@ -24,7 +24,7 @@ const Header = (props) => {
           : "absolute"
       }`}
     >
-      <div className="lg:py-5 lg:text-sm py-2 md:py-3 max-w-5xl mx-auto flex justify-between items-center">
+      <div className="lg:py-5 mx-4 lg:text-sm py-2 md:py-3 max-w-5xl lg:mx-auto flex justify-between items-center">
         <Link to={"/"}>
           <div className="bg-clip-text bg-gradient-to-tr from-teal-500 to-purple-700 text-md lg:text-3xl flex items-center justify-center">
             <Atropos shadow={false} highlight={false}>

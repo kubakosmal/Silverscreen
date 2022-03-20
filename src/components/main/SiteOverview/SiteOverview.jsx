@@ -16,7 +16,7 @@ export default function SiteOverview() {
             <IconContext.Provider value={{ color: "white" }}>
               <BsSearch className="w-10 h-10"></BsSearch>
             </IconContext.Provider>
-            <div className="mx-2">
+            <div className="">
               <p>Learn more about producions, including:</p>
               <p>Box office</p>
               <p>Cast</p>

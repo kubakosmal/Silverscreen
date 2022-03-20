@@ -39,7 +39,7 @@ export default function AllReviews(props) {
   return (
     <div className="max-w-4xl mx-auto mt-20">
       <Header></Header>
-      <div className="mx-4">
+      <div className="">
         <Link to={`/movies/${movieId}`}>
           <div className="flex items-center">
             <IconContext.Provider value={{ color: "white" }}>

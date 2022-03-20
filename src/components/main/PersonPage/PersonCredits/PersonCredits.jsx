@@ -116,7 +116,7 @@ export default function PersonCredits(props) {
           id="tv-shows"
           onClick={(e) => setTypeOfMedia(e.target.value)}
         ></input>
-        <label for="tv-shows" className="hover:text-secondary font-ibm mx-2">
+        <label for="tv-shows" className="hover:text-secondary font-ibm ">
           TV Shows
         </label>
       </div>

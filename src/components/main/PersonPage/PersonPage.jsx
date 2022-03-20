@@ -55,7 +55,7 @@ export default function PersonPage(props) {
   return (
     <div className="max-w-5xl text-gray-300 mx-auto mb-10">
       <Header noBackdrop={true}></Header>
-      <div className="mx-4 lg:mx-0 grid grid-cols-1 gap-7 lg:grid-cols-7">
+      <div className=" lg:mx-0 grid grid-cols-1 gap-7 lg:grid-cols-7">
         <div className="lg:col-start-1 lg:col-end-3 lg:row-start-1 lg:row-end-2">
           <div className="relative flex items-center justify-center">
             <div className="absolute lg:bg-black rounded-md inset-0 blur"></div>
