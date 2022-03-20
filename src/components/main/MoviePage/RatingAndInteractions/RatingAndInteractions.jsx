@@ -6,7 +6,7 @@ import { RiArrowUpCircleLine } from "react-icons/ri";
 
 export default function RatingAndInteractions(props) {
   return (
-    <div className="md:mt-5 font-ibm drop-shadow-lg border-red-pigment flex flex-col items-center justify-around">
+    <div className="lg:mt-5 font-ibm drop-shadow-lg border-red-pigment flex flex-col items-center justify-around">
       <div className="flex flex-col items-center">
         <p className="font-bold font-lato text-gray-300 text-xs mb-1">
           USER SCORE

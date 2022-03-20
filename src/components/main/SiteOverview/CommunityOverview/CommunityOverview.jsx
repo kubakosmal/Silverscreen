@@ -3,10 +3,10 @@ import { IconContext } from "react-icons/lib";
 
 export default function CommunityOverview() {
   return (
-    <div className="flex flex-col md:flex-row items-center m-2 justify-center md:m-5">
+    <div className="flex flex-col lg:flex-row items-center m-2 justify-center lg:m-5">
       <div>
         <IconContext.Provider value={{ color: "#00A7E1" }}>
-          <FaUsers className="w-12 h-12 md:w-48 md:h-48 md:mr-4"></FaUsers>
+          <FaUsers className="w-12 h-12 lg:w-48 lg:h-48 lg:mr-4"></FaUsers>
         </IconContext.Provider>
       </div>
       <div className="flex flex-col text-center items-center justify-center w-60">

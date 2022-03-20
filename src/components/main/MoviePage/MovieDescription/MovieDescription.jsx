@@ -11,9 +11,9 @@ export default function MovieDescription(props) {
   });
 
   return (
-    <div className="my-6  md:px-0 md:my-0  text-white">
-      <div className="bg-zinc-900 md:bg-transparent md:border-transparent p-1  rounded-md">
-        <p className="text-gray-300 font-ibm md:text-lg">{props.overview}</p>
+    <div className="my-6  lg:px-0 lg:my-0  text-white">
+      <div className="bg-zinc-900 lg:bg-transparent lg:border-transparent p-1  rounded-md">
+        <p className="text-gray-300 font-ibm lg:text-lg">{props.overview}</p>
       </div>
     </div>
   );

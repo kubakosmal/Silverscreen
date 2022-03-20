@@ -55,19 +55,19 @@ export default function PersonPage(props) {
   return (
     <div className="max-w-5xl text-gray-300 mx-auto mb-10">
       <Header noBackdrop={true}></Header>
-      <div className="mx-4 md:mx-0 grid grid-cols-1 gap-7 md:grid-cols-7">
-        <div className="md:col-start-1 md:col-end-3 md:row-start-1 md:row-end-2">
+      <div className="mx-4 lg:mx-0 grid grid-cols-1 gap-7 lg:grid-cols-7">
+        <div className="lg:col-start-1 lg:col-end-3 lg:row-start-1 lg:row-end-2">
           <div className="relative flex items-center justify-center">
-            <div className="absolute md:bg-black rounded-md inset-0 blur"></div>
+            <div className="absolute lg:bg-black rounded-md inset-0 blur"></div>
             <img
-              className="rounded-md w-64 md:w-full relative border-2 border-neutral-800"
+              className="rounded-md w-64 lg:w-full relative border-2 border-neutral-800"
               src={`${constants.IMAGES_BASE_PATH}w500${personData.profile_path}`}
             ></img>
           </div>
         </div>
 
-        <div className="md:col-start-3 md:col-end-8 md:row-start-1 md:row-end-2">
-          <h2 className="text-2xl font-lato text-gray-200 font-bold text-center md:text-left">
+        <div className="lg:col-start-3 lg:col-end-8 lg:row-start-1 lg:row-end-2">
+          <h2 className="text-2xl font-lato text-gray-200 font-bold text-center lg:text-left">
             {personData.name}
           </h2>
           <div className="mt-5">
@@ -96,7 +96,7 @@ export default function PersonPage(props) {
           </div>
         </div>
 
-        <div className="md:col-start-1 md:col-end-3 ">
+        <div className="lg:col-start-1 lg:col-end-3 ">
           <PersonOverview
             gender={personData.gender == 1 ? "Female" : "Male"}
             biography={personData.biography}
@@ -109,7 +109,7 @@ export default function PersonPage(props) {
           />
         </div>
 
-        <div className="md:col-start-3 md:col-end-8 md:row-start-2 md:row-end-3">
+        <div className="lg:col-start-3 lg:col-end-8 lg:row-start-2 lg:row-end-3">
           <PersonCredits
             castedIn={castedIn}
             filmsStarred={filmsStarred}

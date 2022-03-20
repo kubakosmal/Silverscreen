@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 export default function MovieBackdrop(props) {
   const size = props.context === "main" ? "h-[28rem]" : "h-[18rem]";
 
-  const [pxWindowHeight, setPxWindowHeight] = useState("md:h-[500px]");
+  const [pxWindowHeight, setPxWindowHeight] = useState("lg:h-[500px]");
 
   useEffect(() => {
-    setPxWindowHeight(`md:h[${window.innerHeight.toString()}px]`);
+    setPxWindowHeight(`lg:h[${window.innerHeight.toString()}px]`);
     console.log(window.innerHeight);
   }, [window.innerWidth, window.innerHeight]);
   return (

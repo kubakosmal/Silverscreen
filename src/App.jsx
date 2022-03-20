@@ -17,7 +17,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="max-w-full mx-auto relative font-oxygen">
+      <div className="max-w-full mx-1 md:mx-2 lg:mx-auto relative font-oxygen">
         <Header></Header>
         <Main></Main>
       </div>

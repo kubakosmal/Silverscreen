@@ -152,19 +152,19 @@ const MoviePage = () => {
           }
         />
         <div className="relative">
-          {/* <div className="absolute w-full h-1/4 mt-20  -green-500 md:inset-0 md:max-w-6xl mx-auto">
-            <div className="absolute w-64 h-64 md:w-60 md:h-60 left-0 top-0 bg-radical-red rounded-full filter blur-3xl opacity-10 mix"></div>
-            <div className="absolute w-64 h-64 md:w-60 md:h-60 bottom-0 right-0 bg-secondary rounded-full blur-3xl opacity-10"></div>
+          {/* <div className="absolute w-full h-1/4 mt-20  -green-500 lg:inset-0 lg:max-w-6xl mx-auto">
+            <div className="absolute w-64 h-64 lg:w-60 lg:h-60 left-0 top-0 bg-radical-red rounded-full filter blur-3xl opacity-10 mix"></div>
+            <div className="absolute w-64 h-64 lg:w-60 lg:h-60 bottom-0 right-0 bg-secondary rounded-full blur-3xl opacity-10"></div>
           </div> */}
 
-          <div className="relative max-w-5xl mx-4 gap-y-7 gap-x-14 -mt-10 grid grid-cols-1 md:grid-cols-8 md:mx-auto md:grid-rows-[40px_auto]">
-            <div className="md:row-start-1 md:col-start-1 md:col-end-3 md:sticky md:-top-40">
+          <div className="relative max-w-5xl mx-4 gap-y-7 gap-x-14 -mt-10 grid grid-cols-1 lg:grid-cols-8 lg:mx-auto lg:grid-rows-[40px_auto]">
+            <div className="lg:row-start-1 lg:col-start-1 lg:col-end-3 lg:sticky lg:-top-40">
               <MoviePagePoster
                 posterImageUrl={
                   constants.IMAGES_BASE_PATH + "w500" + data.poster_path
                 }
               />
-              <div className="hidden md:block">
+              <div className="hidden lg:block">
                 <Indicators popularity={popularity} voteCount={voteCount} />
               </div>
               {/* <MovieDetails
@@ -187,12 +187,12 @@ const MoviePage = () => {
                 ></MovieDetails>
               </div> */}
 
-              <div className="mt-5 hidden md:block">
+              <div className="mt-5 hidden lg:block">
                 <Providers type="movie" id={id} />
               </div>
             </div>
 
-            <div className="md:col-start-3 md:col-end-9 md:row-start-1 md:row-end-2 ">
+            <div className="lg:col-start-3 lg:col-end-9 lg:row-start-1 lg:row-end-2 ">
               {mobileOrDesktop === "mobile" ? (
                 <MobileMovieOverview
                   backdropImageUrl={
@@ -222,7 +222,7 @@ const MoviePage = () => {
               )}
             </div>
 
-            <div className="md:col-start-7 md:col-end-9 md:row-start-2 md:row-end-3">
+            <div className="lg:col-start-7 lg:col-end-9 lg:row-start-2 lg:row-end-3">
               <RatingAndInteractions
                 rating={rating}
                 popularity={popularity}
@@ -230,7 +230,7 @@ const MoviePage = () => {
               />
             </div>
 
-            {/* <div className="  md:col-start-1 md:col-end-3 md:row-start-4 md:row-end-5">
+            {/* <div className="  lg:col-start-1 lg:col-end-3 lg:row-start-4 lg:row-end-5">
               <MovieDetails
                 genres={genres}
                 originalTitle={originalTitle}
@@ -241,11 +241,11 @@ const MoviePage = () => {
               ></MovieDetails>
             </div> */}
 
-            {/* <div className="md:col-start-2 md:col-end-4 md:row-start-2 md:row-end-3 ">
+            {/* <div className="lg:col-start-2 lg:col-end-4 lg:row-start-2 lg:row-end-3 ">
               <Score />
             </div> */}
 
-            <div className="md:col-start-3 md:col-end-7 md:row-start-2 md:row-end-3 mt-5">
+            <div className="lg:col-start-3 lg:col-end-7 lg:row-start-2 lg:row-end-3 mt-5">
               {/* <div className="flex text-white">
                 <div>English</div>
                 <Genres genres={genres} />
@@ -268,15 +268,15 @@ const MoviePage = () => {
 
             {/* <MovieImages imagesUrls={imagesUrls} /> */}
 
-            <div className="md:col-start-3 md:col-end-9  md:row-start-4 md:row-end-5">
+            <div className="lg:col-start-3 lg:col-end-9  lg:row-start-4 lg:row-end-5">
               <Cast actors={actors}></Cast>
             </div>
 
-            <div className="md:col-start-3 md:col-end-9  md:row-start-5 md:row-end-6">
+            <div className="lg:col-start-3 lg:col-end-9  lg:row-start-5 lg:row-end-6">
               <Reviews reviews={reviews} movieId={movieId} />
             </div>
 
-            <div className="md:col-start-3 md:col-end-9  md:row-start-6 md:row-end-7">
+            <div className="lg:col-start-3 lg:col-end-9  lg:row-start-6 lg:row-end-7">
               <Recommendations productions={recommendations} />
             </div>
           </div>

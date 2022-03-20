@@ -13,11 +13,11 @@ export default function Cast(props) {
                 <div className="flex items-center py-4">
                   <div className="items-center border-b-2 w-full border-zinc-800 flex p-2">
                     <img
-                      className="object-cover w-12 h-12 md:w-20 md:h-20  rounded-full "
+                      className="object-cover w-12 h-12 lg:w-20 lg:h-20  rounded-full "
                       src={`${constants.IMAGES_BASE_PATH}w500${actor.profile_path}`}
                     ></img>
                     <div className="ml-2 text-gray-400 flex flex-col ">
-                      <p className="text-gray-300 font-sora text-xs md:text-sm font-bold">
+                      <p className="text-gray-300 font-sora text-xs lg:text-sm font-bold">
                         {actor.name}
                       </p>
 
@@ -30,7 +30,7 @@ export default function Cast(props) {
           }
         })}
       </div>
-      <h3 className="text-secondary self-end text-sm md:text-md">
+      <h3 className="text-secondary self-end text-sm lg:text-md">
         Show full cast
       </h3>
     </div>

@@ -15,6 +15,7 @@ export default function Shows() {
   const [voteCountGte, setVoteCountGte] = useState(1000);
   const [pageNumber, setPageNumber] = useState(1);
   const [genreIds, setGenreIds] = useState([]);
+  const [genres, setGenres] = useState("");
 
   const [currentListOfProductions, setCurrentListOfProductions] =
     useState(mostPopularShows);
@@ -36,6 +37,7 @@ export default function Shows() {
     mostPopularShows,
     highestRatedShows,
     newestShows,
+    genres,
   ]);
 
   useEffect(() => {
@@ -43,10 +45,11 @@ export default function Shows() {
       sortBy,
       stateToUpdate,
       sortingOrder,
-      leastNumberOfVotes
+      leastNumberOfVotes,
+      genres
     ) => {
       const data = await fetch(
-        `${constants.TMDB_BASE_PATH}discover/tv?api_key=${constants.API_KEY}&sort_by=${sortBy}.${sortingOrder}&vote_count.gte=${leastNumberOfVotes}&page=${pageNumber}`
+        `${constants.TMDB_BASE_PATH}discover/tv?api_key=${constants.API_KEY}&sort_by=${sortBy}.${sortingOrder}&vote_count.gte=${leastNumberOfVotes}&page=${pageNumber}&with_genres=${genres}`
       );
 
       const jsonData = await data.json();
@@ -54,19 +57,28 @@ export default function Shows() {
       stateToUpdate(jsonData.results);
     };
 
-    fetchSorted("popularity", setMostPopularShows, sortingOrder, 1000);
-    fetchSorted("vote_average", setHighestRatedShows, sortingOrder, 3000);
+    fetchSorted("popularity", setMostPopularShows, sortingOrder, 1000, genres);
+    fetchSorted(
+      "vote_average",
+      setHighestRatedShows,
+      sortingOrder,
+      3000,
+      genres
+    );
 
-    fetchSorted("first_air_date", setNewestShows, sortingOrder, 100);
-  }, [sortingOrder, pageNumber]);
+    fetchSorted("first_air_date", setNewestShows, sortingOrder, 100, genres);
+  }, [sortingOrder, pageNumber, genres]);
 
   return (
     <div>
       <Header noBackdrop={true}></Header>
       <div className="max-w-5xl mx-auto mt-10 text-gray-200">
-        <div className="flex mt-10 flex-col md:flex-row text-gray-300 font-ibm max-w-5xl md:mx-auto">
-          <div className="font-ibm mb-5 md:w-1/5 text-sm md:text-md md:text-lg items-center rounded-md border-neutral-700">
+        <div className="flex mt-10 flex-col lg:flex-row text-gray-300 font-ibm max-w-5xl lg:mx-auto">
+          <div className="font-ibm mb-5 lg:w-1/5 text-sm lg:text-md lg:text-lg items-center rounded-md border-neutral-700">
             <RankingsInterface
+              changeGenres={(genresString) => {
+                setGenres(genresString);
+              }}
               changeRankingType={(listName) => {
                 setCurrentSelectedList(listName);
                 setPageNumber(1);
@@ -81,7 +93,7 @@ export default function Shows() {
               type="shows"
             />
           </div>
-          <div className="md:w-4/5 flex flex-col items-center md:ml-7">
+          <div className="lg:w-4/5 flex flex-col items-center lg:ml-7">
             <h3 className="self-start text-xl font-bold font-lato mb-4">
               {currentListName}
             </h3>

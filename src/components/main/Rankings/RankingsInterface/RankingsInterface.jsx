@@ -11,6 +11,7 @@ export default function RankingsInterface({
   changeRankingType,
   changeSortingOrder,
   changeCurrentListName,
+  changeGenres,
 }) {
   const [popularityChecked, setPopularityChecked] = useState(true);
   const [ratingChecked, setRatingChecked] = useState(false);
@@ -21,6 +22,41 @@ export default function RankingsInterface({
   const [descendingChecked, setDescendingChecked] = useState(true);
 
   const [genreIds, setGenreIds] = useState([]);
+  const [checkedIds, setCheckedIds] = useState(
+    genreIds.map((genre) => {
+      return { name: genre.name, id: genre.id, checked: false };
+    })
+  );
+
+  useEffect(() => {
+    console.log(checkedIds);
+    const csvGenres = checkedIds
+      .filter((genre) => genre.checked)
+      .map((genre) => genre.id)
+      .join(",");
+    console.log(csvGenres);
+
+    changeGenres(csvGenres);
+  }, [checkedIds]);
+
+  useEffect(() => {
+    setCheckedIds(
+      genreIds.map((genre) => {
+        return { name: genre.name, id: genre.id, checked: false };
+      })
+    );
+  }, [genreIds]);
+
+  const handleCheckboxChange = (id) => {
+    let newCheckedIds = checkedIds.map((genre) =>
+      genre.id == id
+        ? { id: genre.id, name: genre.name, checked: !genre.checked }
+        : { id: genre.id, name: genre.name, checked: genre.checked }
+    );
+
+    setCheckedIds(newCheckedIds);
+    console.log(newCheckedIds);
+  };
 
   useEffect(() => {
     const fetchGenres = async (type, stateToUpdate) => {
@@ -28,7 +64,14 @@ export default function RankingsInterface({
         `${constants.TMDB_BASE_PATH}genre/${type}/list?api_key=${constants.API_KEY}`
       );
       const jsonData = await data.json();
-      setGenreIds(jsonData.genres);
+      setGenreIds(
+        jsonData.genres.filter(
+          (genre) =>
+            !["Romance", "Mystery", "TV Movie", "History", "Western"].includes(
+              genre.name
+            )
+        )
+      );
       console.log(jsonData.genres);
     };
 
@@ -169,7 +212,7 @@ export default function RankingsInterface({
             </label>
           </div>
         </div>
-        <div className="md:mt-5">
+        <div className="lg:mt-5">
           <p className="text-lg font-lato font-bold border-b-2 border-neutral-800 text-gray-300">
             Order
           </p>
@@ -243,7 +286,10 @@ export default function RankingsInterface({
                           className="hidden peer"
                           type="checkbox"
                           id={genre.name}
-                          onClick={(e) => console.log(e.target.checked)}
+                          value={genre.id}
+                          onClick={(e) => {
+                            handleCheckboxChange(e.target.value);
+                          }}
                         ></input>
                         <div className="border-2 cursor-pointer border-neutral-700 rounded-lg p-1 px-2 m-1 peer-checked:bg-white">
                           {genre.name}

@@ -27,8 +27,8 @@ const PopularMoviesList = () => {
   }, []);
 
   return (
-    <div className="max-w-6xl mx-auto my-2 md:my-10">
-      <h2 className="mx-2 my-1 self-start text-primary drop-shadow-xl text-lg md:text-xl font-medium">
+    <div className="max-w-6xl mx-auto my-2 lg:my-10">
+      <h2 className="mx-2 my-1 self-start text-primary drop-shadow-xl text-lg lg:text-xl font-medium">
         POPULAR MOVIES
       </h2>
       <Swiper

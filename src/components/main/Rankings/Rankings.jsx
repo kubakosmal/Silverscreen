@@ -14,6 +14,7 @@ export default function Rankings() {
   const [voteCountGte, setVoteCountGte] = useState(1000);
   const [sortingOrder, setSortingOrder] = useState("desc");
   const [pageNumber, setPageNumber] = useState(1);
+  const [genres, setGenres] = useState("");
 
   const [mostPopularMovies, setMostPopularMovies] = useState([]);
   const [highestRatedMovies, setHighestRatedMovies] = useState([]);
@@ -42,6 +43,7 @@ export default function Rankings() {
     highestRevenueMovies,
     newestMovies,
     sortingOrder,
+    genres,
   ]);
 
   useEffect(() => {
@@ -49,38 +51,56 @@ export default function Rankings() {
       sortBy,
       stateToUpdate,
       sortingOrder,
-      leastNumberOfVotes
+      leastNumberOfVotes,
+      genres
     ) => {
       const data = await fetch(
-        `${constants.TMDB_BASE_PATH}discover/movie?api_key=${constants.API_KEY}&sort_by=${sortBy}.${sortingOrder}&vote_count.gte=${leastNumberOfVotes}&page=${pageNumber}`
+        `${constants.TMDB_BASE_PATH}discover/movie?api_key=${constants.API_KEY}&sort_by=${sortBy}.${sortingOrder}&vote_count.gte=${leastNumberOfVotes}&page=${pageNumber}&with_genres=${genres}`
       );
       const jsonData = await data.json();
       console.log(jsonData.results);
       stateToUpdate(jsonData.results);
     };
 
-    fetchSorted("popularity", setMostPopularMovies, sortingOrder, voteCountGte);
-    fetchSorted("revenue", setHighestRevenueMovies, sortingOrder, voteCountGte);
+    fetchSorted(
+      "popularity",
+      setMostPopularMovies,
+      sortingOrder,
+      voteCountGte,
+      genres
+    );
+    fetchSorted(
+      "revenue",
+      setHighestRevenueMovies,
+      sortingOrder,
+      voteCountGte,
+      genres
+    );
     fetchSorted(
       "vote_average",
       setHighestRatedMovies,
       sortingOrder,
-      voteCountGte
+      voteCountGte,
+      genres
     );
     fetchSorted(
       "primary_release_date",
       setNewestMovies,
       sortingOrder,
-      voteCountGte
+      voteCountGte,
+      genres
     );
-  }, [sortingOrder, pageNumber]);
+  }, [sortingOrder, pageNumber, genres]);
 
   return (
     <div className="text-gray-200  mx-auto">
       <Header noBackdrop={true}></Header>
-      <div className="flex mt-10 flex-col md:flex-row text-gray-300 font-ibm max-w-5xl md:mx-auto">
-        <div className="font-ibm mb-5 md:w-1/5 text-sm md:text-md md:text-lg items-center rounded-md border-neutral-700">
+      <div className="flex mt-10 flex-col lg:flex-row text-gray-300 font-ibm max-w-5xl lg:mx-auto">
+        <div className="font-ibm mb-5 lg:w-1/5 text-sm lg:text-md lg:text-lg items-center rounded-md border-neutral-700">
           <RankingsInterface
+            changeGenres={(genresString) => {
+              setGenres(genresString);
+            }}
             changeRankingType={(listName) => {
               setCurrentSelectedList(listName);
               setPageNumber(1);
@@ -95,7 +115,7 @@ export default function Rankings() {
             type="movies"
           />
         </div>
-        <div className="md:w-4/5 flex flex-col items-center md:ml-7">
+        <div className="lg:w-4/5 flex flex-col items-center lg:ml-7">
           <h3 className="self-start text-xl font-bold font-lato mb-4">
             {currentListName}
           </h3>

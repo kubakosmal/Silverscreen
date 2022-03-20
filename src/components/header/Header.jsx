@@ -24,50 +24,18 @@ const Header = (props) => {
           : "absolute"
       }`}
     >
-      <div className="py-5 max-w-5xl mx-auto flex justify-between items-center">
+      <div className="lg:py-5 lg:text-sm py-2 md:py-3 max-w-5xl mx-auto flex justify-between items-center">
         <Link to={"/"}>
-          <div className="bg-clip-text bg-gradient-to-tr from-teal-500 to-purple-700 text-3xl flex items-center justify-center">
+          <div className="bg-clip-text bg-gradient-to-tr from-teal-500 to-purple-700 text-md lg:text-3xl flex items-center justify-center">
             <Atropos shadow={false} highlight={false}>
-              <div className="w-9 mr-1 rounded-lg h-9 flex items-center font-bold justify-center bg-gradient-to-tr from-red-500 to-purple-700 text-gray-200">
+              <div className="lg:w-9 lg:h-9 w-6 h-6 text-gray-200 border-white lg:mr-1 rounded-lg flex items-center font-bold justify-center bg-gradient-to-tr from-red-500 to-purple-700">
                 S
               </div>
             </Atropos>
-
             <div className="font-bold">ILVERSCREEN</div>
           </div>
         </Link>
-
-        <div className="w-1/3">
-          <SearchComponent></SearchComponent>
-        </div>
-        <div className="flex text-md font-lato font-bold">
-          <Link to={"/films"}>
-            <div className="mx-1">
-              <p>FILMS</p>
-            </div>
-          </Link>
-
-          <Link to={"/shows"}>
-            <div className="mx-1">
-              <p>SHOWS</p>
-            </div>
-          </Link>
-
-          <Link to={"/people"}>
-            <div className="mx-1">
-              <p>PEOPLE</p>
-            </div>
-          </Link>
-
-          <Link to={"/films"}>
-            <div className="mx-1">
-              <p>DISCOVER</p>
-            </div>
-          </Link>
-        </div>
-        <div className="font-bold">
-          <p>LOG IN</p>
-        </div>
+        {screenSize > 900 ? <Navbar /> : <Hamburger />}
       </div>
     </div>
   );

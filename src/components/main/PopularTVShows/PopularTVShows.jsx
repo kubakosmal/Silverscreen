@@ -29,7 +29,7 @@ export default function PopularTVShows() {
 
   return (
     <div className="max-w-6xl mx-auto my-10">
-      <h2 className="my-1 mx-2 self-start text-primary drop-shadow-xl text-lg md:text-xl font-medium">
+      <h2 className="my-1 mx-2 self-start text-primary drop-shadow-xl text-lg lg:text-xl font-medium">
         POPULAR TV SHOWS
       </h2>
       <Swiper
