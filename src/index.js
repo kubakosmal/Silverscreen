@@ -8,8 +8,6 @@ import SearchingResults from "./components/main/SearchingResults/SearchingResult
 import AllReviews from "./components/main/MoviePage/Reviews/AllReviews/AllReviews";
 import Rankings from "./components/main/Rankings/Rankings";
 import PersonPage from "./components/main/PersonPage/PersonPage";
-import "../node_modules/slick-carousel/slick/slick.css";
-import "../node_modules/slick-carousel/slick/slick-theme.css";
 import People from "./components/main/People/People";
 import Shows from "./components/main/Shows/Shows";
 
