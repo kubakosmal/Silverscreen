@@ -3,7 +3,7 @@ import { BsCurrencyDollar } from "react-icons/bs";
 import { IoIosArrowDropup, IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { AiOutlineCalendar } from "react-icons/ai";
 import { IconContext } from "react-icons/lib";
-import { useEffect, useState } from "react/cjs/react.development";
+import { useEffect, useState } from "react";
 import * as constants from "../../../../constants";
 
 export default function RankingsInterface({

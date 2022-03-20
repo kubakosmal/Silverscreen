@@ -1,6 +1,6 @@
 import Review from "./Review/Review";
 import * as constants from "../../../../constants";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 
 export default function Reviews(props) {

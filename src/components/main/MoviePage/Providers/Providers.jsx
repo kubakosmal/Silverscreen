@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react/cjs/react.development";
+import { useState, useEffect } from "react";
 import justWatchLogo from "./justwatch.svg";
 import * as constants from "../../../../constants";
 

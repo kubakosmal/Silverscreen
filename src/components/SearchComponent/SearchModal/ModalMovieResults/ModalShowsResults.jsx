@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react/cjs/react.development";
+import { useState, useEffect } from "react";
 import MoviePoster from "../../../main/PopularMoviesList/MoviePoster/MoviePoster";
 import * as constants from "../../../../constants";
 import ModalNoResults from "./ModalNoResults";

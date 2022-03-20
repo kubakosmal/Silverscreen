@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react/cjs/react.development";
+import { useEffect, useState } from "react";
 import * as constants from "../../../../constants";
 import { AiFillStar } from "react-icons/ai";
 import { BsCurrencyDollar } from "react-icons/bs";

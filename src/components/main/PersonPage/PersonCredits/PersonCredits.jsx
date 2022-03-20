@@ -1,6 +1,6 @@
 import MoviePoster from "../../PopularMoviesList/MoviePoster/MoviePoster";
 import * as constants from "../../../../constants";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 import PersonProductionInfo from "../PersonProductionInfo/PersonProductionInfo";
 
 const sortBy = (productions, type, sortByWhat) => {

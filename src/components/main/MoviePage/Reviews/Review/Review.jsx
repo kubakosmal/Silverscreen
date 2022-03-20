@@ -1,7 +1,7 @@
 import * as constants from "../../../../../constants";
 import { AiOutlineUser, AiOutlineStar } from "react-icons/ai";
 import { IconContext } from "react-icons/lib";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 
 export default function Review(props) {
   const [isReadMore, setIsReadMore] = useState(false);

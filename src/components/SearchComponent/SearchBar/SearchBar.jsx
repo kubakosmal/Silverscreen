@@ -1,6 +1,6 @@
 import { CgSearch } from "react-icons/cg";
 import { IconContext } from "react-icons/lib";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 
 export default function SearchBar(props) {
   const [isSearchActive, setIsSearchActive] = useState(false);

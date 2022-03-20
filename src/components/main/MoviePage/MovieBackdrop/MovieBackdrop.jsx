@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react/cjs/react.development";
+import { useEffect, useState } from "react";
 
 export default function MovieBackdrop(props) {
   const size = props.context === "main" ? "h-[28rem]" : "h-[18rem]";

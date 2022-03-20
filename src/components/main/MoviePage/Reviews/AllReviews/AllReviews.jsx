@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react/cjs/react.development";
+import { useEffect, useState } from "react";
 import * as constants from "../../../../../constants";
 import Review from "../Review/Review";
 import Header from "../../../../header/Header";

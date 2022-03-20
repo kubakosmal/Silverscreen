@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react/cjs/react.development";
+import { useEffect, useState } from "react";
 import SearchBar from "./SearchBar/SearchBar.jsx";
 import SearchModal from "./SearchModal/SearchModal.jsx";
 

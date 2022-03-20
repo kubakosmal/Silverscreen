@@ -1,6 +1,6 @@
 import React from "react";
 import reactDom from "react-dom";
-import { useEffect, useState } from "react/cjs/react.development";
+import { useEffect, useState } from "react";
 import * as constants from "../../../constants";
 import MoviePoster from "../../main/PopularMoviesList/MoviePoster/MoviePoster";
 import ModalMovieResults from "./ModalMovieResults/ModalMovieResults";

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react/cjs/react.development";
+import { useEffect, useState } from "react";
 import Header from "../../header/Header";
 import * as constants from "../../../constants";
 import RankingsProduction from "./RankingsProduction/RankingsProduction";

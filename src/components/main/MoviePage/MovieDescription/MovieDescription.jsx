@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react/cjs/react.development";
+import { useState, useEffect } from "react";
 
 export default function MovieDescription(props) {
   const [screenSize, setScreenSize] = useState(window.innerWidth);

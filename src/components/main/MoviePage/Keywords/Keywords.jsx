@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react/cjs/react.development";
+import { useState, useEffect } from "react";
 import * as constants from "../../../../constants";
 
 export default function Keywords(props) {

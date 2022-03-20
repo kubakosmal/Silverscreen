@@ -1,7 +1,7 @@
 import Header from "../../header/Header";
 import Rankings from "../Rankings/Rankings";
 import * as constants from "../../../constants";
-import { useEffect, useState } from "react/cjs/react.development";
+import { useEffect, useState } from "react";
 import RankingsProduction from "../Rankings/RankingsProduction/RankingsProduction";
 import RankingsInterface from "../Rankings/RankingsInterface/RankingsInterface";
 import { IconContext } from "react-icons/lib";

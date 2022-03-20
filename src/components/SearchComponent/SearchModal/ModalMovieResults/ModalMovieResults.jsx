@@ -1,6 +1,6 @@
 import MoviePoster from "../../../main/PopularMoviesList/MoviePoster/MoviePoster";
 import * as constants from "../../../../constants";
-import { useEffect, useState } from "react/cjs/react.development";
+import { useEffect, useState } from "react";
 import ModalNoResults from "./ModalNoResults";
 import { Link, Outlet } from "react-router-dom";
 
