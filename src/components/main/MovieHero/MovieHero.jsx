@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react/cjs/react.development";
+import { useState, useEffect } from "react/cjs/react.development";
 import MovieBackdrop from "../MoviePage/MovieBackdrop/MovieBackdrop";
 import * as constants from "../../../constants";
 
