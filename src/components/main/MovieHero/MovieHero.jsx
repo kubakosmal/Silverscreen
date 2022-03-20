@@ -16,7 +16,7 @@ export default function MovieHero() {
       );
       const jsonData = await myData.json();
       setData(jsonData.results);
-      setBackdropPath(jsonData.results[17].backdrop_path);
+      setBackdropPath(jsonData.results[19].backdrop_path);
     };
 
     fetchData();

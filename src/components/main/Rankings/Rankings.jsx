@@ -20,20 +20,20 @@ export default function Rankings() {
   const [highestRevenueMovies, setHighestRevenueMovies] = useState([]);
   const [newestMovies, setNewestMovies] = useState([]);
 
-  const [currentListOfFilms, setCurrentListOfFilms] = useState([]);
+  const [currentListOfProductions, setCurrentListOfProductions] = useState([]);
   const [currentSelectedList, setCurrentSelectedList] =
     useState("most-popular");
   const [currentListName, setCurrentListName] = useState("Most popular movies");
 
   useEffect(() => {
     if (currentSelectedList == "top-rated") {
-      setCurrentListOfFilms(highestRatedMovies);
+      setCurrentListOfProductions(highestRatedMovies);
     } else if (currentSelectedList == "most-popular") {
-      setCurrentListOfFilms(mostPopularMovies);
+      setCurrentListOfProductions(mostPopularMovies);
     } else if (currentSelectedList == "top-revenue") {
-      setCurrentListOfFilms(highestRevenueMovies);
+      setCurrentListOfProductions(highestRevenueMovies);
     } else if (currentSelectedList == "newest") {
-      setCurrentListOfFilms(newestMovies);
+      setCurrentListOfProductions(newestMovies);
     }
   }, [
     currentSelectedList,
@@ -78,7 +78,7 @@ export default function Rankings() {
   return (
     <div className="text-gray-200  mx-auto">
       <Header noBackdrop={true}></Header>
-      <div className="flex flex-col md:flex-row text-gray-300 font-ibm max-w-5xl md:mx-auto">
+      <div className="flex mt-10 flex-col md:flex-row text-gray-300 font-ibm max-w-5xl md:mx-auto">
         <div className="font-ibm mb-5 md:w-1/5 text-sm md:text-md md:text-lg items-center rounded-md border-neutral-700">
           <RankingsInterface
             changeRankingType={(listName) => {
@@ -100,7 +100,7 @@ export default function Rankings() {
             {currentListName}
           </h3>
           <div className="flex flex-wrap gap-1 justify-between ">
-            {currentListOfFilms.map((prod, i) => {
+            {currentListOfProductions.map((prod, i) => {
               if (prod.poster_path && prod.popularity && prod.vote_average) {
                 return (
                   <RankingsProduction

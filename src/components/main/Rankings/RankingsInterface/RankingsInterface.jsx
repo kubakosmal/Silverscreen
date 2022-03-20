@@ -3,9 +3,11 @@ import { BsCurrencyDollar } from "react-icons/bs";
 import { IoIosArrowDropup, IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { AiOutlineCalendar } from "react-icons/ai";
 import { IconContext } from "react-icons/lib";
-import { useState } from "react/cjs/react.development";
+import { useEffect, useState } from "react/cjs/react.development";
+import * as constants from "../../../../constants";
 
 export default function RankingsInterface({
+  type,
   changeRankingType,
   changeSortingOrder,
   changeCurrentListName,
@@ -17,6 +19,25 @@ export default function RankingsInterface({
 
   const [ascendingChecked, setAscendingChecked] = useState(false);
   const [descendingChecked, setDescendingChecked] = useState(true);
+
+  const [genreIds, setGenreIds] = useState([]);
+
+  useEffect(() => {
+    const fetchGenres = async (type, stateToUpdate) => {
+      const data = await fetch(
+        `${constants.TMDB_BASE_PATH}genre/${type}/list?api_key=${constants.API_KEY}`
+      );
+      const jsonData = await data.json();
+      setGenreIds(jsonData.genres);
+      console.log(jsonData.genres);
+    };
+
+    if (type == "shows") {
+      fetchGenres("tv");
+    } else {
+      fetchGenres("movie");
+    }
+  }, []);
 
   const uncheckAll = () => {
     setPopularityChecked(false);
@@ -47,7 +68,7 @@ export default function RankingsInterface({
                   changeRankingType(e.target.id);
                   uncheckAll();
                   setPopularityChecked(true);
-                  changeCurrentListName("Most popular movies");
+                  changeCurrentListName(`Most popular ${type}`);
                 }}
               ></input>
 
@@ -76,7 +97,7 @@ export default function RankingsInterface({
                   changeRankingType(e.target.id);
                   uncheckAll();
                   setRatingChecked(true);
-                  changeCurrentListName("Top rated movies");
+                  changeCurrentListName(`Top rated ${type}`);
                 }}
               ></input>
               <div className="peer-checked:text-crayola flex items-center justify-between">
@@ -89,31 +110,37 @@ export default function RankingsInterface({
               </div>
             </label>
 
-            <label
-              className="cursor-pointer hover:text-crayola duration-300 peer-checked:text-red-pigment"
-              htmlFor="top-revenue"
-            >
-              <input
-                className="hidden peer"
-                type="radio"
-                name="typeOfRanking"
-                id="top-revenue"
-                onClick={(e) => {
-                  changeRankingType(e.target.id);
-                  uncheckAll();
-                  setRevenueChecked(true);
-                  changeCurrentListName("Top revenue movies");
-                }}
-              ></input>
-              <div className="peer-checked:text-crayola flex justify-between items-center">
-                <p className="">Revenue</p>
-                <IconContext.Provider
-                  value={{ color: `${revenueChecked ? "#FFE66D" : "#9ca3af"}` }}
-                >
-                  <BsCurrencyDollar className="w-6 h-6"></BsCurrencyDollar>
-                </IconContext.Provider>
-              </div>
-            </label>
+            {type == "shows" ? (
+              false
+            ) : (
+              <label
+                className="cursor-pointer hover:text-crayola duration-300 peer-checked:text-red-pigment"
+                htmlFor="top-revenue"
+              >
+                <input
+                  className="hidden peer"
+                  type="radio"
+                  name="typeOfRanking"
+                  id="top-revenue"
+                  onClick={(e) => {
+                    changeRankingType(e.target.id);
+                    uncheckAll();
+                    setRevenueChecked(true);
+                    changeCurrentListName("Top revenue movies");
+                  }}
+                ></input>
+                <div className="peer-checked:text-crayola flex justify-between items-center">
+                  <p className="">Revenue</p>
+                  <IconContext.Provider
+                    value={{
+                      color: `${revenueChecked ? "#FFE66D" : "#9ca3af"}`,
+                    }}
+                  >
+                    <BsCurrencyDollar className="w-6 h-6"></BsCurrencyDollar>
+                  </IconContext.Provider>
+                </div>
+              </label>
+            )}
 
             <label
               className="cursor-pointer hover:text-crayola duration-300 peer-checked:text-red-pigment"
@@ -128,7 +155,7 @@ export default function RankingsInterface({
                   changeRankingType(e.target.id);
                   uncheckAll();
                   setReleaseChecked(true);
-                  changeCurrentListName("Newest movies");
+                  changeCurrentListName(`Newest ${type}`);
                 }}
               ></input>
               <div className="peer-checked:text-crayola flex items-center justify-between">
@@ -203,38 +230,28 @@ export default function RankingsInterface({
 
         <div className="mt-5">
           <p className="text-lg font-lato font-bold border-b-2 border-neutral-800 text-gray-300">
-            Number of Votes
+            Genres
           </p>
           <div className="relative">
-            <div className="relative mt-1 rounded-md">
-              <div className="text-lg">
-                <label htmlFor="descending" className="hover:text-crayola">
-                  <input
-                    className="hidden peer"
-                    name="sorting-order"
-                    type="radio"
-                    id="descending"
-                    onClick={() => setSortingOrder("desc")}
-                  ></input>
-                  <p className="peer-checked:text-crayola cursor-pointer">
-                    1000
-                  </p>
-                </label>
-
-                <label htmlFor="ascending" className="hover:text-crayola">
-                  <input
-                    className="hidden peer"
-                    name="sorting-order"
-                    type="radio"
-                    id="ascending"
-                    onClick={() => {
-                      setSortingOrder("asc");
-                    }}
-                  ></input>
-                  <p className="peer-checked:text-crayola cursor-pointer">
-                    3000
-                  </p>
-                </label>
+            <div className="relative mt-2 rounded-md">
+              <div className="text-xs font-bold flex flex-wrap ">
+                {genreIds.map((genre) => {
+                  return (
+                    <div className="">
+                      <label htmlFor={genre.name}>
+                        <input
+                          className="hidden peer"
+                          type="checkbox"
+                          id={genre.name}
+                          onClick={(e) => console.log(e.target.checked)}
+                        ></input>
+                        <div className="border-2 cursor-pointer border-neutral-700 rounded-lg p-1 px-2 m-1 peer-checked:bg-white">
+                          {genre.name}
+                        </div>
+                      </label>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>

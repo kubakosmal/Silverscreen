@@ -10,6 +10,8 @@ import Rankings from "./components/main/Rankings/Rankings";
 import PersonPage from "./components/main/PersonPage/PersonPage";
 import "../node_modules/slick-carousel/slick/slick.css";
 import "../node_modules/slick-carousel/slick/slick-theme.css";
+import People from "./components/main/People/People";
+import Shows from "./components/main/Shows/Shows";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -28,6 +30,8 @@ ReactDOM.render(
         <Route path=":personId" element={<PersonPage />}></Route>
       </Route>
       <Route path="/films" element={<Rankings />}></Route>
+      <Route path="/people" element={<People />}></Route>
+      <Route path="/shows" element={<Shows></Shows>}></Route>
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")
