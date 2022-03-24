@@ -20,7 +20,6 @@ const PopularMoviesList = () => {
       );
       const jsonData = await myData.json();
       setData(jsonData.results);
-      console.log(data);
     };
 
     fetchData();
@@ -54,21 +53,23 @@ const PopularMoviesList = () => {
         navigation={true}
         modules={[Pagination, Navigation]}
       >
-        {data.map((movie) => {
+        {data.map((movie, i) => {
           return (
-            <SwiperSlide>
-              <div className="">
-                <MoviePoster
-                  posterImageUrl={
-                    constants.IMAGES_BASE_PATH + "w500" + movie.poster_path
-                  }
-                  movieTitle={movie.title}
-                  movieId={movie.id}
-                  key={movie.id}
-                  type={"movies"}
-                />
-              </div>
-            </SwiperSlide>
+            <div id={movie.id}>
+              <SwiperSlide>
+                <div className="">
+                  <MoviePoster
+                    posterImageUrl={
+                      constants.IMAGES_BASE_PATH + "w500" + movie.poster_path
+                    }
+                    movieTitle={movie.title}
+                    movieId={movie.id}
+                    key={movie.id}
+                    type={"movies"}
+                  />
+                </div>
+              </SwiperSlide>
+            </div>
           );
         })}
       </Swiper>

@@ -1,7 +1,6 @@
 import * as constants from "../../../../constants";
 
 export default function MovieImages(props) {
-  console.log(props.imagesUrls);
   return (
     <div className="flex flex-wrap">
       {props.imagesUrls.map((imageObj) => {

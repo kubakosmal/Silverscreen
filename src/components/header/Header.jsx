@@ -26,9 +26,9 @@ const Header = (props) => {
     >
       <div className="lg:py-5 mx-4 lg:text-sm py-2 md:py-3 max-w-5xl lg:mx-auto flex justify-between items-center">
         <Link to={"/"}>
-          <div className="bg-clip-text bg-gradient-to-tr from-teal-500 to-purple-700 text-md lg:text-3xl flex items-center justify-center">
+          <div className="bg-clip-text bg-gradient-to-tr from-teal-500 to-purple-700 text-lg lg:text-3xl flex items-center justify-center">
             <Atropos shadow={false} highlight={false}>
-              <div className="lg:w-9 lg:h-9 w-6 h-6 text-gray-200 border-white lg:mr-1 rounded-lg flex items-center font-bold justify-center bg-gradient-to-tr from-red-500 to-purple-700">
+              <div className="lg:w-9 lg:h-9 w-6 h-6 text-gray-200 border-white lg:mr-1 rounded-md lg:rounded-lg flex items-center font-bold justify-center bg-gradient-to-tr from-red-500 to-purple-700">
                 S
               </div>
             </Atropos>

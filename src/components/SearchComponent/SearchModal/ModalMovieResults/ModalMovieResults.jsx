@@ -13,7 +13,6 @@ export default function ModalMovieResults(props) {
         `${constants.TMDB_BASE_PATH}search/movie?api_key=${constants.API_KEY}&query=${props.searchValue}`
       );
       const jsonResults = await results.json();
-      console.log(jsonResults.results);
 
       setMoviesData(jsonResults.results);
     };

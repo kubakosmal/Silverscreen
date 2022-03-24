@@ -58,7 +58,7 @@ export default function Rankings() {
         `${constants.TMDB_BASE_PATH}discover/movie?api_key=${constants.API_KEY}&sort_by=${sortBy}.${sortingOrder}&vote_count.gte=${leastNumberOfVotes}&page=${pageNumber}&with_genres=${genres}`
       );
       const jsonData = await data.json();
-      console.log(jsonData.results);
+
       stateToUpdate(jsonData.results);
     };
 
@@ -95,7 +95,7 @@ export default function Rankings() {
   return (
     <div className="text-gray-200  mx-auto">
       <Header noBackdrop={true}></Header>
-      <div className="flex mt-10 flex-col lg:flex-row text-gray-300 font-ibm max-w-5xl lg:mx-auto">
+      <div className="flex mt-5 flex-col lg:flex-row text-gray-300 font-ibm max-w-5xl lg:mx-auto">
         <div className="font-ibm mb-5 lg:w-1/5 text-sm lg:text-md lg:text-lg items-center rounded-md border-neutral-700">
           <RankingsInterface
             changeGenres={(genresString) => {

@@ -6,6 +6,7 @@ import RankingsProduction from "../Rankings/RankingsProduction/RankingsProductio
 import RankingsInterface from "../Rankings/RankingsInterface/RankingsInterface";
 import { IconContext } from "react-icons/lib";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
+import { LoggedContext } from "../../Context/Context";
 
 export default function Shows() {
   const [sortingOrder, setSortingOrder] = useState("desc");
@@ -53,7 +54,7 @@ export default function Shows() {
       );
 
       const jsonData = await data.json();
-      console.log(jsonData.results);
+
       stateToUpdate(jsonData.results);
     };
 
@@ -72,8 +73,8 @@ export default function Shows() {
   return (
     <div>
       <Header noBackdrop={true}></Header>
-      <div className="max-w-5xl mx-auto mt-10 text-gray-200">
-        <div className="flex mt-10 flex-col lg:flex-row text-gray-300 font-ibm max-w-5xl lg:mx-auto">
+      <div className="max-w-5xl mx-4 lg:mx-auto text-gray-200">
+        <div className="flex mt-5 flex-col lg:flex-row text-gray-300 font-ibm max-w-5xl lg:mx-auto">
           <div className="font-ibm mb-5 lg:w-1/5 text-sm lg:text-md lg:text-lg items-center rounded-md border-neutral-700">
             <RankingsInterface
               changeGenres={(genresString) => {
@@ -153,6 +154,7 @@ export default function Shows() {
           </div>
         </div>
       </div>
+      <LoggedContext.Consumer>{(ctx) => {}}</LoggedContext.Consumer>
     </div>
   );
 }

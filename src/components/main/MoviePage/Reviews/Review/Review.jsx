@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function Review(props) {
   const [isReadMore, setIsReadMore] = useState(false);
-  console.log(props.avatarPath);
+
   return (
     <div className="text-gray-300 flex flex-col my-4 border-b-2 border border-zinc-800 bg-zinc-900 px-3 py-4 rounded-md">
       <div className="flex justify-between items-center">

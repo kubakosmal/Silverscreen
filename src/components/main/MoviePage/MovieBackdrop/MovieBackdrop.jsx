@@ -7,7 +7,6 @@ export default function MovieBackdrop(props) {
 
   useEffect(() => {
     setPxWindowHeight(`lg:h[${window.innerHeight.toString()}px]`);
-    console.log(window.innerHeight);
   }, [window.innerWidth, window.innerHeight]);
   return (
     <div
@@ -17,7 +16,7 @@ export default function MovieBackdrop(props) {
         backgroundImage: `linear-gradient(180deg, #171717, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0),  #171717), linear-gradient(90deg, #171717, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0),  #171717), url('${props.backdropImageUrl}')`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center center",
+        backgroundPosition: "center top",
         opacity: `${props.opacity}`,
       }}
     ></div>

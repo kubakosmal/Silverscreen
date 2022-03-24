@@ -29,12 +29,10 @@ export default function RankingsInterface({
   );
 
   useEffect(() => {
-    console.log(checkedIds);
     const csvGenres = checkedIds
       .filter((genre) => genre.checked)
       .map((genre) => genre.id)
       .join(",");
-    console.log(csvGenres);
 
     changeGenres(csvGenres);
   }, [checkedIds]);
@@ -55,7 +53,6 @@ export default function RankingsInterface({
     );
 
     setCheckedIds(newCheckedIds);
-    console.log(newCheckedIds);
   };
 
   useEffect(() => {
@@ -72,7 +69,6 @@ export default function RankingsInterface({
             )
         )
       );
-      console.log(jsonData.genres);
     };
 
     if (type == "shows") {

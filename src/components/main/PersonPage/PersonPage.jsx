@@ -53,69 +53,72 @@ export default function PersonPage(props) {
     fetchPersonData();
   }, []);
   return (
-    <div className="max-w-5xl text-gray-300 mx-auto mb-10">
+    <div>
       <Header noBackdrop={true}></Header>
-      <div className=" lg:mx-0 grid grid-cols-1 gap-7 lg:grid-cols-7">
-        <div className="lg:col-start-1 lg:col-end-3 lg:row-start-1 lg:row-end-2">
-          <div className="relative flex items-center justify-center">
-            <div className="absolute lg:bg-black rounded-md inset-0 blur"></div>
-            <img
-              className="rounded-md w-64 lg:w-full relative border-2 border-neutral-800"
-              src={`${constants.IMAGES_BASE_PATH}w500${personData.profile_path}`}
-            ></img>
+      <div className="max-w-5xl text-gray-300 mx-auto">
+        <div className="mx-4 mt-5  lg:mx-auto grid grid-cols-1 gap-7 lg:grid-cols-7">
+          <div className="lg:col-start-1 lg:col-end-3 lg:row-start-1 lg:row-end-2">
+            <div className="relative flex items-center justify-center">
+              <div className="absolute lg:bg-black rounded-md inset-0 blur"></div>
+              <img
+                className="rounded-md w-64 lg:w-full relative border-2 border-neutral-800"
+                src={`${constants.IMAGES_BASE_PATH}w500${personData.profile_path}`}
+              ></img>
+            </div>
           </div>
-        </div>
 
-        <div className="lg:col-start-3 lg:col-end-8 lg:row-start-1 lg:row-end-2">
-          <h2 className="text-2xl font-lato text-gray-200 font-bold text-center lg:text-left">
-            {personData.name}
-          </h2>
-          <div className="mt-5">
-            <h3 className="font-bold">Biography</h3>
-            <div className="relative  rounded-md mt-1">
-              <div className="absolute rounded-md bg-black blur-sm inset-0"></div>
-              <div className="relative bg-neutral-900 border border-neutral-800 rounded-md p-2">
-                <p className="text-sm">
-                  {personData?.biography?.length > maxBiographyLength &&
-                  isReadMore == false
-                    ? personData.biography.slice(0, maxBiographyLength) + "..."
-                    : personData.biography}
-                  {personData?.biography?.length > maxBiographyLength ? (
-                    <button
-                      className="text-secondary border text-xs px-1  rounded-md hover:opacity-90 border-secondary"
-                      onClick={() => setIsReadMore(!isReadMore)}
-                    >
-                      {isReadMore ? "Show Less" : "Show More"}
-                    </button>
-                  ) : (
-                    false
-                  )}
-                </p>
+          <div className="lg:col-start-3 lg:col-end-8 lg:row-start-1 lg:row-end-2">
+            <h2 className="text-2xl font-lato text-gray-200 font-bold text-center lg:text-left">
+              {personData.name}
+            </h2>
+            <div className="mt-5">
+              <h3 className="font-bold">Biography</h3>
+              <div className="relative  rounded-md mt-1">
+                <div className="absolute rounded-md bg-black blur-sm inset-0"></div>
+                <div className="relative bg-neutral-900 border border-neutral-800 rounded-md p-2">
+                  <p className="text-sm">
+                    {personData?.biography?.length > maxBiographyLength &&
+                    isReadMore == false
+                      ? personData.biography.slice(0, maxBiographyLength) +
+                        "..."
+                      : personData.biography}
+                    {personData?.biography?.length > maxBiographyLength ? (
+                      <button
+                        className="text-secondary border text-xs px-1  rounded-md hover:opacity-90 border-secondary"
+                        onClick={() => setIsReadMore(!isReadMore)}
+                      >
+                        {isReadMore ? "Show Less" : "Show More"}
+                      </button>
+                    ) : (
+                      false
+                    )}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div className="lg:col-start-1 lg:col-end-3 ">
-          <PersonOverview
-            gender={personData.gender == 1 ? "Female" : "Male"}
-            biography={personData.biography}
-            birthday={personData.birthday}
-            deathday={personData.deathday}
-            knownFor={personData.known_for_department}
-            name={personData.name}
-            placeOfBirth={personData.place_of_birth}
-            profilePath={`${constants.IMAGES_BASE_PATH}w500${personData.profile_path}`}
-          />
-        </div>
+          <div className="lg:col-start-1 lg:col-end-3 ">
+            <PersonOverview
+              gender={personData.gender == 1 ? "Female" : "Male"}
+              biography={personData.biography}
+              birthday={personData.birthday}
+              deathday={personData.deathday}
+              knownFor={personData.known_for_department}
+              name={personData.name}
+              placeOfBirth={personData.place_of_birth}
+              profilePath={`${constants.IMAGES_BASE_PATH}w500${personData.profile_path}`}
+            />
+          </div>
 
-        <div className="lg:col-start-3 lg:col-end-8 lg:row-start-2 lg:row-end-3">
-          <PersonCredits
-            castedIn={castedIn}
-            filmsStarred={filmsStarred}
-            showsStarred={showsStarred}
-            name={personData.name}
-          />
+          <div className="lg:col-start-3 lg:col-end-8 lg:row-start-2 lg:row-end-3">
+            <PersonCredits
+              castedIn={castedIn}
+              filmsStarred={filmsStarred}
+              showsStarred={showsStarred}
+              name={personData.name}
+            />
+          </div>
         </div>
       </div>
     </div>

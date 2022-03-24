@@ -45,8 +45,6 @@ export default function PersonCredits(props) {
   let showsStarred = props.showsStarred;
   let bestKnownFor = props.filmsStarred;
 
-  console.log(filmsStarred);
-
   // filter for productions only with release date
   filmsStarred = filmsStarred.filter((prod) => prod.release_date);
   showsStarred = showsStarred.filter((prod) => prod.first_air_date);
@@ -55,8 +53,6 @@ export default function PersonCredits(props) {
   if (props.filmsStarred) {
     filmsStarred = sortBy(filmsStarred, "movie", "release");
     bestKnownFor = sortBy(bestKnownFor, "movie", "voteCount");
-    console.log("what is he best known for");
-    console.log(bestKnownFor);
   }
 
   if (props.showsStarred) {

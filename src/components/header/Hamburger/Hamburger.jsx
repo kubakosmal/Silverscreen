@@ -14,7 +14,7 @@ const HamburgerSpans = () => {
 
 const Menu = () => {
   return (
-    <div className="text-gray-300 text-sm font-ibm absolute right-1 top-2 flex flex-col w-1/2 bg-neutral-900 rounded-md p-1 px-3">
+    <div className="z-10 text-gray-300 text-sm font-ibm absolute right-1 top-2 flex flex-col w-1/2 bg-neutral-900 rounded-md p-1 px-3">
       <div className="self-end">X</div>
       <div className="flex justify-between items-center border-b border-gray-300 my-1">
         <p>FILMS</p>

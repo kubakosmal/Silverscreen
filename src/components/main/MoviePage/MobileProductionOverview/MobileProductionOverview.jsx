@@ -4,8 +4,7 @@ import { BiUpvote } from "react-icons/bi";
 import { IconContext } from "react-icons/lib";
 import YearDirector from "./YearDirector";
 
-const MobileMovieOverview = (props) => {
-  console.log(props.directors);
+const MobileProductionOverview = (props) => {
   return (
     <div>
       <div className="filter drop-shadow-2xl py-4 flex flex-col items-center text-center text-primary  rounded-lg">
@@ -20,10 +19,11 @@ const MobileMovieOverview = (props) => {
           <YearDirector
             releaseDate={props.releaseDate}
             directors={props.directors}
+            type={props.type}
           />
         </div>
       </div>
     </div>
   );
 };
-export default MobileMovieOverview;
+export default MobileProductionOverview;

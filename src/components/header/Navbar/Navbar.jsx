@@ -28,15 +28,18 @@ export default function Navbar() {
           </div>
         </Link>
 
-        <Link to={"/films"}>
+        <Link to={"/user"}>
           <div className="mx-1">
-            <p>DISCOVER</p>
+            <p>USER</p>
           </div>
         </Link>
       </div>
-      <div className="font-bold">
-        <p>LOG IN</p>
-      </div>
+
+      <Link to={"/login"}>
+        <div className="font-bold">
+          <p>LOG IN</p>
+        </div>
+      </Link>
     </>
   );
 }

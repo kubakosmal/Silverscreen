@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import * as constants from "../../../constants";
-import MobileMovieOverview from "./MobileMovieOverview.jsx/MobileMovieOverview";
-import DesktopMovieOverview from "./DesktopMovieOverview/DesktopMovieOverview";
-import MovieDescription from "./MovieDescription/MovieDescription";
+import MobileProductionOverview from "./MobileProductionOverview/MobileProductionOverview";
+import DesktopProductionOverview from "./DesktopProductionOverview/DesktopProductionOverview";
+import ProductionDescription from "./ProductionDescription/ProductionDescription";
 import MovieImages from "./MovieImages/MovieImages";
 import MovieBackdrop from "./MovieBackdrop/MovieBackdrop";
 import Header from "../../header/Header";
 import Cast from "./Cast/Cast";
 import Reviews from "./Reviews/Reviews";
-import MovieDetails from "./MovieDetails/MovieDetails";
+import ProductionDetails from "./ProductionDetails/ProductionDetails";
 import MoviePagePoster from "./MoviePagePoster.jsx/MoviePagePoster";
 import Recommendations from "./Reccomendations/Recommendations";
 import Indicators from "./Indicators/Indicators.jsx";
@@ -18,14 +18,16 @@ import RatingAndInteractions from "./RatingAndInteractions/RatingAndInteractions
 import Genres from "./Genres/Genres";
 import Keywords from "./Keywords/Keywords";
 import Providers from "./Providers/Providers";
+import { LoggedContext } from "../../Context/Context";
 
 const MoviePage = () => {
-  let params = useParams();
+  const params = useParams();
   const movieId = params.movieId;
 
   const [screenSize, setScreenSize] = useState(window.innerWidth);
-
   const mobileOrDesktop = screenSize >= 768 ? "desktop" : "mobile";
+
+  const authContext = useContext(LoggedContext);
 
   const [data, setData] = useState([]);
   const [imagesUrls, setImagesUrls] = useState(["url"]);
@@ -157,34 +159,26 @@ const MoviePage = () => {
             <div className="absolute w-64 h-64 lg:w-60 lg:h-60 bottom-0 right-0 bg-secondary rounded-full blur-3xl opacity-10"></div>
           </div> */}
 
-          <div className="relative max-w-5xl  gap-y-7 gap-x-14 -mt-10 grid grid-cols-1 lg:grid-cols-8 lg:mx-auto lg:grid-rows-[40px_auto]">
-            <div className="lg:row-start-1 lg:col-start-1 lg:col-end-3 lg:sticky lg:-top-40">
+          <div className="relative max-w-5xl mx-4 gap-y-7 gap-x-14 -mt-10 grid grid-cols-1 lg:grid-cols-8 lg:mx-auto lg:grid-rows-[40px_auto]">
+            <div className="lg:row-start-1 lg:col-start-1 lg:col-end-3 lg:sticky lg:top-5 flex lg:block items-center justify-center">
               <MoviePagePoster
                 posterImageUrl={
                   constants.IMAGES_BASE_PATH + "w500" + data.poster_path
                 }
               />
               <div className="hidden lg:block">
-                <Indicators popularity={popularity} voteCount={voteCount} />
+                <Indicators type="movies" prodId={movieId} />
               </div>
-              {/* <MovieDetails
-                genres={genres}
-                originalTitle={originalTitle}
-                originalLanguage={originalLanguage}
-                revenue={revenue}
-                releaseDate={releaseDate}
-                budget={budget}
-              ></MovieDetails> */}
 
               {/* <div>
-                <MovieDetails
+                <ProductionDetails
                   genres={genres}
                   originalTitle={originalTitle}
                   originalLanguage={originalLanguage}
                   revenue={revenue}
                   releaseDate={releaseDate}
                   budget={budget}
-                ></MovieDetails>
+                ></ProductionDetails>
               </div> */}
 
               <div className="mt-5 hidden lg:block">
@@ -192,9 +186,9 @@ const MoviePage = () => {
               </div>
             </div>
 
-            <div className="lg:col-start-3 lg:col-end-9 lg:row-start-1 lg:row-end-2 ">
+            <div className="lg:col-start-3 lg:col-end-9 lg:row-start-1 lg:row-end-2">
               {mobileOrDesktop === "mobile" ? (
-                <MobileMovieOverview
+                <MobileProductionOverview
                   backdropImageUrl={
                     constants.IMAGES_BASE_PATH + "w500" + data.backdrop_path
                   }
@@ -211,7 +205,7 @@ const MoviePage = () => {
                 />
               ) : (
                 <div className="">
-                  <DesktopMovieOverview
+                  <DesktopProductionOverview
                     movieName={data.title}
                     releaseDate={releaseDate}
                     directors={directors}
@@ -225,44 +219,56 @@ const MoviePage = () => {
             <div className="lg:col-start-7 lg:col-end-9 lg:row-start-2 lg:row-end-3">
               <RatingAndInteractions
                 rating={rating}
-                popularity={popularity}
-                voteCount={voteCount}
+                type={"movies"}
+                prodId={movieId}
               />
             </div>
 
             {/* <div className="  lg:col-start-1 lg:col-end-3 lg:row-start-4 lg:row-end-5">
-              <MovieDetails
+              <ProductionDetails
                 genres={genres}
                 originalTitle={originalTitle}
                 originalLanguage={originalLanguage}
                 revenue={revenue}
                 releaseDate={releaseDate}
                 budget={budget}
-              ></MovieDetails>
+              ></ProductionDetails>
             </div> */}
 
             {/* <div className="lg:col-start-2 lg:col-end-4 lg:row-start-2 lg:row-end-3 ">
               <Score />
             </div> */}
 
-            <div className="lg:col-start-3 lg:col-end-7 lg:row-start-2 lg:row-end-3 mt-5">
-              {/* <div className="flex text-white">
-                <div>English</div>
-                <Genres genres={genres} />
-              </div> */}
-              <h3 className="text-gray-300 font-oxygen text-lg font-bold italic mb-2">
+            <div className="lg:col-start-3 lg:col-end-7 lg:row-start-2 lg:row-end-3 mt-5 flex flex-col gap-5">
+              <h3 className="text-gray-300 font-oxygen text-lg font-bold italic">
                 {tagline.toUpperCase()}
               </h3>
               <div className="relative">
                 <div className=""></div>
-                <div className="relative bg-neutral-900  rounded-md">
+                <div className="relative rounded-md">
                   <div className="">
-                    <MovieDescription overview={overview} tagline={tagline} />
+                    <ProductionDescription
+                      overview={overview}
+                      tagline={tagline}
+                    />
                   </div>
                 </div>
               </div>
-              <div className="mt-5">
-                <Keywords id={id} />
+              <div className="">
+                <Keywords type="movie" id={id} />
+              </div>
+              <div>
+                <h3 className="text-gray-200 text-lg font-bold font-oxygen">
+                  Details
+                </h3>
+                <ProductionDetails
+                  genres={genres}
+                  originalTitle={originalTitle}
+                  originalLanguage={originalLanguage}
+                  revenue={revenue}
+                  releaseDate={releaseDate}
+                  budget={budget}
+                ></ProductionDetails>
               </div>
             </div>
 

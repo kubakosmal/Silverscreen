@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState, useEffect } from "react";
 import MovieBackdrop from "../MoviePage/MovieBackdrop/MovieBackdrop";
 import * as constants from "../../../constants";
-
-let API_KEY = process.env.REACT_APP_API_KEY;
+import { LoggedContext } from "../../Context/Context";
+import { Link } from "react-router-dom";
 
 export default function MovieHero() {
   const urlBase = constants.IMAGES_BASE_PATH + "original";
   const [data, setData] = useState([]);
   const [backdropPath, setBackdropPath] = useState("");
+  const authContext = useContext(LoggedContext);
   useEffect(() => {
     const fetchData = async () => {
       const myData = await fetch(
@@ -36,15 +37,21 @@ export default function MovieHero() {
         <h2 className="font-bold font-ibm text-4xl sm:text-6xl lg:text-7xl bg-gradient-to-tr from-red-500 to-purple-600 text-transparent bg-clip-text mt-1 sm:mt-2 z-10">
           All in one place.
         </h2>
-        <div className="rounded-lg text-sm m-3 lg:m-6 relative">
+        <div className="rounded-lg text-sm relative">
           <div className="absolute -inset-0 bg-gradient-to-tr from-blue-500 bold to-green-500 rounded-lg blur-sm"></div>
-          <div className="bg-neutral-900 relative border border-secondary px-4 py-2 rounded-lg">
-            <button className="flex items-center lg:text-lg font-ibm">
-              <span className="bg-gradient-to-tr font-bold from-blue-500 bold to-green-500 bg-clip-text text-transparent">
-                Log in with TMDB account
-              </span>{" "}
-            </button>
-          </div>
+          {authContext ? (
+            false
+          ) : (
+            <Link to={"/login"}>
+              <div className="bg-neutral-900 relative border border-secondary px-4 py-2 m-3 rounded-lg">
+                <button className="flex items-center lg:text-lg font-ibm">
+                  <span className="bg-gradient-to-tr font-bold from-blue-500 bold to-green-500 bg-clip-text text-transparent">
+                    Log in with TMDB account
+                  </span>{" "}
+                </button>
+              </div>
+            </Link>
+          )}
         </div>
       </div>
     </div>

@@ -10,6 +10,7 @@ import {
   EffectCoverflow,
   Autoplay,
 } from "swiper";
+import { Link } from "react-router-dom";
 
 export default function PopularTVShows() {
   const [data, setData] = useState([]);
@@ -59,16 +60,16 @@ export default function PopularTVShows() {
           return (
             <div key={show.id.toString()}>
               <SwiperSlide>
-                <div className="">
-                  <MoviePoster
-                    posterImageUrl={
-                      constants.IMAGES_BASE_PATH + "w500" + show.backdrop_path
-                    }
-                    movieTitle={show.name}
-                    movieId={show.id}
-                    type={"tv"}
-                  />
-                </div>
+                <Link to={`/tvshows/${show.id}`}>
+                  <div className="mx-1">
+                    <img
+                      src={
+                        constants.IMAGES_BASE_PATH + "w500" + show.backdrop_path
+                      }
+                    ></img>
+                    <p>{show.name}</p>
+                  </div>
+                </Link>
               </SwiperSlide>
             </div>
           );

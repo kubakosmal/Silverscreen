@@ -26,6 +26,7 @@ export default function Reviews(props) {
             }
             return (
               <Review
+                key={i}
                 author={review.author}
                 avatarPath={avatarPath}
                 content={review.content}

@@ -11,7 +11,6 @@ export default function AllReviews(props) {
   const [reviews, setReviews] = useState([]);
   const [movieData, setMovieData] = useState({});
   const movieId = useParams().reviewMovieId;
-  console.log(movieId);
 
   useEffect(() => {
     const fetchReviews = async () => {
@@ -29,7 +28,7 @@ export default function AllReviews(props) {
       );
 
       const jsonData = await data.json();
-      console.log(jsonData);
+
       setMovieData(jsonData);
     };
 

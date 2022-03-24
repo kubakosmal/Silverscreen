@@ -19,7 +19,7 @@ export default function Providers(props) {
     if (props.id) {
       fetchProviders();
     }
-  }, props.id);
+  }, [props.id]);
 
   return (
     <div className="relative text-gray-200 text-xs font-istok     rounded-sm">
