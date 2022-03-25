@@ -24,6 +24,10 @@ export default function UserPage() {
 
   const [averageMovieRating, setAverageMovieRating] = useState(0);
   const [averageShowsRating, setAverageShowsRating] = useState(0);
+  const [numOfFavMovies, setNumOfFavMovies] = useState(0);
+  const [numOfFavShows, setNumOfFavShows] = useState(0);
+  const [numOfMoviesInWatchlist, setNumOfMoviesInWatchlist] = useState(0);
+  const [numOfShowsInWatchList, setNumOfShowsInWatchlist] = useState(0);
 
   const [currentSelectedListName, setCurrentSelectedListName] =
     useState("Favorite Movies");
@@ -98,33 +102,40 @@ export default function UserPage() {
     averageShows = (averageShows / ratedShows.length).toFixed(1);
 
     setAverageMovieRating(averageRating);
+    setAverageShowsRating(averageShows);
   }, [ratedMovies, ratedShows]);
   return (
     <div>
       <Header noBackdrop={true}></Header>
-      <div className="max-w-5xl my-5 mx-4 lg:mx-auto text-gray-200 font-ibm flex flex-col lg:flex-row">
-        <div className="flex flex-col items-center border lg:w-4/12">
-          {avatarPath ? (
-            <img
-              className="rounded-full w-40 h-40 object-cover border-2 border-neutral-800"
-              src={`${constants.IMAGES_BASE_PATH}w500${avatarPath}`}
-            ></img>
-          ) : (
-            <div className="w-40 h-40 rounded-full"></div>
-          )}
-          <h2 className="text-secondary text-4xl font-bold font-lato">
-            {accountDetails.username}
-          </h2>
+      <div className="max-w-5xl my-5 mx-4 lg:mx-auto text-gray-200 font-ibm flex flex-col ">
+        <div className="flex flex-col lg:flex-row border-neutral-800 border-2 p-6 rounded-lg bg-gradient-to-tr from-slate-1000 to-black">
+          <div className="flex flex-col items-center">
+            {avatarPath ? (
+              <img
+                className="rounded-full w-40 h-40 object-cover border-2 border-neutral-800"
+                src={`${constants.IMAGES_BASE_PATH}w500${avatarPath}`}
+              ></img>
+            ) : (
+              <div className="w-40 h-40 rounded-full"></div>
+            )}
+          </div>
+          <div className="">
+            <UserInfo
+              userName={accountDetails.username}
+              numOfFavMovies={favMovies.length}
+              numOfFavShows={favShows.length}
+              numOfRatedMovies={ratedMovies.length}
+              numOfRatedShows={ratedShows.length}
+              averageMovieRating={averageMovieRating}
+              averageShowsRating={averageShowsRating}
+              numOfMoviesInWatchlist={movieWatchlist.length}
+              numOfShowsInWatchList={showsWatchlist.length}
+            />
+          </div>
         </div>
-        <div className="border w-full">
-          <UserInfo
-            numOfFavMovies={favMovies.length}
-            numOfRatedMovies={ratedMovies.length}
-            numOfRatedShows={ratedShows.length}
-            averageMovieRating={averageMovieRating}
-            averageShowsRating={averageShowsRating}
-          />
-          <div className="border flex justify-between">
+
+        <div className="w-full my-5">
+          <div className="flex justify-between">
             <label htmlFor="fav-movies">
               <input
                 hidden
@@ -183,7 +194,7 @@ export default function UserPage() {
             </label>
           </div>
 
-          <div className="flex flex-wrap gap-5 lg:w-8/12 border">
+          <div className="flex flex-wrap gap-5">
             {currentSelectedList?.map((movie) => {
               return (
                 <Link to={`/movies/${movie.id}`}>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import MoviePoster from "../../../main/PopularMoviesList/MoviePoster/MoviePoster";
 import * as constants from "../../../../constants";
 import ModalNoResults from "./ModalNoResults";
+import { Link } from "react-router-dom";
 
 export default function ModalShowsResults(props) {
   const [showsData, setShowsData] = useState([]);
@@ -13,6 +13,9 @@ export default function ModalShowsResults(props) {
       );
       const jsonResults = await results.json();
 
+      jsonResults.results = jsonResults.results.filter(
+        (show) => show.poster_path
+      );
       setShowsData(jsonResults.results);
     };
 
@@ -20,37 +23,49 @@ export default function ModalShowsResults(props) {
   }, [props.searchValue]);
 
   return (
-    <div className="flex flex-col items-center my-4">
-      <div className="flex flex-col items-center border-b border-secondary w-full">
-        <h3>TV Shows</h3>
-        {showsData.length < 1 ? (
-          <ModalNoResults />
-        ) : (
-          <div className="flex w-full flex-wrap justify-center">
-            {showsData.map((show, i) => {
-              if (i < 5) {
-                return (
-                  <div className="w-32 m-2" key={show.id.toString()}>
-                    <MoviePoster
-                      posterImageUrl={
-                        constants.IMAGES_BASE_PATH + "w500" + show.poster_path
-                      }
-                      movieTitle={show.name}
-                      movieId={show.id}
-                      key={show.id}
-                      type={"shows"}
-                      origin={"modal"}
-                    />
-                  </div>
-                );
-              }
-            })}
+    <>
+      {showsData.length < 1 ? (
+        false
+      ) : (
+        <div className="flex flex-col items-center my-4 font-lato w-1/2">
+          <div className="flex flex-col w-full">
+            <h3 className="text-2xl font-bold">TV Shows</h3>
+
+            <div className="flex w-full flex-wrap">
+              {showsData.map((show, i) => {
+                if (i < 3) {
+                  return (
+                    <div onClick={() => props.closeModal()}>
+                      <Link to={`/tvshows/${show.id}`}>
+                        <div
+                          className="w-20 lg:w-28 p-1 rounded-md border-2 border-transparent hover:border-secondary"
+                          key={show.id.toString()}
+                        >
+                          <img
+                            className="rounded-md"
+                            src={
+                              constants.IMAGES_BASE_PATH +
+                              "w500" +
+                              show.poster_path
+                            }
+                          />
+                          <p className="truncate text-sm text-gray-300 mt-1">
+                            {show.name}
+                          </p>
+                        </div>
+                      </Link>
+                    </div>
+                  );
+                }
+              })}
+            </div>
+
+            <div className=" text-sm">
+              <button className="border m-2 px-4 py-1">Show more</button>
+            </div>
           </div>
-        )}
-        <div className=" text-sm">
-          <button className="border m-2 px-4 py-1">Show more</button>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 }

@@ -1,9 +1,13 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import SearchComponent from "../../SearchComponent/SearchComponent";
+import { LoggedContext } from "../../Context/Context";
 
 export default function Navbar() {
+  const authContext = useContext(LoggedContext);
+  const isUserLoggedIn = authContext.isLogged;
+  const userName = authContext.userName;
+  const userProfilePath = authContext.userProfilePath;
   return (
     <>
       <div className="w-1/3">
@@ -27,19 +31,30 @@ export default function Navbar() {
             <p>PEOPLE</p>
           </div>
         </Link>
-
-        <Link to={"/user"}>
-          <div className="mx-1">
-            <p>USER</p>
-          </div>
-        </Link>
       </div>
 
-      <Link to={"/login"}>
-        <div className="font-bold">
-          <p>LOG IN</p>
-        </div>
-      </Link>
+      {isUserLoggedIn ? (
+        <Link to={"/user"}>
+          <div className="mx-1 flex items-center">
+            <div>
+              <div className="rounded-full mx-1 border-2 border-crayola">
+                <img
+                  className="w-8 h-8 rounded-full object-cover"
+                  src={userProfilePath}
+                ></img>
+              </div>
+            </div>
+
+            <p className="font-bold">{userName.toUpperCase()}</p>
+          </div>
+        </Link>
+      ) : (
+        <Link to={"/login"}>
+          <div className="font-bold">
+            <p>LOG IN</p>
+          </div>
+        </Link>
+      )}
     </>
   );
 }

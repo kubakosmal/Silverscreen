@@ -1,6 +1,6 @@
 import React from "react";
 import MovieHero from "./MovieHero/MovieHero";
-import PopularMoviesList from "./PopularMoviesList/PopularMoviesList";
+import PopularMoviesList from "./Collections/PopularMoviesList/PopularMoviesList";
 import MoviePage from "./MoviePage/MoviePage.jsx";
 import SiteOverview from "./SiteOverview/SiteOverview";
 import MovieShowcase from "./MovieShowcase/MovieShowcase";

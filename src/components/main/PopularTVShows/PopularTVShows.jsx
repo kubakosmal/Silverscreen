@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import * as constants from "../../../constants";
-import MoviePoster from "../PopularMoviesList/MoviePoster/MoviePoster";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   Navigation,

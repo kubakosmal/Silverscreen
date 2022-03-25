@@ -15,6 +15,7 @@ import Keywords from "./Keywords/Keywords";
 import ShowDetails from "./ShowDetails/ShowDetails";
 import Cast from "./Cast/Cast";
 import Reviews from "./Reviews/Reviews";
+import Recommendations from "./Reccomendations/Recommendations";
 
 export default function ShowPage() {
   const params = useParams();
@@ -45,6 +46,7 @@ export default function ShowPage() {
   const [originalLanguage, setOriginalLanguage] = useState("en");
   const [actors, setActors] = useState([]);
   const [reviews, setReviews] = useState([]);
+  const [recommendations, setRecommendations] = useState([]);
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -92,7 +94,7 @@ export default function ShowPage() {
 
     fetchActors();
     fetchShowData();
-  }, []);
+  }, [showId]);
   return (
     <div>
       <Header></Header>
@@ -197,6 +199,10 @@ export default function ShowPage() {
 
             <div className="lg:col-start-3 lg:col-end-9  lg:row-start-5 lg:row-end-6">
               <Reviews reviews={reviews} movieId={showId} />
+            </div>
+
+            <div className="lg:col-start-3 lg:col-end-9  lg:row-start-6 lg:row-end-7">
+              <Recommendations type="tv" productions={recommendations} />
             </div>
           </div>
         </div>

@@ -39,8 +39,15 @@ export default function UserLoggedMain() {
 
       setAccountDetails(jsonData);
       authContext.setUserId(jsonData.id);
+      authContext.setUserName(jsonData.username);
+      authContext.setUserProfilePath(
+        `${constants.IMAGES_BASE_PATH}w500${jsonData.avatar.tmdb.avatar_path}`
+      );
     };
-    fetchAccountDetails();
+
+    if (sessionId) {
+      fetchAccountDetails();
+    }
   }, [sessionId]);
 
   return (

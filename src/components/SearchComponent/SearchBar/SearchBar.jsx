@@ -15,7 +15,7 @@ export default function SearchBar(props) {
         <input
           onClick={props.openModal}
           type="text"
-          placeholder="Search for movies, shows and people"
+          placeholder="Search for Movies, TV Shows and People"
           className="outline-0 ml-4 rounded-sm w-full text-sm text-white p-1 px-2 bg-transparent border-transparent"
         ></input>
       </div>

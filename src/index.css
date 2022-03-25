@@ -15,6 +15,22 @@ body {
   background-color: #171717;
 }
 
+#community-svg {
+  fill: url(#community-gradient);
+}
+
+#database-svg {
+  fill: url(#database-gradient);
+}
+
+#database-svg-2 {
+  fill: url(#database-gradient-2);
+}
+
+#database-svg-3 {
+  fill: url(#database-gradient-3);
+}
+
 .swiper-button-next {
   color: #34d1bf !important;
   opacity: 0.5;

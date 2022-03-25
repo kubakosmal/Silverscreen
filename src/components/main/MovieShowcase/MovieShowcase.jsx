@@ -1,6 +1,6 @@
 import * as constants from "../../../constants";
 import { useState, useEffect } from "react";
-import MoviePoster from "../PopularMoviesList/MoviePoster/MoviePoster";
+import MoviePoster from "../Collections/PopularMoviesList/MoviePoster/MoviePoster";
 import Atropos from "atropos/react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";

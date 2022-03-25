@@ -1,4 +1,4 @@
-import MoviePoster from "../../PopularMoviesList/MoviePoster/MoviePoster";
+import MoviePoster from "../../Collections/PopularMoviesList/MoviePoster/MoviePoster";
 import * as constants from "../../../../constants";
 import { useState } from "react";
 import PersonProductionInfo from "../PersonProductionInfo/PersonProductionInfo";

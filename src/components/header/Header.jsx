@@ -35,6 +35,7 @@ const Header = (props) => {
             <div className="font-bold">ILVERSCREEN</div>
           </div>
         </Link>
+        {screenSize > 900 ? false : <SearchComponent mobile={true} />}
         {screenSize > 900 ? <Navbar /> : <Hamburger />}
       </div>
     </div>

@@ -1,4 +1,4 @@
-import MoviePoster from "../../PopularMoviesList/MoviePoster/MoviePoster";
+import MoviePoster from "../../Collections/PopularMoviesList/MoviePoster/MoviePoster";
 import Atropos from "atropos/react";
 import * as constants from "../../../../constants";
 import { Link } from "react-router-dom";

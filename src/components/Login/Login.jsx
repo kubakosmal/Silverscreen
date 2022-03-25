@@ -31,11 +31,7 @@ export default function Login() {
         >
           CLICK ME TO LOGIN!!!!
         </a>
-        <LoggedContext.Consumer>
-          {(ctx) => {
-            ctx.setSessionId("xddd");
-          }}
-        </LoggedContext.Consumer>
+
         <Link to={"/shows"}>
           <p>LECYMY TU</p>
         </Link>

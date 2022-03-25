@@ -141,7 +141,7 @@ const MoviePage = () => {
     fetchData();
     fetchImagesUrls();
     fetchCrew();
-  }, []);
+  }, [movieId]);
 
   return (
     <div className="">
@@ -159,7 +159,7 @@ const MoviePage = () => {
             <div className="absolute w-64 h-64 lg:w-60 lg:h-60 bottom-0 right-0 bg-secondary rounded-full blur-3xl opacity-10"></div>
           </div> */}
 
-          <div className="relative max-w-5xl mx-4 gap-y-7 gap-x-14 -mt-10 grid grid-cols-1 lg:grid-cols-8 lg:mx-auto lg:grid-rows-[40px_auto]">
+          <div className="relative max-w-5xl mx-4 gap-y-7 gap-x-10 -mt-10 grid grid-cols-1 lg:grid-cols-8 lg:mx-auto lg:grid-rows-[40px_auto]">
             <div className="lg:row-start-1 lg:col-start-1 lg:col-end-3 lg:sticky lg:top-5 flex lg:block items-center justify-center">
               <MoviePagePoster
                 posterImageUrl={
@@ -216,7 +216,7 @@ const MoviePage = () => {
               )}
             </div>
 
-            <div className="lg:col-start-7 lg:col-end-9 lg:row-start-2 lg:row-end-3">
+            <div className="lg:col-start-7 lg:col-end-9 lg:row-start-2 lg:row-end-3 w-48">
               <RatingAndInteractions
                 rating={rating}
                 type={"movies"}
