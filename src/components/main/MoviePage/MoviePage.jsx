@@ -212,15 +212,18 @@ const MoviePage = () => {
             </div>
 
             <div className="lg:col-start-9  lg:col-end-12 lg:row-start-2 lg:row-end-3">
-              <div className="relative">
-                <div className=" bg-black inset-0 blur-sm rounded-xl"></div>
-                <div className="relative bg-neutral-900 rounded-xl px-4">
-                  <RatingAndInteractions
-                    rating={rating}
-                    type={"movies"}
-                    prodId={movieId}
-                  />
-                  <Indicators></Indicators>
+              <div className="relative rounded-xl">
+                <div className="absolute bg-black inset-0 blur-sm rounded-xl"></div>
+                <div className="relative bg-neutral-900 rounded-xl">
+                  <div className="bg-slate-1000">
+                    <RatingAndInteractions
+                      rating={rating}
+                      type={"movies"}
+                      prodId={movieId}
+                    />
+                  </div>
+
+                  <Indicators type="movies" prodId={movieId}></Indicators>
                 </div>
               </div>
             </div>

@@ -17,41 +17,39 @@ export default function ProductionDetails(props) {
         <div>
           <dl>
             <div className="bg-slate-1000 rounded-md px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-sm font-bold text-white">Original Title</dt>
-              <dd className="mt-1 text-sm text-gray-300 sm:mt-0 sm:col-span-2">
+              <dt className=" font-bold text-white">Original Title</dt>
+              <dd className="mt-1  text-gray-300 sm:mt-0 sm:col-span-2">
                 {props.originalTitle}
               </dd>
             </div>
             <div className="bg-neutral-900 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-sm font-bold text-white">
-                Original Language
-              </dt>
-              <dd className="mt-1 text-sm text-gray-300 sm:mt-0 sm:col-span-2">
+              <dt className=" font-bold text-white">Original Language</dt>
+              <dd className="mt-1  text-gray-300 sm:mt-0 sm:col-span-2">
                 {originalLanguage}
               </dd>
             </div>
 
             <div className="bg-slate-1000 rounded-md px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-sm font-bold text-white">Release Date</dt>
-              <dd className="mt-1 text-sm text-gray-300 sm:mt-0 sm:col-span-2">
+              <dt className="font-bold text-white">Release Date</dt>
+              <dd className="mt-1 text-gray-300 sm:mt-0 sm:col-span-2">
                 {props.releaseDate}
               </dd>
             </div>
             <div className="bg-neutral-900 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-sm font-bold text-white">Budget</dt>
-              <dd className="mt-1 text-sm text-gray-300 sm:mt-0 sm:col-span-2">
+              <dt className=" font-bold text-white">Budget</dt>
+              <dd className="mt-1  text-gray-300 sm:mt-0 sm:col-span-2">
                 {budget}
               </dd>
             </div>
             <div className="bg-slate-1000 rounded-md px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-sm font-bold text-white">Revenue</dt>
-              <dd className="mt-1 text-sm text-gray-300 sm:mt-0 sm:col-span-2">
+              <dt className=" font-bold text-white">Revenue</dt>
+              <dd className="mt-1  text-gray-300 sm:mt-0 sm:col-span-2">
                 {revenue}
               </dd>
             </div>
             <div className="bg-neutral1000 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-sm font-bold text-white">Genre</dt>
-              <dd className="mt-1 text-sm text-gray-300 sm:mt-0 sm:col-span-2">
+              <dt className=" font-bold text-white">Genre</dt>
+              <dd className="mt-1  text-gray-300 sm:mt-0 sm:col-span-2">
                 {props.genres.map((genre, i) => {
                   if (i + 1 === props.genres.length) {
                     return genre.name;

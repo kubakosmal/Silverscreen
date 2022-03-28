@@ -7,40 +7,46 @@ export default function Review(props) {
   const [isReadMore, setIsReadMore] = useState(false);
 
   return (
-    <div className="text-gray-300 flex flex-col my-4 border-b-2 border border-zinc-800 bg-zinc-900 px-3 py-4 rounded-md">
-      <div className="flex justify-between items-center">
+    <div className="text-gray-300 flex flex-col p-4 py-6">
+      <div className="flex justify-between items-center border-b border-neutral-800 pb-2">
         <div className="flex items-center">
-          <div className="w-8 h-8 flex items-center justify-center bg-white rounded-full">
+          <div className="w-14 h-14 flex items-center justify-center bg-white rounded-full">
             {props.hasAvatar ? (
               <img className="rounded-full" src={props.avatarPath}></img>
             ) : (
               <IconContext.Provider value={{ color: "black" }}>
-                <AiOutlineUser className="w-7 h-7"></AiOutlineUser>
+                <AiOutlineUser className="w-12 h-12"></AiOutlineUser>
               </IconContext.Provider>
             )}
           </div>
 
           <div className="px-2">
             <div className="flex items-center">
-              <div className="text-gray-400 mr-1 text-sm">
+              <div className="text-gray-400 lg:text-md mr-1">
                 <p>Review by</p>
               </div>
 
-              <div className="font-bold text-md">
+              <div className="font-bold lg:text-lg text-gray-100">
                 <p>{props.author}</p>
               </div>
             </div>
           </div>
         </div>
-        <div className="flex items-center">
-          <IconContext.Provider value={{ color: "#FFE66D" }}>
-            <AiOutlineStar className="w-7 h-7"></AiOutlineStar>
-          </IconContext.Provider>
-          <p>{props.rating ? props.rating : "N/A"}</p>
+        <div className="flex items-center font-ibm ">
+          {props.rating ? (
+            <p className="font-bold bg-gradient-to-tr from-crayola to-pink-500 bg-clip-text text-transparent text-2xl">
+              {props.rating}
+              <span className="text-gray-500 text-xs">/10</span>
+            </p>
+          ) : (
+            <p className="font-bold bg-gradient-to-tr from-crayola to-pink-500 bg-clip-text text-transparent text-lg">
+              N/A
+            </p>
+          )}
         </div>
       </div>
 
-      <div className="text-sm my-2 max-w-3/4">
+      <div className="text-gray-300 font-lato lg:text-sm lg:text-md my-3 max-w-3/4">
         {isReadMore || props.content.length <= 130
           ? props.content
           : props.content.slice(0, 130) + "..."}
