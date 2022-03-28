@@ -22,7 +22,7 @@ export default function Providers(props) {
   }, [props.id]);
 
   return (
-    <div className="relative text-gray-200 text-xs font-istok     rounded-sm">
+    <div className="relative text-white text-xs font-istok     rounded-sm">
       <div className="absolute bg-black inset-0 blur-sm rounded-md"></div>
       <div className="relative border border-zinc-800 rounded-md">
         <div className="bg-zinc-800 p-2">

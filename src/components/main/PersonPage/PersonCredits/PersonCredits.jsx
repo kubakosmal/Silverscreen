@@ -63,7 +63,7 @@ export default function PersonCredits(props) {
   return (
     <div>
       <div className="mb-10">
-        <h3 className="font-ibm text-xl text-gray-200">Best known for</h3>
+        <h3 className="font-ibm text-xl text-white">Best known for</h3>
         <div className="relative">
           <div className="absolute bg-black blur-sm inset-0"></div>
           <div className="relative flex border bg-neutral-900 border-neutral-800 rounded-md">

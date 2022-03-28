@@ -11,7 +11,7 @@ export default function MovieBackdrop(props) {
   return (
     <div
       id="moviePageBackgroundImage"
-      className={`${size} sm:h-[34rem] ${pxWindowHeight} rounded-4xl max-w-7xl mx-auto`}
+      className={`${size} sm:h-[34rem] ${pxWindowHeight} rounded-4xl max-w-6xl mx-auto`}
       style={{
         backgroundImage: `linear-gradient(180deg, #171717, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0),  #171717), linear-gradient(90deg, #171717, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0),  #171717), url('${props.backdropImageUrl}')`,
         backgroundSize: "cover",

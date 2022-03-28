@@ -20,7 +20,7 @@ export default function MovieShowcase() {
   }, []);
 
   return (
-    <div className="mx-auto max-w-5xl lg:my-10 flex flex-wrap justify-around">
+    <div className="mx-auto max-w-4/5 lg:my-10 flex flex-wrap justify-around">
       {data.map((prod, i) => {
         if (i < 6 && prod.poster_path) {
           return (

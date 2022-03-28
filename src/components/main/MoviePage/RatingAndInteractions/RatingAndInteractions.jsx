@@ -8,37 +8,34 @@ import { useContext } from "react";
 export default function RatingAndInteractions(props) {
   const authContext = useContext(LoggedContext);
   return (
-    <div className="relative">
-      <div className="absolute bg-black inset-0 blur-sm rounded-md"></div>
-      <div className="relative bg-neutral-900 font-ibm drop-shadow-lg border-neutral-800 flex flex-col gap-5 items-center justify-around border-2 rounded-md py-4 px-2">
-        <div className="flex flex-col items-center">
-          <p className="font-bold font-lato text-gray-300 text-xs mb-1">
-            USER SCORE
-          </p>
-          <div className="flex items-center ">
-            <IconContext.Provider value={{ color: "#FFE66D" }}>
-              <AiFillStar className="h-9 w-9"></AiFillStar>
-            </IconContext.Provider>
+    <div className="relative font-ibm drop-shadow-lg flex flex-col gap-5 items-center justify-around rounded-md py-4 px-2">
+      <div className="flex flex-col items-center">
+        <p className="font-bold font-lato text-gray-300 text-xs mb-1">
+          USER SCORE
+        </p>
+        <div className="flex items-center ">
+          <IconContext.Provider value={{ color: "#FFE66D" }}>
+            <AiFillStar className="h-9 w-9"></AiFillStar>
+          </IconContext.Provider>
 
-            <p className="font-bold bg-gradient-to-tr from-crayola to-pink-500 bg-clip-text text-transparent text-5xl">
-              {props.rating}
-              <span className="text-gray-500 text-lg">/10</span>
+          <p className="font-bold bg-gradient-to-tr from-crayola to-pink-500 bg-clip-text text-transparent text-5xl">
+            {props.rating}
+            <span className="text-gray-500 text-lg">/10</span>
+          </p>
+        </div>
+      </div>
+
+      {authContext.isLogged ? (
+        <Rate type={props.type} prodId={props.prodId} />
+      ) : (
+        <Link to={"/login"}>
+          <div className="mt-2">
+            <p className="text-gray-300 text-xs">
+              You must be logged to rate this production
             </p>
           </div>
-        </div>
-
-        {authContext.isLogged ? (
-          <Rate type={props.type} prodId={props.prodId} />
-        ) : (
-          <Link to={"/login"}>
-            <div className="mt-2">
-              <p className="text-gray-300 text-xs">
-                You must be logged to rate this production
-              </p>
-            </div>
-          </Link>
-        )}
-      </div>
+        </Link>
+      )}
     </div>
   );
 }

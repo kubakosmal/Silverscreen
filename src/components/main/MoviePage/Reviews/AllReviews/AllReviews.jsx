@@ -36,9 +36,9 @@ export default function AllReviews(props) {
     fetchReviews();
   }, []);
   return (
-    <div className="max-w-4xl mx-auto mt-20">
-      <Header></Header>
-      <div className="">
+    <div className="">
+      <Header noBackdrop={true}></Header>
+      <div className="mx-4 lg:mx-auto max-w-4/5 my-5">
         <Link to={`/movies/${movieId}`}>
           <div className="flex items-center">
             <IconContext.Provider value={{ color: "white" }}>

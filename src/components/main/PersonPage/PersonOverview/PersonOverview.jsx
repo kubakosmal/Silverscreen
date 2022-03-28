@@ -2,7 +2,7 @@ export default function PersonOverview(props) {
   return (
     <div className="text-sm font-ibm">
       <div className="font-lato">
-        <h3 className="text-lg text-gray-200">Personal info</h3>
+        <h3 className="text-lg text-white">Personal info</h3>
         <div className="my-2">
           <p className="text-md font-bold">Known for</p>
           <p className="text-secondary text-xs">{props.knownFor}</p>

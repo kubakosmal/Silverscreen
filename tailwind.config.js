@@ -1,6 +1,15 @@
+let plugin = require("tailwindcss/plugin");
+
 module.exports = {
   mode: "jit",
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  plugins: [
+    plugin(function ({ addVariant }) {
+      addVariant("third", "&:nth-child(3)");
+      addVariant("fourth", "&:nth-child(4)");
+      addVariant("fifth", "&:nth-child(5)");
+    }),
+  ],
   theme: {
     fontFamily: {
       sans: ["Graphik", "sans-serif"],
@@ -38,6 +47,9 @@ module.exports = {
       },
       dropShadow: {
         "3xl": "0 1px 2px rgba(0, 0, 0, .8)",
+      },
+      maxWidth: {
+        "4/5": "60rem",
       },
     },
   },

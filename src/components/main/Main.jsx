@@ -11,7 +11,7 @@ class Main extends React.Component {
     return (
       <div className=" mx-auto  text-primary">
         <MovieHero></MovieHero>
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-4/5 mx-auto">
           <MovieShowcase></MovieShowcase>
           <SiteOverview></SiteOverview>
           <PopularMoviesList></PopularMoviesList>

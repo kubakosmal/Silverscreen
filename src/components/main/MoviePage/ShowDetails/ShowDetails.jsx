@@ -4,7 +4,7 @@ export default function ShowDetails(props) {
   return (
     <div className="relative mt-2">
       <div className="absolute inset-0 bg-black blur-sm rounded-lg"></div>
-      <div className="relative text-gray-200 flex border-2 flex-col text-sm rounded-lg bg-neutral-900 border-neutral-800 px-2">
+      <div className="relative text-white flex border-2 flex-col text-sm rounded-lg bg-neutral-900 border-neutral-800 px-2">
         <div className="flex border-neutral-800  border-b py-3 justify-between items-center">
           <p className="font-bold text-md lg:text-md">Original Title </p>
           <p className="text-secondary mx-3 text-md">{props.originalName}</p>

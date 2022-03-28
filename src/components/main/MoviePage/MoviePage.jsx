@@ -154,13 +154,8 @@ const MoviePage = () => {
           }
         />
         <div className="relative">
-          {/* <div className="absolute w-full h-1/4 mt-20  -green-500 lg:inset-0 lg:max-w-6xl mx-auto">
-            <div className="absolute w-64 h-64 lg:w-60 lg:h-60 left-0 top-0 bg-radical-red rounded-full filter blur-3xl opacity-10 mix"></div>
-            <div className="absolute w-64 h-64 lg:w-60 lg:h-60 bottom-0 right-0 bg-secondary rounded-full blur-3xl opacity-10"></div>
-          </div> */}
-
-          <div className="relative max-w-5xl mx-4 gap-y-7 gap-x-10 -mt-10 grid grid-cols-1 lg:grid-cols-8 lg:mx-auto lg:grid-rows-[40px_auto]">
-            <div className="lg:row-start-1 lg:col-start-1 lg:col-end-3 lg:sticky lg:top-5 flex lg:block items-center justify-center">
+          <div className="relative max-w-4/5 mx-4 gap-y-5 gap-x-12 -mt-12 grid grid-cols-1 lg:grid-cols-11 lg:mx-auto lg:grid-rows-[auto_auto]">
+            <div className="lg:row-start-1 lg:col-start-1 lg:col-end-4 lg:row-span-2 lg:sticky lg:top-5 flex lg:block items-center justify-center">
               <MoviePagePoster
                 posterImageUrl={
                   constants.IMAGES_BASE_PATH + "w500" + data.poster_path
@@ -186,7 +181,7 @@ const MoviePage = () => {
               </div>
             </div>
 
-            <div className="lg:col-start-3 lg:col-end-9 lg:row-start-1 lg:row-end-2">
+            <div className="lg:col-start-4 lg:col-end-12 lg:row-start-1 lg:row-end-2">
               {mobileOrDesktop === "mobile" ? (
                 <MobileProductionOverview
                   backdropImageUrl={
@@ -216,73 +211,73 @@ const MoviePage = () => {
               )}
             </div>
 
-            <div className="lg:col-start-7 lg:col-end-9 lg:row-start-2 lg:row-end-3 w-48">
-              <RatingAndInteractions
-                rating={rating}
-                type={"movies"}
-                prodId={movieId}
-              />
+            <div className="lg:col-start-9  lg:col-end-12 lg:row-start-2 lg:row-end-3">
+              <div className="relative">
+                <div className=" bg-black inset-0 blur-sm rounded-xl"></div>
+                <div className="relative bg-neutral-900 rounded-xl px-4">
+                  <RatingAndInteractions
+                    rating={rating}
+                    type={"movies"}
+                    prodId={movieId}
+                  />
+                  <Indicators></Indicators>
+                </div>
+              </div>
             </div>
 
-            {/* <div className="  lg:col-start-1 lg:col-end-3 lg:row-start-4 lg:row-end-5">
-              <ProductionDetails
-                genres={genres}
-                originalTitle={originalTitle}
-                originalLanguage={originalLanguage}
-                revenue={revenue}
-                releaseDate={releaseDate}
-                budget={budget}
-              ></ProductionDetails>
-            </div> */}
-
-            {/* <div className="lg:col-start-2 lg:col-end-4 lg:row-start-2 lg:row-end-3 ">
-              <Score />
-            </div> */}
-
-            <div className="lg:col-start-3 lg:col-end-7 lg:row-start-2 lg:row-end-3 mt-5 flex flex-col gap-5">
-              <h3 className="text-gray-300 font-oxygen text-lg font-bold italic">
+            <div className="lg:col-start-4 rounded-lg  lg:col-end-9 lg:row-start-2 lg:row-end-3 flex flex-col gap-5">
+              <h3 className="text-gray-300 font-lato text-lg font-bold italic">
                 {tagline.toUpperCase()}
               </h3>
               <div className="relative">
-                <div className=""></div>
-                <div className="relative rounded-md">
-                  <div className="">
-                    <ProductionDescription
-                      overview={overview}
-                      tagline={tagline}
-                    />
+                <div className="absolute inset-0 blur-sm rounded-lg"></div>
+                <div className="relative rounded-lg">
+                  <div className=""></div>
+                  <div className="relative rounded-md lg:min-h-[13rem]">
+                    <div className="">
+                      <ProductionDescription
+                        overview={overview}
+                        tagline={tagline}
+                      />
+                    </div>
                   </div>
+                  {/* <div className="">
+                    <Keywords type="movie" id={id} />
+                  </div> */}
                 </div>
               </div>
-              <div className="">
-                <Keywords type="movie" id={id} />
-              </div>
+
               <div>
-                <h3 className="text-gray-200 text-lg font-bold font-oxygen">
+                <h3 className="text-white text-lg font-bold font-lato mb-2">
                   Details
                 </h3>
-                <ProductionDetails
-                  genres={genres}
-                  originalTitle={originalTitle}
-                  originalLanguage={originalLanguage}
-                  revenue={revenue}
-                  releaseDate={releaseDate}
-                  budget={budget}
-                ></ProductionDetails>
+                <div className="relative">
+                  <div className="absolute bg-black inset-0 blur-sm rounded-md"></div>
+                  <div className="relative">
+                    <ProductionDetails
+                      genres={genres}
+                      originalTitle={originalTitle}
+                      originalLanguage={originalLanguage}
+                      revenue={revenue}
+                      releaseDate={releaseDate}
+                      budget={budget}
+                    ></ProductionDetails>
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* <MovieImages imagesUrls={imagesUrls} /> */}
 
-            <div className="lg:col-start-3 lg:col-end-9  lg:row-start-4 lg:row-end-5">
-              <Cast actors={actors}></Cast>
+            <div className="lg:col-start-4 lg:col-end-12  lg:row-start-4 lg:row-end-5">
+              <Cast actors={actors} prodId={movieId} type="movie"></Cast>
             </div>
 
-            <div className="lg:col-start-3 lg:col-end-9  lg:row-start-5 lg:row-end-6">
+            <div className="lg:col-start-4 lg:col-end-12  lg:row-start-5 lg:row-end-6">
               <Reviews reviews={reviews} movieId={movieId} />
             </div>
 
-            <div className="lg:col-start-3 lg:col-end-9  lg:row-start-6 lg:row-end-7">
+            <div className="lg:col-start-4 lg:col-end-12  lg:row-start-6 lg:row-end-7">
               <Recommendations productions={recommendations} />
             </div>
           </div>

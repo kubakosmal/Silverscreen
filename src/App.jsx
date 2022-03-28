@@ -23,7 +23,7 @@ const App = () => {
 
   return (
     <div
-      className={`max-w-full md: lg:mx-auto relative font-oxygen ${
+      className={`max-w-full md: lg:mx-auto relative font-lato ${
         isModalOpen ? "hidden" : false
       }`}
     >

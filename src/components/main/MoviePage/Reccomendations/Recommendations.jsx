@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export default function Recommendations(props) {
   return (
     <div>
-      <h3 className="text-gray-200 font-lato text-xl font-bold">
+      <h3 className="text-white font-lato text-xl font-bold">
         You may also like
       </h3>
       <div className="flex flex-wrap gap-5 mt-5">

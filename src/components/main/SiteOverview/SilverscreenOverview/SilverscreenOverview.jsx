@@ -8,7 +8,7 @@ export default function SilverscreenOverview() {
       <div className="absolute bg-gradient-to-tr from-purple-500 to-[#01b4e4] inset-0 blur-sm rounded-md"></div>
       <div className="p-6 relative flex flex-col bg-gradient-to-tr from-slate-1100 to-neutral-800 border-neutral-800 rounded-lg">
         <div className="text-5xl lg:text-6xl flex items-center">
-          <div className="lg:w-20 lg:h-20 w-14 h-14 text-gray-200 border-white lg:mr-1 rounded-lg lg:rounded-2xl flex items-center font-bold justify-center bg-gradient-to-tr from-red-500 to-purple-700">
+          <div className="lg:w-20 lg:h-20 w-14 h-14 text-white border-white lg:mr-1 rounded-lg lg:rounded-2xl flex items-center font-bold justify-center bg-gradient-to-tr from-red-500 to-purple-700">
             S
           </div>
           <div className="">

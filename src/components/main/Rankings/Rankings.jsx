@@ -93,9 +93,9 @@ export default function Rankings() {
   }, [sortingOrder, pageNumber, genres]);
 
   return (
-    <div className="text-gray-200  mx-auto">
+    <div className="text-white lg:mx-auto">
       <Header noBackdrop={true}></Header>
-      <div className="flex mt-5 flex-col lg:flex-row text-gray-300 font-ibm max-w-5xl lg:mx-auto">
+      <div className="flex mt-5 flex-col lg:flex-row text-gray-300 font-ibm max-w-4/5 mx-4 lg:mx-auto">
         <div className="font-ibm mb-5 lg:w-1/5 text-sm lg:text-md lg:text-lg items-center rounded-md border-neutral-700">
           <RankingsInterface
             changeGenres={(genresString) => {

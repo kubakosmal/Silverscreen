@@ -9,7 +9,7 @@ import DataOverview from "./DataOverview/DataOverview";
 
 export default function SiteOverview() {
   return (
-    <div className="px-2 mt-6 max-w-6xl mx-auto text-gray-300 rounded-md font-lato flex flex-col">
+    <div className="px-2 mt-6 max-w-4/5 mx-auto text-gray-300 rounded-md font-lato flex flex-col">
       <div className="self-start w-1/2">
         <SilverscreenOverview />
       </div>

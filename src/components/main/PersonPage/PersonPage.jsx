@@ -55,7 +55,7 @@ export default function PersonPage(props) {
   return (
     <div>
       <Header noBackdrop={true}></Header>
-      <div className="max-w-5xl text-gray-300 mx-auto">
+      <div className="max-w-4/5 text-gray-300 mx-auto">
         <div className="mx-4 mt-5  lg:mx-auto grid grid-cols-1 gap-7 lg:grid-cols-7">
           <div className="lg:col-start-1 lg:col-end-3 lg:row-start-1 lg:row-end-2">
             <div className="relative flex items-center justify-center">
@@ -68,7 +68,7 @@ export default function PersonPage(props) {
           </div>
 
           <div className="lg:col-start-3 lg:col-end-8 lg:row-start-1 lg:row-end-2">
-            <h2 className="text-2xl font-lato text-gray-200 font-bold text-center lg:text-left">
+            <h2 className="text-2xl font-lato text-white font-bold text-center lg:text-left">
               {personData.name}
             </h2>
             <div className="mt-5">

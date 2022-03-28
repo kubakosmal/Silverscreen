@@ -86,8 +86,8 @@ export default function RankingsInterface({
   };
   return (
     <div className="relative rounded-md">
-      <div className="absolute inset-0 bg-black blur-sm rounded-md"></div>
-      <div className="relative bg-neutral-900 border-neutral-800 border-2  p-2 rounded-md font-lato text-gray-400">
+      <div className="absolute inset-0 bg-black blur-sm  rounded-md"></div>
+      <div className="relative bg-gradient-to-tr from-neutral-900 to-slate-1100 border-neutral-800 p-2 rounded-md font-lato text-gray-400">
         <p className="text-gray-300 text-lg font-bold font-lato  border-b-2 border-neutral-800">
           Sort by
         </p>

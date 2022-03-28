@@ -27,7 +27,7 @@ export default function Keywords(props) {
         return (
           <div className="relative" key={i}>
             <div className=""></div>
-            <div className="relative bg-neutral-900 border-2 shadow-xl border-slate-600 text-gray-300 font-oxygen m-1 rounded-xl cursor-pointer text-xs px-2 py-1">
+            <div className="relative bg-neutral-900 border-2 shadow-xl border-slate-600 text-gray-300 font-lato m-1 rounded-xl cursor-pointer text-xs px-2 py-1">
               <p>{keyword.name}</p>
             </div>
           </div>

@@ -24,7 +24,7 @@ export default function SearchModal(props) {
     <div className=" absolute w-full h-100 text-white inset-0 bg-neutral-900 z-50 font-lato">
       <div className="mt-5">
         <div className="m-3 max-w-3xl mx-4 lg:mx-auto">
-          <div className="flex justify-between items-center text-gray-200">
+          <div className="flex justify-between items-center text-white">
             <p className="font-ibm text-md lg:text-xl">
               Search for movies, TV shows and people:
             </p>
@@ -49,7 +49,7 @@ export default function SearchModal(props) {
               onChange={(e) => setSearchValue(e.target.value)}
               type="text"
               placeholder="Search"
-              className="w-full bg-neutral-900 border-b-2 py-2 border-crayola outline-none text-gray-200"
+              className="w-full bg-neutral-900 border-b-2 py-2 border-crayola outline-none text-white"
             ></input>
           </div>
 

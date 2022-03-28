@@ -105,7 +105,7 @@ export default function ShowPage() {
           }
         />
         <div className="relative">
-          <div className="relative max-w-5xl mx-4 gap-y-7 gap-x-14 -mt-10 grid grid-cols-1 lg:grid-cols-8 lg:mx-auto lg:grid-rows-[40px_auto]">
+          <div className="relative max-w-4/5 mx-4 gap-y-7 gap-x-14 -mt-10 grid grid-cols-1 lg:grid-cols-8 lg:mx-auto lg:grid-rows-[40px_auto]">
             <div className="lg:row-start-1 lg:col-start-1 lg:col-end-3 lg:sticky lg:top-5 flex lg:block items-center justify-center">
               <MoviePagePoster
                 posterImageUrl={
@@ -159,7 +159,7 @@ export default function ShowPage() {
             </div>
 
             <div className="lg:col-start-3 lg:col-end-7 lg:row-start-2 lg:row-end-3 mt-5 flex flex-col gap-5">
-              <h3 className="text-gray-300 font-oxygen text-lg font-bold italic">
+              <h3 className="text-gray-300 font-lato text-lg font-bold italic">
                 {tagline.toUpperCase()}
               </h3>
               <div className="relative">
@@ -177,7 +177,7 @@ export default function ShowPage() {
                 <Keywords type="tv" id={showId} />
               </div>
               <div>
-                <h3 className="text-gray-200 text-lg font-bold font-oxygen">
+                <h3 className="text-white text-lg font-bold font-lato">
                   Details
                 </h3>
                 <ShowDetails

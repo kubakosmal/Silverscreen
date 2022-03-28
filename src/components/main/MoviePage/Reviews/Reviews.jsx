@@ -12,7 +12,7 @@ export default function Reviews(props) {
   return (
     <div className="text-gray-500 flex flex-col border-b-2 border-zinc-800 my-6">
       <div className="mt-2">
-        <h3 className="text-gray-200 font-bold -mb-2">Reviews</h3>
+        <h3 className="text-white font-bold -mb-2">Reviews</h3>
         {reviews.map((review, i) => {
           if (i < numOfReviewsToShow) {
             let avatarPath = "";

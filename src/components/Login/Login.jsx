@@ -23,7 +23,7 @@ export default function Login() {
   return (
     <div>
       <Header noBackdrop={true} />
-      <div className="max-w-5xl my-5 mx-4 lg:mx-auto text-gray-200">
+      <div className="max-w-4/5 my-5 mx-4 lg:mx-auto text-white">
         <h1>LOGIN HERE</h1>
         <a
           href={`https://www.themoviedb.org/authenticate/${authToken}?redirect_to=http://localhost:3000/logged`}

@@ -31,7 +31,7 @@ export default function Indicators(props) {
       fetchList(typeOfProduction, "favorite", setFavProductions);
       fetchList(typeOfProduction, "watchlist", setProductionsWatchlist);
     }
-  }, []);
+  }, [id, props.prodId]);
 
   useEffect(() => {
     for (let prod of favProductions) {
@@ -45,7 +45,7 @@ export default function Indicators(props) {
         setIsInWatchlist(true);
       }
     }
-  }, [favProductions, productionsWatchlist]);
+  }, [favProductions, productionsWatchlist, id, props.prodId]);
 
   const toggleFavorites = async (addOrDelete, type, stateToUpdate) => {
     const toAdd =
@@ -93,7 +93,7 @@ export default function Indicators(props) {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className={`h-7 w-7 transition duration-200 ${
-              isInFavorites ? "text-pink-600" : "text-gray-200"
+              isInFavorites ? "text-pink-600" : "text-white"
             }`}
             viewBox="0 0 20 20"
             fill="currentColor"
@@ -118,7 +118,7 @@ export default function Indicators(props) {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className={`h-7 w-7 transition duration-200 ${
-              isInWatchlist ? "text-crayola" : "text-gray-200"
+              isInWatchlist ? "text-crayola" : "text-white"
             }`}
             viewBox="0 0 20 20"
             fill="currentColor"

@@ -18,17 +18,17 @@ const Header = (props) => {
 
   return (
     <div
-      className={`text-gray-200 w-full font-lato ${
+      className={`text-white w-full font-lato ${
         props.noBackdrop
           ? "bg-slate-1100 border-b-4 border-slate-1100"
           : "absolute"
       }`}
     >
-      <div className="lg:py-5 mx-4 lg:text-sm py-2 md:py-3 max-w-5xl lg:mx-auto flex justify-between items-center">
+      <div className="lg:py-5 mx-4 lg:text-sm py-2 md:py-3 max-w-4/5 lg:mx-auto flex justify-between items-center">
         <Link to={"/"}>
           <div className="bg-clip-text bg-gradient-to-tr from-teal-500 to-purple-700 text-lg lg:text-3xl flex items-center justify-center">
             <Atropos shadow={false} highlight={false}>
-              <div className="lg:w-9 lg:h-9 w-6 h-6 text-gray-200 border-white lg:mr-1 rounded-md lg:rounded-lg flex items-center font-bold justify-center bg-gradient-to-tr from-red-500 to-purple-700">
+              <div className="lg:w-9 lg:h-9 w-6 h-6 text-white border-white lg:mr-1 rounded-md lg:rounded-lg flex items-center font-bold justify-center bg-gradient-to-tr from-red-500 to-purple-700">
                 S
               </div>
             </Atropos>

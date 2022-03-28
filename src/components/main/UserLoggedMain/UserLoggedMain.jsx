@@ -54,7 +54,7 @@ export default function UserLoggedMain() {
     <div>
       <Header />
       <MovieHero />
-      <div className="max-w-5xl mx-4 lg:mx-auto text-gray-200">
+      <div className="max-w-4/5 mx-4 lg:mx-auto text-white">
         <p>You should be logged now</p>
 
         <p>Welcome {accountDetails.username}</p>
