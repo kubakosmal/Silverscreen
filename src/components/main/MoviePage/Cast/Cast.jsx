@@ -16,32 +16,36 @@ export default function Cast(props) {
         <ul className="relative bg-neutral-900 rounded-lg grid grid-cols-1 md:grid-cols-2">
           {props.actors.map((actor, i) => {
             if (i < (screenSize < 500 ? 3 : 6)) {
-              return (
-                <li
-                  key={actor.id}
-                  className="odd:bg-slate-1000 lg:third:bg-neutral-900 rounded-lg lg:first:bg-slate-1000 lg:fourth:bg-slate-1000 lg:fifth:bg-slate-1000"
-                >
-                  <Link to={`/person/${actor.id}`}>
-                    <div className="flex items-center py-4">
-                      <div className="items-center w-full   flex p-2 px-4">
-                        <img
-                          className="object-cover w-20 h-20  rounded-full "
-                          src={`${constants.IMAGES_BASE_PATH}w500${actor.profile_path}`}
-                        ></img>
-                        <div className="ml-4 text-gray-300 flex flex-col font-lato">
-                          <p className="text-gray-100 text-md lg:text-lg font-bold">
-                            {actor.name}
-                          </p>
+              if (actor.profile_path) {
+                return (
+                  <li
+                    key={actor.id}
+                    className="odd:bg-slate-1000 lg:third:bg-neutral-900 rounded-lg lg:first:bg-slate-1000 lg:fourth:bg-slate-1000 lg:fifth:bg-slate-1000"
+                  >
+                    <Link to={`/person/${actor.id}`}>
+                      <div className="flex items-center py-4">
+                        <div className="items-center w-full   flex p-2 px-4">
+                          <img
+                            className="object-cover w-20 h-20  rounded-full "
+                            src={`${constants.IMAGES_BASE_PATH}w500${actor.profile_path}`}
+                          ></img>
+                          <div className="ml-4 text-gray-300 flex flex-col font-lato">
+                            <p className="text-gray-100 text-md lg:text-lg font-bold">
+                              {actor.name}
+                            </p>
 
-                          <p className="text-xs lg:text-sm">
-                            {actor.character}
-                          </p>
+                            <p className="text-xs lg:text-sm">
+                              {actor.character}
+                            </p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </Link>
-                </li>
-              );
+                    </Link>
+                  </li>
+                );
+              } else {
+                i--;
+              }
             }
           })}
         </ul>

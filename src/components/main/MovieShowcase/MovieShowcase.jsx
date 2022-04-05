@@ -22,7 +22,7 @@ export default function MovieShowcase() {
   return (
     <div className="mx-auto max-w-4/5 lg:my-10 flex flex-wrap justify-around">
       {data.map((prod, i) => {
-        if (i < 6 && prod.poster_path) {
+        if (i < 5 && prod.poster_path) {
           return (
             <div id={prod.id}>
               <Link to={`movies/${prod.id}`}>

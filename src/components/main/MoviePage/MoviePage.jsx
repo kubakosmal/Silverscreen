@@ -19,6 +19,7 @@ import Genres from "./Genres/Genres";
 import Keywords from "./Keywords/Keywords";
 import Providers from "./Providers/Providers";
 import { LoggedContext } from "../../Context/Context";
+import Collection from "./Collection/Collection";
 
 const MoviePage = () => {
   const params = useParams();
@@ -49,6 +50,7 @@ const MoviePage = () => {
   const [tagline, setTagline] = useState("");
   const [id, setId] = useState();
   const [recommendations, setRecommndations] = useState([]);
+  const [collection, setCollection] = useState(null);
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -76,6 +78,7 @@ const MoviePage = () => {
       setBudget(jsonData.budget);
       setTagline(jsonData.tagline);
       setId(jsonData.id);
+      setCollection(jsonData.belongs_to_collection);
     };
 
     const fetchImagesUrls = async () => {
@@ -154,7 +157,7 @@ const MoviePage = () => {
           }
         />
         <div className="relative">
-          <div className="relative max-w-4/5 mx-4 gap-y-5 gap-x-12 -mt-12 grid grid-cols-1 lg:grid-cols-11 lg:mx-auto lg:grid-rows-[auto_auto]">
+          <div className="relative max-w-4/5 mx-4 gap-y-5 gap-x-12 mb-10 -mt-12 grid grid-cols-1 lg:grid-cols-11 lg:mx-auto lg:grid-rows-[auto_auto]">
             <div className="lg:row-start-1 lg:col-start-1 lg:col-end-4 lg:row-span-2 lg:sticky lg:top-5 flex lg:block items-center justify-center">
               <MoviePagePoster
                 posterImageUrl={
@@ -223,7 +226,7 @@ const MoviePage = () => {
                     />
                   </div>
 
-                  <Indicators type="movies" prodId={movieId}></Indicators>
+                  {/* <Indicators type="movies" prodId={movieId}></Indicators> */}
                 </div>
               </div>
             </div>
@@ -276,13 +279,33 @@ const MoviePage = () => {
               <Cast actors={actors} prodId={movieId} type="movie"></Cast>
             </div>
 
-            <div className="lg:col-start-4 lg:col-end-12  lg:row-start-5 lg:row-end-6">
-              <Reviews reviews={reviews} movieId={movieId} />
-            </div>
+            {reviews.length > 0 ? (
+              <div className="lg:col-start-4 lg:col-end-12  lg:row-start-5 lg:row-end-6">
+                <Reviews reviews={reviews} movieId={movieId} />
+              </div>
+            ) : (
+              false
+            )}
 
-            <div className="lg:col-start-4 lg:col-end-12  lg:row-start-6 lg:row-end-7">
-              <Recommendations productions={recommendations} />
-            </div>
+            {collection ? (
+              <div className="lg:col-start-4 lg:col-end-12  lg:row-start-6 lg:row-end-7">
+                <Collection
+                  backdropPath={`${constants.IMAGES_BASE_PATH}original${collection.backdrop_path}`}
+                  title={collection.name}
+                  id={collection.id}
+                />
+              </div>
+            ) : (
+              false
+            )}
+
+            {recommendations.length > 0 ? (
+              <div className="lg:col-start-4 lg:col-end-12  lg:row-start-7 lg:row-end-8">
+                <Recommendations productions={recommendations} />
+              </div>
+            ) : (
+              false
+            )}
           </div>
         </div>
       </div>
