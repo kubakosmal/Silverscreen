@@ -1,15 +1,8 @@
 import { useEffect, useState } from "react";
-import * as constants from "../../../constants";
+import * as constants from "../../../../constants";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import {
-  Navigation,
-  Pagination,
-  Scrollbar,
-  A11y,
-  EffectCoverflow,
-  Autoplay,
-} from "swiper";
+import { Navigation, Pagination } from "swiper";
 import { Link } from "react-router-dom";
 
 export default function PopularTVShows() {
@@ -29,40 +22,45 @@ export default function PopularTVShows() {
   }, []);
 
   return (
-    <div className="max-w-4/5 mx-auto my-10">
-      <h2 className="my-1  self-start text-primary drop-shadow-xl text-lg lg:text-xl font-medium">
-        POPULAR TV SHOWS
-      </h2>
+    <div className="max-w-4/5 mx-auto my-5 lg:my-16">
+      <div className="flex items-center whitespace-nowrap">
+        <h2 className="my-1  self-start text-crayola drop-shadow-xl text-lg lg:text-xl font-bold">
+          POPULAR TV SHOWS
+        </h2>
+        <div className="h-2 ml-2 bg-crayola w-full rounded-full"></div>
+      </div>
+
       <Swiper
         breakpoints={{
           550: {
-            slidesPerView: 3,
-            slidesPerGroup: 3,
+            slidesPerView: 2,
+            slidesPerGroup: 1,
           },
           850: {
-            slidesPerView: 4,
-            slidesPerGroup: 4,
+            slidesPerView: 2,
+            slidesPerGroup: 1,
           },
           1180: {
-            slidesPerView: 5,
-            slidesPerGroup: 5,
+            slidesPerView: 3,
+            slidesPerGroup: 1,
           },
         }}
-        slidesPerView={2}
+        slidesPerView={1}
         spaceBetween={0}
-        slidesPerGroup={2}
+        slidesPerGroup={1}
         loop={true}
-        loopFillGroupWithBlank={true}
+        loopFillGroupWithBlank={false}
         navigation={true}
         modules={[Pagination, Navigation]}
       >
         {data.map((show, i) => {
           return (
-            <div key={show.id.toString()}>
+            <div className="" key={show.id.toString()}>
               <SwiperSlide>
                 <Link to={`/tvshows/${show.id}`}>
-                  <div className="mx-1">
+                  <div className="border-2 p-2 rounded-md border-transparent hover:border-secondary">
                     <img
+                      className="rounded-md"
                       src={
                         constants.IMAGES_BASE_PATH + "w500" + show.backdrop_path
                       }

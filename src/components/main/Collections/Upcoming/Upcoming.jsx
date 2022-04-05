@@ -1,50 +1,43 @@
-import React, { useEffect, useState } from "react";
-import MoviePoster from "./MoviePoster/MoviePoster.jsx";
+import { useEffect, useState } from "react";
 import * as constants from "../../../../constants";
+import MoviePoster from "../PopularMoviesList/MoviePoster/MoviePoster";
 import { Swiper, SwiperSlide } from "swiper/react";
-import {
-  Navigation,
-  Pagination,
-  Scrollbar,
-  A11y,
-  EffectCoverflow,
-  Autoplay,
-} from "swiper";
+import { Navigation, Pagination } from "swiper";
+import { Link } from "react-router-dom";
 
-const PopularMoviesList = () => {
+export default function Upcoming() {
   const [data, setData] = useState([]);
+
   useEffect(() => {
     const fetchData = async () => {
-      const myData = await fetch(
-        `${constants.TMDB_BASE_PATH}movie/popular?api_key=${constants.API_KEY}`
+      const data = await fetch(
+        `${constants.TMDB_BASE_PATH}movie/upcoming?api_key=${constants.API_KEY}`
       );
-      const jsonData = await myData.json();
+      const jsonData = await data.json();
       setData(jsonData.results);
     };
-
     fetchData();
   }, []);
-
   return (
     <div className="max-w-4/5 mx-auto my-5 lg:my-16">
       <div className="flex items-center whitespace-nowrap">
         <h2 className="my-1  self-start text-secondary drop-shadow-xl text-lg lg:text-xl font-bold">
-          POPULAR MOVIES
+          UPCOMING
         </h2>
         <div className="h-2 ml-2 bg-secondary w-full rounded-full"></div>
       </div>
       <Swiper
         breakpoints={{
           550: {
-            slidesPerView: 3,
+            slidesPerView: 2,
             slidesPerGroup: 1,
           },
           850: {
-            slidesPerView: 4,
+            slidesPerView: 2,
             slidesPerGroup: 1,
           },
           1180: {
-            slidesPerView: 4,
+            slidesPerView: 5,
             slidesPerGroup: 1,
           },
         }}
@@ -58,7 +51,7 @@ const PopularMoviesList = () => {
       >
         {data.map((movie, i) => {
           return (
-            <div id={movie.id}>
+            <div className="border-2" key={movie.id.toString()}>
               <SwiperSlide>
                 <div className="">
                   <MoviePoster
@@ -78,6 +71,4 @@ const PopularMoviesList = () => {
       </Swiper>
     </div>
   );
-};
-
-export default PopularMoviesList;
+}

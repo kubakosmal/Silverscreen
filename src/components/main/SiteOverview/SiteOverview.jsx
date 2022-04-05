@@ -12,12 +12,12 @@ export default function SiteOverview() {
   return (
     <div className="mt-3 max-w-4/5 mx-auto text-gray-300 rounded-md font-lato flex flex-col">
       <div class="">
-        <div class="w-full text-gray-300 md:px-12 xl:px-0">
-          <div class="mx-auto grid gap-6 md:w-3/4 lg:w-full lg:grid-cols-3">
-            <div className="relative">
+        <div class="w-full text-gray-300 xl:px-0">
+          <div class=" grid gap-6 md:w-full lg:w-full lg:grid-cols-3">
+            <div className="h-full relative">
               <div className="absolute bg-black rounded-2xl inset-0 blur-sm"></div>
-              <div class="relative bg-neutral-900  border-neutral-800 rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8">
-                <div class="mb-24 lg:mb-36 space-y-4">
+              <div class="h-full relative bg-neutral-900 border-2 border-neutral-600 rounded-2xl shadow-xl px-8 py-8 sm:px-12 lg:py-12 lg:px-8">
+                <div class="mb-16 lg:mb-36 space-y-4">
                   <h3 class="text-2xl font-semibold text-white">
                     Silverscreen uses TMDB
                   </h3>
@@ -31,7 +31,7 @@ export default function SiteOverview() {
                 </div>
                 <div className="absolute bottom-10 right-10 text-4xl flex items-center justify-end">
                   <div className="">
-                    <TmdbSvg className="w-40 h-24"></TmdbSvg>
+                    <TmdbSvg className="w-28 h-16 lg:w-40 lg:h-24"></TmdbSvg>
                   </div>
                 </div>
               </div>
@@ -39,8 +39,8 @@ export default function SiteOverview() {
 
             <div className="relative h-full">
               <div className="absolute bg-black inset-0 blur-sm rounded-2xl"></div>
-              <div class="h-full relative bg-neutral-900 border-neutral-800 rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8">
-                <div class="mb-24 lg:mb-36 space-y-4">
+              <div class="h-full relative border-2 bg-neutral-900 border-neutral-600 rounded-2xl shadow-xl px-8 py-8 sm:px-12 lg:py-12 lg:px-8">
+                <div class="mb-16 lg:mb-36 space-y-4">
                   <h3 class="text-2xl font-semibold text-white">
                     Strong and Reliable Data
                   </h3>
@@ -55,7 +55,7 @@ export default function SiteOverview() {
                 <div className="flex absolute bottom-10 right-5">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-32 w-32"
+                    className="w-20 h-20 lg:h-32 lg:w-32"
                     viewBox="0 0 20 20"
                     id="database-svg-3"
                   >
@@ -81,8 +81,8 @@ export default function SiteOverview() {
 
             <div className="relative h-full">
               <div className="absolute bg-black rounded-2xl blur-sm inset-0"></div>
-              <div class="h-full relative bg-neutral-900 border-neutral-800 rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8">
-                <div class="mb-24 lg:mb-36 space-y-4">
+              <div class="h-full relative border-2 bg-neutral-900 border-neutral-600 rounded-2xl shadow-xl px-8 py-8 sm:px-12 lg:py-12 lg:px-8">
+                <div class="mb-16 lg:mb-36 space-y-4">
                   <h3 class="text-2xl font-semibold text-white">
                     Even Stronger Community
                   </h3>
@@ -97,7 +97,7 @@ export default function SiteOverview() {
                 <div className="absolute bottom-10 right-5 flex justify-end">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-32 w-32"
+                    className="w-20 h-20 lg:h-32 lg:w-32"
                     viewBox="0 0 20 20"
                     id="community-svg"
                   >

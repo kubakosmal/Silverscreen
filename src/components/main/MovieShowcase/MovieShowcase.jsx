@@ -6,7 +6,19 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 export default function MovieShowcase() {
+  const [screenSize, setScreenSize] = useState(window.innerWidth);
   const [data, setData] = useState([]);
+  const [numOfMovies, setNumOfMovies] = useState(
+    window.innerWidth < 450 ? 3 : window.innerWidth < 700 ? 4 : 5
+  );
+
+  useEffect(() => {
+    setScreenSize(window.innerWidth);
+    setNumOfMovies(
+      window.innerWidth < 450 ? 3 : window.innerWidth < 700 ? 4 : 5
+    );
+  }, [window.innerWidth]);
+
   useEffect(() => {
     const fetchData = async () => {
       const myData = await fetch(
@@ -20,9 +32,9 @@ export default function MovieShowcase() {
   }, []);
 
   return (
-    <div className="mx-auto max-w-4/5 lg:my-10 flex flex-wrap justify-around">
+    <div className="mx-auto max-w-4/5 lg:my-10 flex flex-wrap justify-between">
       {data.map((prod, i) => {
-        if (i < 5 && prod.poster_path) {
+        if (i < numOfMovies && prod.poster_path) {
           return (
             <div id={prod.id}>
               <Link to={`movies/${prod.id}`}>
@@ -38,7 +50,7 @@ export default function MovieShowcase() {
                   }}
                 >
                   <Atropos shadow={false} highlight={false}>
-                    <div className="relative my-3 w-24 lg:w-40 cursor-pointer rounded-md">
+                    <div className="relative my-3 w-28 lg:w-40 cursor-pointer rounded-md">
                       <div className="absolute bg-black inset-0 blur rounded-lg"></div>
                       <div className="relative rounded-md border-2 border-neutral-800">
                         <img

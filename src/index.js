@@ -4,7 +4,6 @@ import "./index.css";
 import App from "./App.jsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MoviePage from "./components/main/MoviePage/MoviePage";
-import SearchingResults from "./components/main/SearchingResults/SearchingResults";
 import AllReviews from "./components/main/MoviePage/Reviews/AllReviews/AllReviews";
 import Rankings from "./components/main/Rankings/Rankings";
 import PersonPage from "./components/main/PersonPage/PersonPage";
@@ -86,9 +85,6 @@ const Index = () => {
                 path=":reviewMovieId"
                 element={<AllReviews />}
               ></Route>
-            </Route>
-            <Route path="/results">
-              <Route path=":query" element={<SearchingResults />}></Route>
             </Route>
             <Route path="/person">
               <Route path=":personId" element={<PersonPage />}></Route>
