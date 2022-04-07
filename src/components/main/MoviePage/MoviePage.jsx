@@ -256,10 +256,10 @@ const MoviePage = () => {
 
               <div>
                 <div className="flex items-center mb-2">
-                  <h3 className="text-white text-lg font-bold font-lato">
-                    Details
+                  <h3 className="text-pink-600 text-md font-bold font-lato">
+                    DETAILS
                   </h3>
-                  <div className="w-full h-2 ml-2 rounded-full bg-white"></div>
+                  <div className="w-full h-1 ml-2 rounded-full bg-pink-600"></div>
                 </div>
                 {/* 32414295 */}
                 <div className="relative">

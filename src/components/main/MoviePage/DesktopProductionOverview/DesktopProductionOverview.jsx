@@ -1,6 +1,6 @@
 export default function DesktopProductionOverview(props) {
   return (
-    <div className="text-white font-ibm flex flex-wrap drop-shadow-lg items-center mt-2">
+    <div className="text-white font-ibm flex flex-wrap drop-shadow-lg items-center mt-2 mb-2">
       <h2 className="font-bold text-4xl mr-1">{props.movieName}</h2>
       <h3 className="mx-1 font-lato text-lg">
         {props.releaseDate.slice(0, 4)}

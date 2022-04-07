@@ -12,7 +12,10 @@ export default function Reviews(props) {
   return (
     <div className="text-gray-500 flex flex-col my-6">
       <div className="mt-2">
-        <h3 className="text-white font-bold font-lato text-lg mb-2">Reviews</h3>
+        <div className="flex items-center mb-2">
+          <h3 className="text-pink-600 text-md font-bold font-lato">REVIEWS</h3>
+          <div className="w-full h-1 ml-2 rounded-full bg-pink-600"></div>
+        </div>
         <div className="relative">
           <div className="absolute bg-black inset-0 blur-sm rounded-md"></div>
           <ul className="relative rounded-lg bg-neutral-900">

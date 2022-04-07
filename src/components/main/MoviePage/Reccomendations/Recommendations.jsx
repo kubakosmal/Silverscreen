@@ -6,9 +6,12 @@ import { Link } from "react-router-dom";
 export default function Recommendations(props) {
   return (
     <div>
-      <h3 className="text-white font-lato text-xl font-bold mb-2">
-        You may also like
-      </h3>
+      <div className="flex items-center mb-2">
+        <h3 className="text-pink-600 text-md font-bold font-lato whitespace-nowrap">
+          YOU MAY ALSO LIKE
+        </h3>
+        <div className="w-full h-1 ml-2 rounded-full bg-pink-600"></div>
+      </div>
 
       <div className="flex flex-wrap gap-x-8">
         {props.productions.map((prod, i) => {

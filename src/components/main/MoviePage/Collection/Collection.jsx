@@ -20,9 +20,12 @@ export default function Collection({ backdropPath, title, id }) {
   }, []);
   return (
     <div className="lg:mb-10 lg:mt-5">
-      <h3 className="text-white font-lato text-xl font-bold mb-2">
-        Belongs to
-      </h3>
+      <div className="flex items-center mb-2">
+        <h3 className="text-pink-600 text-md font-bold font-lato whitespace-nowrap">
+          BELONGS TO
+        </h3>
+        <div className="w-full h-1 ml-2 rounded-full bg-pink-600"></div>
+      </div>
       <div className="relative">
         <div className="absolute inset-0 bg-black rounded-lg blur-sm"></div>
         <div className="relative">
