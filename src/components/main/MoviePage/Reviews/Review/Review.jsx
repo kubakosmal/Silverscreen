@@ -26,13 +26,13 @@ export default function Review(props) {
               <div className="px-2">
                 <div className="flex items-center mt-4">
                   <div className="text-gray-100 lg:text-md mx-2">
-                    <p>Review by</p>
+                    <p className="whitespace-nowrap">Review by</p>
                   </div>
 
-                  <div className="font-bold lg:text-lg text-pink-600">
+                  <div className="font-bold lg:text-lg text-crayola">
                     <p className="">
-                      {props.author.length > 10
-                        ? props.author.slice(0, 10) + "..."
+                      {props.author.length > 9
+                        ? props.author.slice(0, 9) + "..."
                         : props.author}
                     </p>
                   </div>

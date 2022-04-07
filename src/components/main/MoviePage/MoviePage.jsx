@@ -213,10 +213,16 @@ const MoviePage = () => {
             </div>
 
             <div className="lg:col-start-9  lg:col-end-12 lg:row-start-2 lg:row-end-3">
-              <div className="relative rounded-xl">
+              <div className="flex items-center mb-2">
+                <h3 className="text-crayola text-md font-bold font-lato whitespace-nowrap">
+                  SCORE
+                </h3>
+                <div className="w-full h-1 ml-2 rounded-full bg-crayola"></div>
+              </div>
+              <div className="relative rounded-lg border-2 border-crayola">
                 <div className="absolute bg-black inset-0 blur-sm rounded-xl"></div>
                 <div className="relative bg-neutral-900 rounded-xl">
-                  <div className="bg-slate-1000 w-full">
+                  <div className="bg-slate-1000 rounded-xl">
                     <RatingAndInteractions
                       rating={rating}
                       type={"movies"}
@@ -232,14 +238,14 @@ const MoviePage = () => {
 
             <div className="lg:col-start-4  lg:col-end-9 lg:row-start-2 lg:row-end-3 flex flex-col gap-10">
               <div>
-                {/* <div className="flex items-center mb-2">
-                  <h3 className="text-pink-500 text-md font-bold font-lato">
-                    Description
+                <div className="flex items-center mb-2">
+                  <h3 className="text-secondary text-md font-bold font-lato">
+                    OVERVIEW
                   </h3>
-                  <div className="w-full h-1 ml-2 bg-pink-500 rounded-full"></div>
-                </div> */}
+                  <div className="w-full h-1 ml-2 bg-secondary rounded-full"></div>
+                </div>
 
-                <div className="relative bg-neutral-900 rounded-lg">
+                <div className="relative bg-neutral-900 rounded-lg border-2 border-secondary">
                   <div className="absolute bg-black inset-0 blur-sm rounded-lg"></div>
                   <div className="relative bg-neutral-900 rounded-lg">
                     <div className="rounded-lg">
@@ -256,15 +262,15 @@ const MoviePage = () => {
 
               <div>
                 <div className="flex items-center mb-2">
-                  <h3 className="text-pink-600 text-md font-bold font-lato">
+                  <h3 className="text-white text-md font-bold font-lato">
                     DETAILS
                   </h3>
-                  <div className="w-full h-1 ml-2 rounded-full bg-pink-600"></div>
+                  <div className="w-full h-1 ml-2 rounded-full bg-white"></div>
                 </div>
                 {/* 32414295 */}
-                <div className="relative">
-                  <div className="absolute bg-black inset-0 blur-sm rounded-md"></div>
-                  <div className="relative">
+                <div className="relative border-2 rounded-lg border-white">
+                  <div className="absolute bg-black inset-0 blur-sm rounded-lg"></div>
+                  <div className="relative rounded-lg">
                     <ProductionDetails
                       genres={genres}
                       originalTitle={originalTitle}

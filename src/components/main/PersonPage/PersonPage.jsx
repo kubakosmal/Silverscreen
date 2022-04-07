@@ -55,7 +55,7 @@ export default function PersonPage(props) {
   return (
     <div>
       <Header noBackdrop={true}></Header>
-      <div className="max-w-4/5 text-gray-300 mx-auto">
+      <div className="max-w-4/5 text-gray-200 mx-auto mb-5">
         <div className="mx-4 mt-5  lg:mx-auto grid grid-cols-1 gap-7 lg:grid-cols-7">
           <div className="lg:col-start-1 lg:col-end-3 lg:row-start-1 lg:row-end-2">
             <div className="relative flex items-center justify-center">
@@ -68,15 +68,21 @@ export default function PersonPage(props) {
           </div>
 
           <div className="lg:col-start-3 lg:col-end-8 lg:row-start-1 lg:row-end-2">
-            <h2 className="text-2xl font-lato text-white font-bold text-center lg:text-left">
+            <h2 className="text-2xl lg:text-3xl font-lato text-white font-bold text-center lg:text-left">
               {personData.name}
             </h2>
             <div className="mt-5">
-              <h3 className="font-bold">Biography</h3>
+              <div className="flex items-center">
+                <h3 className="font-bold font-lato text-secondary">
+                  BIOGRAPHY
+                </h3>
+                <div className="h-1 w-full rounded-full bg-secondary ml-2"></div>
+              </div>
+
               <div className="relative  rounded-md mt-1">
                 <div className="absolute rounded-md bg-black blur-sm inset-0"></div>
                 <div className="relative bg-neutral-900 border border-neutral-800 rounded-md p-2">
-                  <p className="text-sm">
+                  <p className="">
                     {personData?.biography?.length > maxBiographyLength &&
                     isReadMore == false
                       ? personData.biography.slice(0, maxBiographyLength) +

@@ -63,7 +63,12 @@ export default function PersonCredits(props) {
   return (
     <div>
       <div className="mb-10">
-        <h3 className="font-ibm text-xl text-white">Best known for</h3>
+        <div className="flex items-center">
+          <h3 className="font-bold font-lato text-secondary whitespace-nowrap mb-1">
+            BEST KNOWN FOR
+          </h3>
+          <div className="h-1 w-full rounded-full bg-secondary ml-2"></div>
+        </div>
         <div className="relative">
           <div className="absolute bg-black blur-sm inset-0"></div>
           <div className="relative flex border bg-neutral-900 border-neutral-800 rounded-md">
@@ -83,36 +88,45 @@ export default function PersonCredits(props) {
       </div>
 
       <div className="">
-        <h3 className="font-ibm text-xs  text-gray-400">STARRING</h3>
-        <h3 className="leading-5 text-lg font-bold font-lato text-gray-300">
+        <h3 className="font-lato  text-gray-200">STARRING</h3>
+        <h3 className="leading-5 text-xl font-bold font-lato text-white">
           {props.name}
         </h3>
       </div>
 
       <div className="flex mt-4 mb-1">
-        <input
-          className="checked:text-secondary hidden"
-          type="radio"
-          id="films"
-          value="films"
-          name="media-type"
-          onClick={(e) => {
-            setTypeOfMedia(e.target.value);
-          }}
-        ></input>
-        <label for="films" className="font-ibm">
-          Films
-        </label>
+        <div>
+          <input
+            defaultChecked={true}
+            className="hidden peer"
+            type="radio"
+            id="films"
+            value="films"
+            name="media-type"
+            onClick={(e) => {
+              setTypeOfMedia(e.target.value);
+            }}
+          ></input>
+          <label
+            for="films"
+            className="hover:text-secondary font-lato font-bold cursor-pointer peer-checked:underline peer-checked:text-secondary"
+          >
+            Films
+          </label>
+        </div>
 
         <input
-          className="hidden"
+          className="hidden peer"
           type="radio"
           value="tv-shows"
           name="media-type"
           id="tv-shows"
           onClick={(e) => setTypeOfMedia(e.target.value)}
         ></input>
-        <label for="tv-shows" className="hover:text-secondary font-ibm ">
+        <label
+          for="tv-shows"
+          className="hover:text-secondary font-lato font-bold mx-2 cursor-pointer peer-checked:underline peer-checked:text-secondary"
+        >
           TV Shows
         </label>
       </div>
@@ -140,11 +154,13 @@ export default function PersonCredits(props) {
             : showsStarred.map((show) => {
                 if (show.poster_path) {
                   return (
-                    <div className="w-32">
-                      <MoviePoster
-                        movieId={show.id}
-                        posterImageUrl={`${constants.IMAGES_BASE_PATH}w500${show.poster_path}`}
-                        movieTitle={show.original_name}
+                    <div className="">
+                      <PersonProductionInfo
+                        id={show.id}
+                        mediaType={show.media_type}
+                        title={show.name}
+                        voteAverage={show.vote_average}
+                        releaseDate={show.first_air_date}
                       />
                     </div>
                   );

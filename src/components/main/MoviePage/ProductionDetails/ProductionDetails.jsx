@@ -12,8 +12,8 @@ export default function ProductionDetails(props) {
   const budget = formatter.format(props.budget);
   const revenue = formatter.format(props.revenue);
   return (
-    <div className="relative">
-      <div className="bg-neutral-900 max-w-2xl shadow overflow-hidden sm:rounded-lg">
+    <div className="relative rounded-lg">
+      <div className="bg-neutral-900 max-w-2xl shadow overflow-hidden rounded-lg">
         <div>
           <dl>
             <div className="bg-slate-1000 rounded-md px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">

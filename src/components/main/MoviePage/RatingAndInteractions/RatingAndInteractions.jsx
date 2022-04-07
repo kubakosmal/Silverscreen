@@ -31,7 +31,7 @@ export default function RatingAndInteractions(props) {
         <Link to={"/login"}>
           <div className="mt-2">
             <p className="text-gray-100 text-md font-lato p-2 pt-0 text-center">
-              <span className="text-secondary hover:underline font-bold">
+              <span className="text-pink-500 hover:underline font-bold">
                 Log In
               </span>{" "}
               to Rate and Add Productions to Lists

@@ -11,12 +11,12 @@ export default function Cast(props) {
   return (
     <div className="my-8 flex flex-col">
       <div className="flex items-center mb-2">
-        <h3 className="text-pink-600 text-md font-bold font-lato whitespace-nowrap">
+        <h3 className="text-secondary text-md font-bold font-lato whitespace-nowrap">
           TOP CAST
         </h3>
-        <div className="w-full h-1 ml-2 rounded-full bg-pink-600"></div>
+        <div className="w-full h-1 ml-2 rounded-full bg-secondary"></div>
       </div>
-      <div className="relative">
+      <div className="relative border-2 rounded-lg border-secondary">
         <div className="absolute bg-black inset-0 blur-sm rounded-lg"></div>
         <ul className="relative bg-neutral-900 rounded-lg grid grid-cols-1 md:grid-cols-2">
           {props.actors.map((actor, i) => {
@@ -58,7 +58,7 @@ export default function Cast(props) {
 
       <div className="text-secondary mt-2 font-bold font-lato self-end">
         <Link to={`/cast/${props.prodId}/movie`}>
-          <h3>Show full cast</h3>
+          <h3 className="hover:underline">Show full cast</h3>
         </Link>
       </div>
     </div>

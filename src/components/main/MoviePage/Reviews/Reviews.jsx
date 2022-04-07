@@ -13,10 +13,12 @@ export default function Reviews(props) {
     <div className="text-gray-500 flex flex-col my-6">
       <div className="mt-2">
         <div className="flex items-center mb-2">
-          <h3 className="text-pink-600 text-md font-bold font-lato">REVIEWS</h3>
-          <div className="w-full h-1 ml-2 rounded-full bg-pink-600"></div>
+          <h3 className="text-secondary text-md font-bold font-lato">
+            REVIEWS
+          </h3>
+          <div className="w-full h-1 ml-2 rounded-full bg-secondary"></div>
         </div>
-        <div className="relative">
+        <div className="relative border-2 border-secondary rounded-lg">
           <div className="absolute bg-black inset-0 blur-sm rounded-md"></div>
           <ul className="relative rounded-lg bg-neutral-900">
             {reviews.map((review, i) => {
@@ -50,9 +52,9 @@ export default function Reviews(props) {
         </div>
       </div>
 
-      <div className="flex items-center justify-center text-sm self-end text-secondary mt-2 mb-2">
+      <div className="flex items-center justify-center self-end text-secondary mt-2 mb-2">
         <Link to={`/reviews/${props.movieId}`}>
-          <button className=" font-bold  py-1 px-2 rounded-md">
+          <button className=" font-bold font-lato  py-1 px-2 rounded-md hover:underline">
             Show all reviews
           </button>
         </Link>
