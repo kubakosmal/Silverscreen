@@ -10,7 +10,12 @@ export default function Cast(props) {
   }, [window.innerWidth]);
   return (
     <div className="my-8 flex flex-col">
-      <h3 className="text-white font-bold text-lg mb-2">Top cast</h3>
+      <div className="flex items-center mb-2">
+        <h3 className="text-white text-lg font-bold font-lato whitespace-nowrap">
+          Top Cast
+        </h3>
+        <div className="w-full h-2 ml-2 rounded-full bg-white"></div>
+      </div>
       <div className="relative">
         <div className="absolute bg-black inset-0 blur-sm rounded-lg"></div>
         <ul className="relative bg-neutral-900 rounded-lg grid grid-cols-1 md:grid-cols-2">

@@ -17,7 +17,7 @@ export default function SiteOverview() {
             <div className="h-full relative">
               <div className="absolute bg-black rounded-2xl inset-0 blur-sm"></div>
               <div class="h-full relative bg-neutral-900 border-2 border-neutral-600 rounded-2xl shadow-xl px-8 py-8 sm:px-12 lg:py-12 lg:px-8">
-                <div class="mb-16 lg:mb-36 space-y-4">
+                <div class="mb-6 lg:mb-36 space-y-4">
                   <h3 class="text-2xl font-semibold text-white">
                     Silverscreen uses TMDB
                   </h3>
@@ -29,7 +29,7 @@ export default function SiteOverview() {
                     Visit TMDB
                   </a>
                 </div>
-                <div className="absolute bottom-10 right-10 text-4xl flex items-center justify-end">
+                <div className="absolute bottom-5 right-10 lg:bottom-10 lg:right-10 text-4xl flex items-center justify-end">
                   <div className="">
                     <TmdbSvg className="w-28 h-16 lg:w-40 lg:h-24"></TmdbSvg>
                   </div>
@@ -40,7 +40,7 @@ export default function SiteOverview() {
             <div className="relative h-full">
               <div className="absolute bg-black inset-0 blur-sm rounded-2xl"></div>
               <div class="h-full relative border-2 bg-neutral-900 border-neutral-600 rounded-2xl shadow-xl px-8 py-8 sm:px-12 lg:py-12 lg:px-8">
-                <div class="mb-16 lg:mb-36 space-y-4">
+                <div class="mb-6 lg:mb-36 space-y-4">
                   <h3 class="text-2xl font-semibold text-white">
                     Strong and Reliable Data
                   </h3>
@@ -52,7 +52,7 @@ export default function SiteOverview() {
                     Know more
                   </a>
                 </div>
-                <div className="flex absolute bottom-10 right-5">
+                <div className="flex absolute bottom-5 right-5 lg:bottom-10 lg:right-5">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="w-20 h-20 lg:h-32 lg:w-32"
@@ -82,7 +82,7 @@ export default function SiteOverview() {
             <div className="relative h-full">
               <div className="absolute bg-black rounded-2xl blur-sm inset-0"></div>
               <div class="h-full relative border-2 bg-neutral-900 border-neutral-600 rounded-2xl shadow-xl px-8 py-8 sm:px-12 lg:py-12 lg:px-8">
-                <div class="mb-16 lg:mb-36 space-y-4">
+                <div class="mb-6 lg:mb-36 space-y-4">
                   <h3 class="text-2xl font-semibold text-white">
                     Even Stronger Community
                   </h3>
@@ -94,7 +94,7 @@ export default function SiteOverview() {
                     Know more
                   </a>
                 </div>
-                <div className="absolute bottom-10 right-5 flex justify-end">
+                <div className="absolute bottom-5 lg:bottom-10 right-5 flex justify-end">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="w-20 h-20 lg:h-32 lg:w-32"

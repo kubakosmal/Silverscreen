@@ -164,9 +164,7 @@ const MoviePage = () => {
                   constants.IMAGES_BASE_PATH + "w500" + data.poster_path
                 }
               />
-              <div className="hidden lg:block">
-                <Indicators type="movies" prodId={movieId} />
-              </div>
+              <div className="hidden lg:block"></div>
 
               {/* <div>
                 <ProductionDetails
@@ -218,12 +216,13 @@ const MoviePage = () => {
               <div className="relative rounded-xl">
                 <div className="absolute bg-black inset-0 blur-sm rounded-xl"></div>
                 <div className="relative bg-neutral-900 rounded-xl">
-                  <div className="bg-slate-1000">
+                  <div className="bg-slate-1000 w-full">
                     <RatingAndInteractions
                       rating={rating}
                       type={"movies"}
                       prodId={movieId}
                     />
+                    <Indicators type="movies" prodId={movieId} />
                   </div>
 
                   {/* <Indicators type="movies" prodId={movieId}></Indicators> */}
@@ -231,32 +230,38 @@ const MoviePage = () => {
               </div>
             </div>
 
-            <div className="lg:col-start-4 rounded-lg  lg:col-end-9 lg:row-start-2 lg:row-end-3 flex flex-col gap-5">
-              <h3 className="text-gray-300 font-lato text-lg font-bold italic">
-                {tagline.toUpperCase()}
-              </h3>
-              <div className="relative">
-                <div className="absolute inset-0 blur-sm rounded-lg"></div>
-                <div className="relative rounded-lg">
-                  <div className=""></div>
-                  <div className="relative rounded-md lg:min-h-[13rem]">
-                    <div className="">
-                      <ProductionDescription
-                        overview={overview}
-                        tagline={tagline}
-                      />
+            <div className="lg:col-start-4  lg:col-end-9 lg:row-start-2 lg:row-end-3 flex flex-col gap-10">
+              <div>
+                {/* <div className="flex items-center mb-2">
+                  <h3 className="text-pink-500 text-md font-bold font-lato">
+                    Description
+                  </h3>
+                  <div className="w-full h-1 ml-2 bg-pink-500 rounded-full"></div>
+                </div> */}
+
+                <div className="relative bg-neutral-900 rounded-lg">
+                  <div className="absolute bg-black inset-0 blur-sm rounded-lg"></div>
+                  <div className="relative bg-neutral-900 rounded-lg">
+                    <div className="rounded-lg">
+                      <div className="p-5 rounded-lg bg-neutral-900">
+                        <ProductionDescription
+                          overview={overview}
+                          tagline={tagline}
+                        />
+                      </div>
                     </div>
                   </div>
-                  {/* <div className="">
-                    <Keywords type="movie" id={id} />
-                  </div> */}
                 </div>
               </div>
 
               <div>
-                <h3 className="text-white text-lg font-bold font-lato mb-2">
-                  Details
-                </h3>
+                <div className="flex items-center mb-2">
+                  <h3 className="text-white text-lg font-bold font-lato">
+                    Details
+                  </h3>
+                  <div className="w-full h-2 ml-2 rounded-full bg-white"></div>
+                </div>
+                {/* 32414295 */}
                 <div className="relative">
                   <div className="absolute bg-black inset-0 blur-sm rounded-md"></div>
                   <div className="relative">

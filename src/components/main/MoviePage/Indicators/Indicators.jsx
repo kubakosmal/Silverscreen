@@ -80,7 +80,7 @@ export default function Indicators(props) {
   };
 
   return (
-    <div className="flex p-2 font-ibm justify-center text-gray-300">
+    <div className="flex p-4 font-ibm justify-center text-gray-300">
       <div className="text-xs flex flex-col items-center mx-4">
         <div
           className={`flex items-center justify-center w-10 h-10 border-2 ${

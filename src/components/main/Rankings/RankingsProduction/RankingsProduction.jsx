@@ -110,7 +110,7 @@ export default function RankingsProduction(props) {
         }}
       >
         <Atropos className="rounded-lg" shadow={false} highlight={false}>
-          <div className="relative rounded-md mb-6 w-28 lg:w-40 cursor-pointer">
+          <div className="relative rounded-lg mb-6 w-28 lg:w-40 cursor-pointer border-2 border-neutral-500">
             <div className="bg-black absolute inset-0 blur-sm rounded-md"></div>
             <div className="relative bg-neutral-900 flex flex-col outline-2 border-neutral-800 rounded-md">
               <img className="rounded-md" src={props.posterPath}></img>

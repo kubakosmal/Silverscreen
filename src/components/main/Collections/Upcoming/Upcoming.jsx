@@ -21,7 +21,7 @@ export default function Upcoming() {
   return (
     <div className="max-w-4/5 mx-auto my-5 lg:my-16">
       <div className="flex items-center whitespace-nowrap">
-        <h2 className="my-1  self-start text-secondary drop-shadow-xl text-lg lg:text-xl font-bold">
+        <h2 className="my-1  self-start text-secondary transition-all duration-300 drop-shadow-xl text-lg lg:text-xl font-bold">
           UPCOMING
         </h2>
         <div className="h-2 ml-2 bg-secondary w-full rounded-full"></div>
@@ -50,23 +50,25 @@ export default function Upcoming() {
         modules={[Pagination, Navigation]}
       >
         {data.map((movie, i) => {
-          return (
-            <div className="border-2" key={movie.id.toString()}>
-              <SwiperSlide>
-                <div className="">
-                  <MoviePoster
-                    posterImageUrl={
-                      constants.IMAGES_BASE_PATH + "w500" + movie.poster_path
-                    }
-                    movieTitle={movie.title}
-                    movieId={movie.id}
-                    key={movie.id}
-                    type={"movies"}
-                  />
-                </div>
-              </SwiperSlide>
-            </div>
-          );
+          if (movie.poster_path) {
+            return (
+              <div className="border-2" key={movie.id.toString()}>
+                <SwiperSlide>
+                  <div className="">
+                    <MoviePoster
+                      posterImageUrl={
+                        constants.IMAGES_BASE_PATH + "w500" + movie.poster_path
+                      }
+                      movieTitle={movie.title}
+                      movieId={movie.id}
+                      key={movie.id}
+                      type={"movies"}
+                    />
+                  </div>
+                </SwiperSlide>
+              </div>
+            );
+          }
         })}
       </Swiper>
     </div>

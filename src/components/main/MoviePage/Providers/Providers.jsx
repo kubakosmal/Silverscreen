@@ -38,7 +38,7 @@ export default function Providers(props) {
                     className="w-6 h-6 rounded-full "
                     src={`${constants.IMAGES_BASE_PATH}original${provider.logo_path}`}
                   ></img>
-                  <p className="">{provider.provider_name}</p>
+                  <p className="ml-1">{provider.provider_name}</p>
                 </div>
               );
             }

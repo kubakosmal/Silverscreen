@@ -7,13 +7,13 @@ import YearDirector from "./YearDirector";
 const MobileProductionOverview = (props) => {
   return (
     <div>
-      <div className="filter drop-shadow-2xl py-4 flex flex-col items-center text-center text-primary  rounded-lg">
-        <div className="text-sm sm:text-xl border-b-2 border-zinc-700 w-full pb-2 text-slate-400">
-          <div className="mb-2">
+      <div className="filter drop-shadow-2xl flex flex-col items-center text-center text-primary rounded-lg">
+        <div className="text-sm sm:text-xl w-full pb-2 text-slate-400">
+          <div className="">
             <h2 className="text-xl font-bold mt-2 text-primary leading-7">
               {props.movieName}
             </h2>
-            <p>{props.runtime + " mins"}</p>
+            <p className="text-lg text-gray-200">{props.runtime + " mins"}</p>
           </div>
 
           <YearDirector

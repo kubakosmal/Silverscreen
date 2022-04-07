@@ -10,6 +10,9 @@ export default function Rate(props) {
 
   const [ratedProductions, setRatedProductions] = useState([]);
 
+  console.log("heres authcontext");
+  console.log(authContext);
+
   useEffect(() => {
     const fetchRated = async () => {
       const data = await fetch(
@@ -53,12 +56,21 @@ export default function Rate(props) {
     );
   };
   return (
-    <div className="text-gray-300 items-center flex flex-col">
-      <p className="">
-        {rating
-          ? `You gave ${rating} ${rating == 1 ? "star" : "stars"}`
-          : "Have you seen this movie?"}
-      </p>
+    <div className="text-gray-300 items-center flex flex-col bg-neutral-900 w-full p-4">
+      <div className="self-start flex items-center gap-3 w-full mb-4">
+        {authContext.isLogged ? (
+          <img
+            className="w-16 h-16 rounded-full object-cover"
+            src={authContext.userProfilePath}
+          />
+        ) : (
+          <div className="rounded-full w-16 h-16 bg-white"></div>
+        )}
+        <p className="text-gray-200 font-bold font-lato text-xl">
+          {rating ? `${rating} ${rating == 1 ? "star" : "stars"}` : "No rating"}
+        </p>
+      </div>
+
       <div className="flex">
         {[...Array(10)].map((star, i) => {
           const ratingValue = i + 1;
@@ -75,7 +87,7 @@ export default function Rate(props) {
                 }}
               ></input>
               <FaStar
-                className="h-4 w-4"
+                className="h-5 w-5"
                 color={ratingValue <= (hover || rating) ? "#FFE66D" : "white"}
                 onMouseEnter={() => setHover(ratingValue)}
                 onMouseLeave={() => setHover(null)}

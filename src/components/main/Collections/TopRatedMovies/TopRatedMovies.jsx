@@ -53,25 +53,27 @@ export default function TopRatedTVmovies() {
         modules={[Pagination, Navigation]}
       >
         {data.map((movie, i) => {
-          return (
-            <div key={movie.id.toString()}>
-              <SwiperSlide>
-                <Link to={`/movies/${movie.id}`}>
-                  <div className="border-2 p-2 rounded-md border-transparent hover:border-secondary">
-                    <img
-                      className="rounded-md"
-                      src={
-                        constants.IMAGES_BASE_PATH +
-                        "w500" +
-                        movie.backdrop_path
-                      }
-                    ></img>
-                    <p>{movie.title}</p>
-                  </div>
-                </Link>
-              </SwiperSlide>
-            </div>
-          );
+          if (movie.backdrop_path) {
+            return (
+              <div key={movie.id.toString()}>
+                <SwiperSlide>
+                  <Link to={`/movies/${movie.id}`}>
+                    <div className="border-2 p-2 rounded-md border-transparent hover:border-secondary">
+                      <img
+                        className="rounded-md"
+                        src={
+                          constants.IMAGES_BASE_PATH +
+                          "w500" +
+                          movie.backdrop_path
+                        }
+                      ></img>
+                      <p>{movie.title}</p>
+                    </div>
+                  </Link>
+                </SwiperSlide>
+              </div>
+            );
+          }
         })}
       </Swiper>
     </div>

@@ -58,7 +58,7 @@ export default function TopRatedTVShows() {
               <div key={show.id.toString()}>
                 <SwiperSlide>
                   <Link to={`/tvshows/${show.id}`}>
-                    <div className="border-2 p-2 rounded-md border-transparent hover:border-secondary">
+                    <div className="border-2 p-2 rounded-md border-transparent hover:border-secondary transition-all duration-300">
                       <img
                         className="rounded-md"
                         src={

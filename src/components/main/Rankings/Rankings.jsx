@@ -116,9 +116,13 @@ export default function Rankings() {
           />
         </div>
         <div className="lg:w-4/5 flex flex-col items-center lg:ml-7">
-          <h3 className="self-start text-xl font-bold font-lato mb-4">
-            {currentListName}
-          </h3>
+          <div className="self-start flex w-full items-center mb-4">
+            <h3 className="text-lg font-bold font-lato whitespace-nowrap text-crayola">
+              {currentListName.toUpperCase()}
+            </h3>
+            <div className="w-full h-2 ml-2 bg-crayola rounded-full"></div>
+          </div>
+
           <div className="flex flex-wrap gap-1 justify-between ">
             {currentListOfProductions.map((prod, i) => {
               if (prod.poster_path && prod.popularity && prod.vote_average) {

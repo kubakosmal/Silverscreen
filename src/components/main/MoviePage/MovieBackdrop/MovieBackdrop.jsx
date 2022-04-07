@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function MovieBackdrop(props) {
   const size = props.context === "main" ? "h-[28rem]" : "h-[18rem]";
@@ -19,6 +20,16 @@ export default function MovieBackdrop(props) {
         backgroundPosition: "center top",
         opacity: `${props.opacity}`,
       }}
-    ></div>
+    >
+      <div className="w-full h-full">
+        <div className="relative">
+          <Link to={`/movies/${props.id}`}>
+            <div className="absolute top-64 -right-5 lg:right-0 rotate-[270deg] opacity-80 hover:opacity-100">
+              {props.title} ({props.releaseDate})
+            </div>
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 }

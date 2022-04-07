@@ -8,9 +8,9 @@ import { useContext } from "react";
 export default function RatingAndInteractions(props) {
   const authContext = useContext(LoggedContext);
   return (
-    <div className="relative font-ibm drop-shadow-lg flex flex-col gap-5 items-center justify-around rounded-md py-4 px-2">
-      <div className="flex flex-col items-center">
-        <p className="font-bold font-lato text-gray-300 text-xs mb-1">
+    <div className="relative font-ibm drop-shadow-lg bg-slate-1000 flex flex-col items-center justify-around rounded-md">
+      <div className="flex gap-x-5 lg:gap-x-0 lg:flex-col items-center p-4">
+        <p className="font-bold font-lato text-white text-md mb-2">
           USER SCORE
         </p>
         <div className="flex items-center ">
@@ -18,7 +18,7 @@ export default function RatingAndInteractions(props) {
             <AiFillStar className="h-9 w-9"></AiFillStar>
           </IconContext.Provider>
 
-          <p className="font-bold bg-gradient-to-tr from-crayola to-pink-500 bg-clip-text text-transparent text-5xl">
+          <p className="font-bold bg-gradient-to-tr from-crayola to-pink-500 bg-clip-text text-transparent text-6xl">
             {props.rating}
             <span className="text-gray-500 text-lg">/10</span>
           </p>
@@ -30,8 +30,11 @@ export default function RatingAndInteractions(props) {
       ) : (
         <Link to={"/login"}>
           <div className="mt-2">
-            <p className="text-gray-300 text-xs">
-              You must be logged to rate this production
+            <p className="text-gray-100 text-md font-lato p-2 pt-0 text-center">
+              <span className="text-secondary hover:underline font-bold">
+                Log In
+              </span>{" "}
+              to Rate and Add Productions to Lists
             </p>
           </div>
         </Link>

@@ -54,23 +54,27 @@ export default function PopularTVShows() {
         modules={[Pagination, Navigation]}
       >
         {data.map((show, i) => {
-          return (
-            <div className="" key={show.id.toString()}>
-              <SwiperSlide>
-                <Link to={`/tvshows/${show.id}`}>
-                  <div className="border-2 p-2 rounded-md border-transparent hover:border-secondary">
-                    <img
-                      className="rounded-md"
-                      src={
-                        constants.IMAGES_BASE_PATH + "w500" + show.backdrop_path
-                      }
-                    ></img>
-                    <p>{show.name}</p>
-                  </div>
-                </Link>
-              </SwiperSlide>
-            </div>
-          );
+          if (show.backdrop_path) {
+            return (
+              <div className="" key={show.id.toString()}>
+                <SwiperSlide>
+                  <Link to={`/tvshows/${show.id}`}>
+                    <div className="border-2 p-2 rounded-md border-transparent hover:border-secondary transition-all duration-300">
+                      <img
+                        className="rounded-md"
+                        src={
+                          constants.IMAGES_BASE_PATH +
+                          "w500" +
+                          show.backdrop_path
+                        }
+                      ></img>
+                      <p>{show.name}</p>
+                    </div>
+                  </Link>
+                </SwiperSlide>
+              </div>
+            );
+          }
         })}
       </Swiper>
     </div>

@@ -13,7 +13,7 @@ export default function ProductionDescription(props) {
   return (
     <div className="lg:px-0 lg:my-0 text-white">
       <div className="lg:border-transparent  rounded-md">
-        <p className="text-gray-300 font-ibm lg:text-lg">{props.overview}</p>
+        <p className="text-gray-100 font-ibm lg:text-lg">{props.overview}</p>
       </div>
     </div>
   );

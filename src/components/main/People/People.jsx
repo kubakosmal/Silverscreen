@@ -21,7 +21,12 @@ export default function People() {
     <div>
       <Header noBackdrop={true}></Header>
       <div className="mt-5 mb-5 mx-4 lg:mx-auto max-w-4/5 text-white">
-        <h1>PEOPLE</h1>
+        <div className="self-start flex w-full items-center mb-4">
+          <h3 className="text-lg font-bold font-lato whitespace-nowrap text-crayola">
+            POPULAR PEOPLE
+          </h3>
+          <div className="w-full h-2 ml-2 bg-crayola rounded-full"></div>
+        </div>
         <div className="flex flex-wrap gap-5 lg:gap-7 justify-between">
           {popularPeople.map((person) => {
             return (

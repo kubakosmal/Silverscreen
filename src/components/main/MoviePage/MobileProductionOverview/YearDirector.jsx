@@ -1,6 +1,6 @@
 export default function YearDirector(props) {
   return (
-    <div className="">
+    <div className="flex justify-center gap-1 text-xl">
       <p>
         {props.releaseDate.slice(0, 4)} •{" "}
         {props.type == "movie" ? "Directed" : "Created"} by
