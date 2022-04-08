@@ -69,21 +69,19 @@ export default function PersonCredits(props) {
           </h3>
           <div className="h-1 w-full rounded-full bg-secondary ml-2"></div>
         </div>
-        <div className="relative">
-          <div className="absolute bg-black blur-sm inset-0"></div>
-          <div className="relative flex border bg-neutral-900 border-neutral-800 rounded-md">
-            {bestKnownFor.map((prod, i) => {
-              if (i < 4) {
-                return (
-                  <MoviePoster
-                    type={"movies"}
-                    movieId={prod.id}
-                    posterImageUrl={`${constants.IMAGES_BASE_PATH}w500${prod.poster_path}`}
-                  />
-                );
-              }
-            })}
-          </div>
+
+        <div className="relative flex bg-neutral-900 rounded-md">
+          {bestKnownFor.map((prod, i) => {
+            if (i < 4) {
+              return (
+                <MoviePoster
+                  type={"movies"}
+                  movieId={prod.id}
+                  posterImageUrl={`${constants.IMAGES_BASE_PATH}w500${prod.poster_path}`}
+                />
+              );
+            }
+          })}
         </div>
       </div>
 

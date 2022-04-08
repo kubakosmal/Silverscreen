@@ -12,7 +12,7 @@ export default function PersonProductionInfo(props) {
       <div className="flex justify-between items-center w-full">
         <div className="">
           <Link to={`/movies/${props.id}`}>
-            <p className="underline hover:opacity-90 font-ibm text-crayola text-md cursor-pointer">
+            <p className="underline hover:opacity-90 font-ibm text-white text-md cursor-pointer">
               {props.title}
             </p>
           </Link>

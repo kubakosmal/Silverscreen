@@ -19,7 +19,7 @@ export default function Collection({ backdropPath, title, id }) {
     fetchDetails();
   }, []);
   return (
-    <div className="lg:mb-10 lg:mt-5">
+    <div className="mb-5 lg:mb-10">
       <div className="flex items-center mb-2">
         <h3 className="text-secondary text-md font-bold font-lato whitespace-nowrap">
           BELONGS TO

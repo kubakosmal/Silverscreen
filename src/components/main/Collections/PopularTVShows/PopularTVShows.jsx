@@ -22,7 +22,7 @@ export default function PopularTVShows() {
   }, []);
 
   return (
-    <div className="max-w-4/5 mx-auto my-5 lg:my-16">
+    <div className="max-w-4/5 mx-auto my-5 lg:my-8">
       <div className="flex items-center whitespace-nowrap">
         <h2 className="my-1  self-start text-crayola drop-shadow-xl text-lg lg:text-xl font-bold">
           POPULAR TV SHOWS

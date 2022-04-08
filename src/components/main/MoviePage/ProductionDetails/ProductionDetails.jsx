@@ -23,7 +23,7 @@ export default function ProductionDetails(props) {
               </dd>
             </div>
             <div className="bg-neutral-900 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className=" font-bold text-white">Original Language</dt>
+              <dt className=" font-bold text-white">Language</dt>
               <dd className="mt-1  text-gray-300 sm:mt-0 sm:col-span-2">
                 {originalLanguage}
               </dd>

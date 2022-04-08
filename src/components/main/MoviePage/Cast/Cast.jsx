@@ -9,14 +9,14 @@ export default function Cast(props) {
     setScreenSize(window.innerWidth);
   }, [window.innerWidth]);
   return (
-    <div className="my-8 flex flex-col">
+    <div className="mt-8 flex flex-col">
       <div className="flex items-center mb-2">
         <h3 className="text-secondary text-md font-bold font-lato whitespace-nowrap">
           TOP CAST
         </h3>
         <div className="w-full h-1 ml-2 rounded-full bg-secondary"></div>
       </div>
-      <div className="relative border-2 rounded-lg border-secondary">
+      <div className="relative rounded-lg">
         <div className="absolute bg-black inset-0 blur-sm rounded-lg"></div>
         <ul className="relative bg-neutral-900 rounded-lg grid grid-cols-1 md:grid-cols-2">
           {props.actors.map((actor, i) => {

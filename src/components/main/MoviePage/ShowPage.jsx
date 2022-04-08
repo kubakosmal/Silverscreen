@@ -105,22 +105,20 @@ export default function ShowPage() {
           }
         />
         <div className="relative">
-          <div className="relative max-w-4/5 mx-4 gap-y-7 gap-x-14 -mt-10 grid grid-cols-1 lg:grid-cols-8 lg:mx-auto lg:grid-rows-[40px_auto]">
-            <div className="lg:row-start-1 lg:col-start-1 lg:col-end-3 lg:sticky lg:top-5 flex lg:block items-center justify-center">
+          <div className="relative max-w-4/5 mx-4 gap-y-5 gap-x-12 mb-10 -mt-12 grid grid-cols-1 lg:grid-cols-11 lg:mx-auto lg:grid-rows-[auto_auto]">
+            <div className="lg:row-start-1 lg:col-start-1 lg:col-end-4 lg:row-span-2 lg:sticky lg:top-5 flex lg:block items-center justify-center">
               <MoviePagePoster
                 posterImageUrl={
                   constants.IMAGES_BASE_PATH + "w500" + data.poster_path
                 }
               />
-              <div className="hidden lg:block">
-                <Indicators type="tv" prodId={showId} />
-              </div>
+
               <div className="mt-5 hidden lg:block">
                 <Providers id={showId} type="tv" />
               </div>
             </div>
 
-            <div className="lg:col-start-3 lg:col-end-9 lg:row-start-1 lg:row-end-2">
+            <div className="lg:col-start-4 lg:col-end-12 lg:row-start-1 lg:row-end-2">
               {mobileOrDesktop === "mobile" ? (
                 <MobileProductionOverview
                   backdropImageUrl={
@@ -150,60 +148,98 @@ export default function ShowPage() {
               )}
             </div>
 
-            <div className="lg:col-start-7 lg:col-end-9 lg:row-start-2 lg:row-end-3">
-              <RatingAndInteractions
-                rating={rating}
-                type={"tv"}
-                prodId={showId}
-              />
+            <div className="lg:col-start-9  lg:col-end-12 lg:row-start-2 lg:row-end-3">
+              <div className="flex items-center mb-2">
+                <h3 className="text-crayola text-md font-bold font-lato whitespace-nowrap">
+                  SCORE
+                </h3>
+                <div className="w-full h-1 ml-2 rounded-full bg-crayola"></div>
+              </div>
+              <div className="relative rounded-lg">
+                <div className="absolute bg-black inset-0 blur-sm rounded-xl"></div>
+                <div className="relative bg-neutral-900 rounded-xl">
+                  <div className="bg-slate-1000 rounded-xl">
+                    <RatingAndInteractions
+                      rating={rating}
+                      type={"tv"}
+                      prodId={showId}
+                    />
+                    <Indicators type="tv" prodId={showId} />
+                  </div>
+
+                  {/* <Indicators type="movies" prodId={movieId}></Indicators> */}
+                </div>
+              </div>
             </div>
 
-            <div className="lg:col-start-3 lg:col-end-7 lg:row-start-2 lg:row-end-3 mt-5 flex flex-col gap-5">
-              <h3 className="text-gray-300 font-lato text-lg font-bold italic">
-                {tagline.toUpperCase()}
-              </h3>
-              <div className="relative">
-                <div className=""></div>
-                <div className="relative rounded-md">
-                  <div className="">
-                    <ProductionDescription
-                      overview={overview}
-                      tagline={tagline}
+            <div className="lg:col-start-4  lg:col-end-9 lg:row-start-2 lg:row-end-3 flex flex-col gap-10">
+              <div>
+                <div className="flex items-center mb-2">
+                  <h3 className="text-secondary text-md font-bold font-lato">
+                    OVERVIEW
+                  </h3>
+                  <div className="w-full h-1 ml-2 bg-secondary rounded-full"></div>
+                </div>
+
+                <div className="relative bg-neutral-900 rounded-lg">
+                  <div className="absolute bg-black inset-0 blur-sm rounded-lg"></div>
+                  <div className="relative bg-neutral-900 rounded-lg">
+                    <div className="rounded-lg">
+                      <div className="p-5 rounded-lg bg-neutral-900">
+                        <ProductionDescription
+                          overview={overview}
+                          tagline={tagline}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div className="flex items-center mb-2">
+                  <h3 className="text-secondary text-md font-bold font-lato">
+                    DETAILS
+                  </h3>
+                  <div className="w-full h-1 ml-2 rounded-full bg-secondary"></div>
+                </div>
+                <div className="relative rounded-lg">
+                  <div className="absolute bg-black inset-0 blur-sm rounded-lg"></div>
+                  <div className="relative rounded-lg">
+                    <ShowDetails
+                      originalName={originalName}
+                      firstAirDate={firstAirDate}
+                      lastAirDate={lastAirDate}
+                      genres={genres}
+                      numOfEpisodes={numOfEpisodes}
+                      country={country}
+                      originalLanguage={originalLanguage}
+                      numOfSeasons={numOfSeasons}
                     />
                   </div>
                 </div>
               </div>
-              <div className="">
-                <Keywords type="tv" id={showId} />
-              </div>
-              <div>
-                <h3 className="text-white text-lg font-bold font-lato">
-                  Details
-                </h3>
-                <ShowDetails
-                  originalName={originalName}
-                  firstAirDate={firstAirDate}
-                  lastAirDate={lastAirDate}
-                  genres={genres}
-                  numOfEpisodes={numOfEpisodes}
-                  country={country}
-                  originalLanguage={originalLanguage}
-                  numOfSeasons={numOfSeasons}
-                />
-              </div>
             </div>
 
-            <div className="lg:col-start-3 lg:col-end-9  lg:row-start-4 lg:row-end-5">
+            <div className="lg:col-start-4 lg:col-end-12  lg:row-start-4 lg:row-end-5">
               <Cast actors={actors}></Cast>
             </div>
 
-            <div className="lg:col-start-3 lg:col-end-9  lg:row-start-5 lg:row-end-6">
-              <Reviews reviews={reviews} movieId={showId} />
-            </div>
+            {reviews.length > 0 ? (
+              <div className="lg:col-start-4 lg:col-end-12  lg:row-start-5 lg:row-end-6">
+                <Reviews reviews={reviews} movieId={showId} />
+              </div>
+            ) : (
+              false
+            )}
 
-            <div className="lg:col-start-3 lg:col-end-9  lg:row-start-6 lg:row-end-7">
-              <Recommendations type="tv" productions={recommendations} />
-            </div>
+            {recommendations.length > 0 ? (
+              <div className="lg:col-start-4 lg:col-end-12  lg:row-start-6 lg:row-end-7">
+                <Recommendations type="tv" productions={recommendations} />
+              </div>
+            ) : (
+              false
+            )}
           </div>
         </div>
       </div>

@@ -219,7 +219,7 @@ const MoviePage = () => {
                 </h3>
                 <div className="w-full h-1 ml-2 rounded-full bg-crayola"></div>
               </div>
-              <div className="relative rounded-lg border-2 border-crayola">
+              <div className="relative rounded-lg">
                 <div className="absolute bg-black inset-0 blur-sm rounded-xl"></div>
                 <div className="relative bg-neutral-900 rounded-xl">
                   <div className="bg-slate-1000 rounded-xl">
@@ -245,7 +245,7 @@ const MoviePage = () => {
                   <div className="w-full h-1 ml-2 bg-secondary rounded-full"></div>
                 </div>
 
-                <div className="relative bg-neutral-900 rounded-lg border-2 border-secondary">
+                <div className="relative bg-neutral-900 rounded-lg">
                   <div className="absolute bg-black inset-0 blur-sm rounded-lg"></div>
                   <div className="relative bg-neutral-900 rounded-lg">
                     <div className="rounded-lg">
@@ -262,13 +262,13 @@ const MoviePage = () => {
 
               <div>
                 <div className="flex items-center mb-2">
-                  <h3 className="text-white text-md font-bold font-lato">
+                  <h3 className="text-secondary text-md font-bold font-lato">
                     DETAILS
                   </h3>
-                  <div className="w-full h-1 ml-2 rounded-full bg-white"></div>
+                  <div className="w-full h-1 ml-2 rounded-full bg-secondary"></div>
                 </div>
                 {/* 32414295 */}
-                <div className="relative border-2 rounded-lg border-white">
+                <div className="relative rounded-lg">
                   <div className="absolute bg-black inset-0 blur-sm rounded-lg"></div>
                   <div className="relative rounded-lg">
                     <ProductionDetails
