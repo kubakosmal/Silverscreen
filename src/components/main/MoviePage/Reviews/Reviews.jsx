@@ -10,7 +10,7 @@ export default function Reviews(props) {
   const [isShowMore, setIsShowMore] = useState(false);
 
   return (
-    <div className="text-gray-500 flex flex-col mt-6 mb-3">
+    <div className="text-gray-500 flex flex-col my-6">
       <div className="mt-2">
         <div className="flex items-center mb-2">
           <h3 className="text-secondary text-md font-bold font-lato">
@@ -25,12 +25,17 @@ export default function Reviews(props) {
               if (i < numOfReviewsToShow) {
                 let avatarPath = "";
                 let hasAvatar = false;
-                if (review.author_details.avatar_path) {
-                  avatarPath = review.author_details.avatar_path.substring(1);
+                {
+                  /* if (review.author_details.avatar_path) {
+                  {
+                     avatarPath = review.author_details.avatar_path.substring(1); 
+                  }
+
                   if (!avatarPath.includes("https")) {
                     avatarPath = `${constants.IMAGES_BASE_PATH}original/${avatarPath}`;
                   }
                   hasAvatar = true;
+                } */
                 }
                 return (
                   <li className="odd:bg-slate-1000 rounded-lg">
