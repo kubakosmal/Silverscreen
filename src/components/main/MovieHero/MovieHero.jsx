@@ -20,7 +20,7 @@ export default function MovieHero() {
       );
       const jsonData = await myData.json();
       setData(jsonData);
-      setBackdropPath(jsonData.backdrop_path);
+      setBackdropPath(urlBase + jsonData.backdrop_path);
       setTitle(jsonData.title);
       setReleaseDate(jsonData.release_date);
       setId(jsonData.id);
@@ -33,7 +33,7 @@ export default function MovieHero() {
       <MovieBackdrop
         context={"main"}
         opacity={1}
-        backdropImageUrl={urlBase + backdropPath}
+        backdropImageUrl={backdropPath}
         title={title}
         releaseDate={releaseDate.slice(0, 4)}
         main={true}

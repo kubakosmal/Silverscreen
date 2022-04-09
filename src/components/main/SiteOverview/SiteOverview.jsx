@@ -11,21 +11,21 @@ import { ReactComponent as TmdbSvg } from "./SilverscreenOverview/tmdblogo.svg";
 export default function SiteOverview() {
   return (
     <div className="mt-3 max-w-4/5 mx-auto text-gray-300 rounded-md font-lato flex flex-col">
-      <div class="">
-        <div class="w-full text-gray-300 xl:px-0">
-          <div class=" grid gap-6 md:w-full lg:w-full lg:grid-cols-3">
+      <div className="">
+        <div className="w-full text-gray-300 xl:px-0">
+          <div className=" grid gap-6 md:w-full lg:w-full lg:grid-cols-3">
             <div className="h-full relative">
               <div className="absolute bg-black rounded-2xl inset-0 blur-sm"></div>
-              <div class="h-full relative bg-neutral-900 border-2 border-neutral-600 rounded-2xl shadow-xl px-8 py-8 sm:px-12 lg:py-12 lg:px-8">
-                <div class="mb-6 lg:mb-36 space-y-4">
-                  <h3 class="text-2xl font-semibold text-white">
+              <div className="h-full relative bg-neutral-900 border-2 border-neutral-600 rounded-2xl shadow-xl px-8 py-8 sm:px-12 lg:py-12 lg:px-8">
+                <div className="mb-6 lg:mb-36 space-y-4">
+                  <h3 className="text-2xl font-semibold text-white">
                     Silverscreen uses TMDB
                   </h3>
-                  <p class="mb-6">
+                  <p className="mb-6">
                     Silverscreen is a web app that provides User Interface to
                     The Movie Database API.
                   </p>
-                  <a href="#" class="block font-medium text-purple-600">
+                  <a href="#" className="block font-medium text-purple-600">
                     Visit TMDB
                   </a>
                 </div>
@@ -39,16 +39,16 @@ export default function SiteOverview() {
 
             <div className="relative h-full">
               <div className="absolute bg-black inset-0 blur-sm rounded-2xl"></div>
-              <div class="h-full relative border-2 bg-neutral-900 border-neutral-600 rounded-2xl shadow-xl px-8 py-8 sm:px-12 lg:py-12 lg:px-8">
-                <div class="mb-6 lg:mb-36 space-y-4">
-                  <h3 class="text-2xl font-semibold text-white">
+              <div className="h-full relative border-2 bg-neutral-900 border-neutral-600 rounded-2xl shadow-xl px-8 py-8 sm:px-12 lg:py-12 lg:px-8">
+                <div className="mb-6 lg:mb-36 space-y-4">
+                  <h3 className="text-2xl font-semibold text-white">
                     Strong and Reliable Data
                   </h3>
-                  <p class="mb-6">
+                  <p className="mb-6">
                     TMDB provides information for over 700,00 Movies and over
                     120,000 TV Shows.
                   </p>
-                  <a href="#" class="block font-medium text-purple-600">
+                  <a href="#" className="block font-medium text-purple-600">
                     Know more
                   </a>
                 </div>
@@ -67,8 +67,8 @@ export default function SiteOverview() {
                         y1="0%"
                         y2="100%"
                       >
-                        <stop offset="0%" stop-color="#f472b6" />
-                        <stop offset="100%" stop-color="#FFE66D" />
+                        <stop offset="0%" stopColor="#f472b6" />
+                        <stop offset="100%" stopColor="#FFE66D" />
                       </linearGradient>
                     </defs>
                     <path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z" />
@@ -81,16 +81,16 @@ export default function SiteOverview() {
 
             <div className="relative h-full">
               <div className="absolute bg-black rounded-2xl blur-sm inset-0"></div>
-              <div class="h-full relative border-2 bg-neutral-900 border-neutral-600 rounded-2xl shadow-xl px-8 py-8 sm:px-12 lg:py-12 lg:px-8">
-                <div class="mb-6 lg:mb-36 space-y-4">
-                  <h3 class="text-2xl font-semibold text-white">
+              <div className="h-full relative border-2 bg-neutral-900 border-neutral-600 rounded-2xl shadow-xl px-8 py-8 sm:px-12 lg:py-12 lg:px-8">
+                <div className="mb-6 lg:mb-36 space-y-4">
+                  <h3 className="text-2xl font-semibold text-white">
                     Even Stronger Community
                   </h3>
-                  <p class="mb-6">
+                  <p className="mb-6">
                     TMDB is used by over 400,000 developers and companies from
                     all over the world.
                   </p>
-                  <a href="#" class="block font-medium text-purple-600">
+                  <a href="#" className="block font-medium text-purple-600">
                     Know more
                   </a>
                 </div>
@@ -109,8 +109,8 @@ export default function SiteOverview() {
                         y1="0%"
                         y2="100%"
                       >
-                        <stop offset="0%" stop-color="#34D1BF" />
-                        <stop offset="100%" stop-color="#3b82f6" />
+                        <stop offset="0%" stopColor="#34D1BF" />
+                        <stop offset="100%" stopColor="#3b82f6" />
                       </linearGradient>
                     </defs>
                     <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />

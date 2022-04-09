@@ -36,7 +36,7 @@ export default function MovieShowcase() {
       {data.map((prod, i) => {
         if (i < numOfMovies && prod.poster_path) {
           return (
-            <div id={prod.id}>
+            <div key={prod.id} id={prod.id}>
               <Link to={`movies/${prod.id}`}>
                 <motion.div
                   animate={{

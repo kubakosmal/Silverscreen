@@ -31,7 +31,7 @@ export default function SearchModal(props) {
             <button onClick={props.closeModal}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-7 w-7 text-crayola"
+                className="h-7 w-7 text-crayola"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >

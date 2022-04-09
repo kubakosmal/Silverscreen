@@ -22,8 +22,8 @@ export default function DataOverview() {
                 y1="0%"
                 y2="100%"
               >
-                <stop offset="0%" stop-color="#db2777" />
-                <stop offset="100%" stop-color="#FFE66D" />
+                <stop offset="0%" stopColor="#db2777" />
+                <stop offset="100%" stopColor="#FFE66D" />
               </linearGradient>
             </defs>
             <path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z" />
@@ -44,8 +44,8 @@ export default function DataOverview() {
                 y1="0%"
                 y2="100%"
               >
-                <stop offset="0%" stop-color="#ec4899" />
-                <stop offset="100%" stop-color="#FFE66D" />
+                <stop offset="0%" stopColor="#ec4899" />
+                <stop offset="100%" stopColor="#FFE66D" />
               </linearGradient>
             </defs>
             <path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z" />
@@ -66,8 +66,8 @@ export default function DataOverview() {
                 y1="0%"
                 y2="100%"
               >
-                <stop offset="0%" stop-color="#f472b6" />
-                <stop offset="100%" stop-color="#FFE66D" />
+                <stop offset="0%" stopColor="#f472b6" />
+                <stop offset="100%" stopColor="#FFE66D" />
               </linearGradient>
             </defs>
             <path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z" />

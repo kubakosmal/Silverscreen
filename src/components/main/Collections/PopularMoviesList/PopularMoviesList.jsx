@@ -58,7 +58,7 @@ const PopularMoviesList = () => {
       >
         {data.map((movie, i) => {
           return (
-            <div id={movie.id}>
+            <div id={movie.id} key={movie.id}>
               <SwiperSlide>
                 <div className="">
                   <MoviePoster

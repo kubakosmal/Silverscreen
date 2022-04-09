@@ -51,6 +51,8 @@ const MoviePage = () => {
   const [id, setId] = useState();
   const [recommendations, setRecommndations] = useState([]);
   const [collection, setCollection] = useState(null);
+  const [backdropPath, setBackdropPath] = useState("");
+  const [posterPath, setPosterPath] = useState("");
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -79,6 +81,10 @@ const MoviePage = () => {
       setTagline(jsonData.tagline);
       setId(jsonData.id);
       setCollection(jsonData.belongs_to_collection);
+      setBackdropPath(
+        constants.IMAGES_BASE_PATH + "original" + jsonData.backdrop_path
+      );
+      setPosterPath(constants.IMAGES_BASE_PATH + "w500" + jsonData.poster_path);
     };
 
     const fetchImagesUrls = async () => {
@@ -150,20 +156,11 @@ const MoviePage = () => {
     <div className="">
       <Header></Header>
       <div className="">
-        <MovieBackdrop
-          opacity={1}
-          backdropImageUrl={
-            constants.IMAGES_BASE_PATH + "original" + data.backdrop_path
-          }
-        />
+        <MovieBackdrop opacity={1} backdropImageUrl={backdropPath} />
         <div className="relative">
           <div className="relative max-w-4/5 mx-4 gap-y-5 gap-x-12 mb-10 -mt-12 grid grid-cols-1 lg:grid-cols-11 lg:mx-auto lg:grid-rows-[auto_auto]">
             <div className="lg:row-start-1 lg:col-start-1 lg:col-end-4 lg:row-span-2 lg:sticky lg:top-5 flex lg:block items-center justify-center">
-              <MoviePagePoster
-                posterImageUrl={
-                  constants.IMAGES_BASE_PATH + "w500" + data.poster_path
-                }
-              />
+              <MoviePagePoster posterImageUrl={posterPath} />
               <div className="hidden lg:block"></div>
 
               {/* <div>

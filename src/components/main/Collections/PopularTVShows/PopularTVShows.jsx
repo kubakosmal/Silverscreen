@@ -6,7 +6,7 @@ import { Navigation, Pagination } from "swiper";
 import { Link } from "react-router-dom";
 
 export default function PopularTVShows() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -53,10 +53,10 @@ export default function PopularTVShows() {
         navigation={true}
         modules={[Pagination, Navigation]}
       >
-        {data.map((show, i) => {
+        {data?.map((show, i) => {
           if (show.backdrop_path) {
             return (
-              <div className="" key={show.id.toString()}>
+              <div className="" key={show.id}>
                 <SwiperSlide>
                   <Link to={`/tvshows/${show.id}`}>
                     <div className="border-2 p-2 rounded-md border-transparent hover:border-secondary transition-all duration-300">
