@@ -65,17 +65,15 @@ export default function Lists() {
           {currentSelectedList?.map((movie) => {
             return (
               <Link to={`/movies/${movie.id}`}>
-                <Atropos shadow={false}>
-                  <div className="relative w-40">
-                    <div className="absolute inset-0 rounded-md bg-black blur-sm"></div>
-                    <div className="relative">
-                      <img
-                        className="rounded-lg"
-                        src={`${constants.IMAGES_BASE_PATH}w500${movie.poster_path}`}
-                      ></img>
-                    </div>
+                <div className="relative w-40">
+                  <div className="absolute inset-0 rounded-md bg-black blur-sm"></div>
+                  <div className="relative">
+                    <img
+                      className="rounded-lg"
+                      src={`${constants.IMAGES_BASE_PATH}w500${movie.poster_path}`}
+                    ></img>
                   </div>
-                </Atropos>
+                </div>
               </Link>
             );
           })}

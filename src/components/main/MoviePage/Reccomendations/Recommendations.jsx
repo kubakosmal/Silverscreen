@@ -1,5 +1,5 @@
 import MoviePoster from "../../Collections/PopularMoviesList/MoviePoster/MoviePoster";
-import Atropos from "atropos/react";
+
 import * as constants from "../../../../constants";
 import { Link } from "react-router-dom";
 
@@ -23,12 +23,10 @@ export default function Recommendations(props) {
                   <div className="relative" key={prod.id}>
                     <Link to={`/movies/${prod.id}`}>
                       <div className="w-40 lg:w-36 cursor-pointer">
-                        <Atropos highlight={false} shadow={false}>
-                          <img
-                            className="rounded-md border-2 border-neutral-800"
-                            src={`${constants.IMAGES_BASE_PATH}w500${prod.poster_path}`}
-                          ></img>
-                        </Atropos>
+                        <img
+                          className="rounded-md border-2 border-neutral-800"
+                          src={`${constants.IMAGES_BASE_PATH}w500${prod.poster_path}`}
+                        ></img>
                       </div>
                     </Link>
                   </div>

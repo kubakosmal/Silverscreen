@@ -307,13 +307,13 @@ const MoviePage = () => {
               false
             )}
 
-            {/* {recommendations.length > 0 ? (
+            {recommendations.length > 0 ? (
               <div className="lg:col-start-4 lg:col-end-12  lg:row-start-7 lg:row-end-8">
                 <Recommendations productions={recommendations} />
               </div>
             ) : (
               false
-            )} */}
+            )}
           </div>
         </div>
       </div>

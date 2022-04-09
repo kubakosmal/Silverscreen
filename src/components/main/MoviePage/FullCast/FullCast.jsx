@@ -5,7 +5,6 @@ import { IconContext } from "react-icons";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { useEffect, useState } from "react";
 import * as constants from "../../../../constants";
-import Atropos from "atropos/react";
 
 export default function FullCast(props) {
   const prodId = useParams().prodId;
@@ -82,24 +81,22 @@ export default function FullCast(props) {
             if (actor.profile_path) {
               return (
                 <Link to={`/person/${actor.id}`}>
-                  <Atropos shadow={false} highlight={false}>
-                    <div className="w-24 lg:w-40 bg-neutral-900">
-                      <div className="relative">
-                        <div className="bg-black absolute inset-0 blur-sm rounded-md"></div>
-                        <div className="relative border-2 rounded-md border-neutral-700">
-                          <img
-                            className=" rounded-md"
-                            src={`${constants.IMAGES_BASE_PATH}w500${actor.profile_path}`}
-                          ></img>
-                        </div>
+                  <div className="w-24 lg:w-40 bg-neutral-900">
+                    <div className="relative">
+                      <div className="bg-black absolute inset-0 blur-sm rounded-md"></div>
+                      <div className="relative border-2 rounded-md border-neutral-700">
+                        <img
+                          className=" rounded-md"
+                          src={`${constants.IMAGES_BASE_PATH}w500${actor.profile_path}`}
+                        ></img>
                       </div>
-
-                      <p className="text-gray-100 font-bold">{actor.name}</p>
-                      <p className="text-gray-300 text-xs lg:text-sm">
-                        {actor.character}
-                      </p>
                     </div>
-                  </Atropos>
+
+                    <p className="text-gray-100 font-bold">{actor.name}</p>
+                    <p className="text-gray-300 text-xs lg:text-sm">
+                      {actor.character}
+                    </p>
+                  </div>
                 </Link>
               );
             }

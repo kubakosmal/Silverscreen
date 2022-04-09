@@ -1,7 +1,7 @@
 import * as constants from "../../../constants";
 import { useState, useEffect } from "react";
 import MoviePoster from "../Collections/PopularMoviesList/MoviePoster/MoviePoster";
-import Atropos from "atropos/react";
+
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -49,17 +49,15 @@ export default function MovieShowcase() {
                     delay: i * 0.3,
                   }}
                 >
-                  <Atropos shadow={false} highlight={false}>
-                    <div className="relative my-3 w-28 lg:w-40 cursor-pointer rounded-md">
-                      <div className="absolute bg-black inset-0 blur rounded-lg"></div>
-                      <div className="relative rounded-md border-2 border-neutral-800">
-                        <img
-                          className="rounded-md"
-                          src={`${constants.IMAGES_BASE_PATH}w500${prod.poster_path}`}
-                        ></img>
-                      </div>
+                  <div className="relative my-3 w-28 lg:w-40 cursor-pointer rounded-md">
+                    <div className="absolute bg-black inset-0 blur rounded-lg"></div>
+                    <div className="relative rounded-md border-2 border-neutral-800">
+                      <img
+                        className="rounded-md"
+                        src={`${constants.IMAGES_BASE_PATH}w500${prod.poster_path}`}
+                      ></img>
                     </div>
-                  </Atropos>
+                  </div>
                 </motion.div>
               </Link>
             </div>

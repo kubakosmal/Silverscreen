@@ -9,7 +9,6 @@ import { ModalContext } from "./components/Context/Context.jsx";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import "atropos/css";
 
 const App = () => {
   const modalContext = useContext(ModalContext);

@@ -1,5 +1,3 @@
-import Atropos from "atropos/react";
-import TMDBLogo from "../SilverscreenOverview/tmdblogo.svg";
 import { ReactComponent as TmdbSvg } from "./tmdblogo.svg";
 
 export default function SilverscreenOverview() {

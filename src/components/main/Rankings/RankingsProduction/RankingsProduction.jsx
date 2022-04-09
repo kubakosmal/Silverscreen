@@ -5,7 +5,7 @@ import { BsCurrencyDollar } from "react-icons/bs";
 import { IoIosArrowDropup } from "react-icons/io";
 import { AiOutlineCalendar } from "react-icons/ai";
 import { IconContext } from "react-icons/lib";
-import Atropos from "atropos/react";
+
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -109,30 +109,28 @@ export default function RankingsProduction(props) {
           delay: props.place * 0.04,
         }}
       >
-        <Atropos className="rounded-lg" shadow={false} highlight={false}>
-          <div className="relative rounded-lg mb-6 w-28 lg:w-40 cursor-pointer border-2 border-neutral-500">
-            <div className="bg-black absolute inset-0 blur-sm rounded-md"></div>
-            <div className="relative bg-neutral-900 flex flex-col outline-2 border-neutral-800 rounded-md">
-              <img className="rounded-md" src={props.posterPath}></img>
+        <div className="relative rounded-lg mb-6 w-28 lg:w-40 cursor-pointer border-2 border-neutral-500">
+          <div className="bg-black absolute inset-0 blur-sm rounded-md"></div>
+          <div className="relative bg-neutral-900 flex flex-col outline-2 border-neutral-800 rounded-md">
+            <img className="rounded-md" src={props.posterPath}></img>
 
-              <motion.div
-                animate={{ opacity: [0, 1] }}
-                transition={{ ease: "linear", duration: 0.5, delay: 0.8 }}
-              >
-                <div className="flex justify-between mx-1 font-lato">
-                  {/* <div className="absolute -top-0 -left-0 bg-black rounded-md  border-neutral-700">
+            <motion.div
+              animate={{ opacity: [0, 1] }}
+              transition={{ ease: "linear", duration: 0.5, delay: 0.8 }}
+            >
+              <div className="flex justify-between mx-1 font-lato">
+                {/* <div className="absolute -top-0 -left-0 bg-black rounded-md  border-neutral-700">
                   <p className="font-bold text-sm">{props.place}</p>
                 </div> */}
 
-                  <div className="absolute bg-opacity-70 justify-center -bottom-3 right-0 bg-black px-2 text-xs rounded-lg p-1 flex items-center">
-                    {rankingIconElement}
-                    {rankingValueElement}
-                  </div>
+                <div className="absolute bg-opacity-70 justify-center -bottom-3 right-0 bg-black px-2 text-xs rounded-lg p-1 flex items-center">
+                  {rankingIconElement}
+                  {rankingValueElement}
                 </div>
-              </motion.div>
-            </div>
+              </div>
+            </motion.div>
           </div>
-        </Atropos>
+        </div>
       </motion.div>
     </Link>
   );
