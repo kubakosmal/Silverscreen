@@ -272,7 +272,7 @@ const MoviePage = () => {
                 {/* 32414295 */}
                 <div className="relative rounded-lg">
                   <div className="absolute bg-black inset-0 blur-sm rounded-lg"></div>
-                  <div className="relative rounded-lg">
+                  {/* <div className="relative rounded-lg">
                     <ProductionDetails
                       genres={genres}
                       originalTitle={originalTitle}
@@ -281,7 +281,7 @@ const MoviePage = () => {
                       releaseDate={releaseDate}
                       budget={budget}
                     ></ProductionDetails>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
