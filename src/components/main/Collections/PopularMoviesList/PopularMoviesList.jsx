@@ -2,14 +2,7 @@ import React, { useEffect, useState } from "react";
 import MoviePoster from "./MoviePoster/MoviePoster.jsx";
 import * as constants from "../../../../constants";
 import { Swiper, SwiperSlide } from "swiper/react";
-import {
-  Navigation,
-  Pagination,
-  Scrollbar,
-  A11y,
-  EffectCoverflow,
-  Autoplay,
-} from "swiper";
+import { Navigation, Pagination } from "swiper";
 
 const PopularMoviesList = () => {
   const [data, setData] = useState([]);
@@ -63,7 +56,7 @@ const PopularMoviesList = () => {
                 <div className="">
                   <MoviePoster
                     posterImageUrl={
-                      constants.IMAGES_BASE_PATH + "w342" + movie.poster_path
+                      constants.IMAGES_BASE_PATH + "w500" + movie.poster_path
                     }
                     movieTitle={movie.title}
                     prodId={movie.id}

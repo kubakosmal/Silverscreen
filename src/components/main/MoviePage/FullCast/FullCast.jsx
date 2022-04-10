@@ -89,7 +89,7 @@ export default function FullCast(props) {
                       <div className="relative w-24 lg:w-40 bg-neutral-900 overflow-hidden border-2 hover:border-secondary transition-all duration-200 rounded-md border-neutral-700">
                         <img
                           className="rounded-md hover:scale-110 transition-all duration-200"
-                          src={`${constants.IMAGES_BASE_PATH}w342${actor.profile_path}`}
+                          src={`${constants.IMAGES_BASE_PATH}w500${actor.profile_path}`}
                         ></img>
                       </div>
                     </div>

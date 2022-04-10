@@ -64,7 +64,7 @@ export default function PopularTVShows() {
                         className="rounded-md"
                         src={
                           constants.IMAGES_BASE_PATH +
-                          "w342" +
+                          "w500" +
                           show.backdrop_path
                         }
                       ></img>

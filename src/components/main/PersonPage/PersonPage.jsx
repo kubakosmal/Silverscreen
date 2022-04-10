@@ -65,7 +65,7 @@ export default function PersonPage(props) {
               <div className="absolute lg:bg-black rounded-md inset-0 blur"></div>
               <img
                 className="rounded-md w-64 lg:w-full relative border-2 border-neutral-800"
-                src={`${constants.IMAGES_BASE_PATH}w342${personData.profile_path}`}
+                src={`${constants.IMAGES_BASE_PATH}w500${personData.profile_path}`}
               ></img>
             </div>
           </div>
@@ -89,7 +89,7 @@ export default function PersonPage(props) {
               knownFor={personData.known_for_department}
               name={personData.name}
               placeOfBirth={personData.place_of_birth}
-              profilePath={`${constants.IMAGES_BASE_PATH}w342${personData.profile_path}`}
+              profilePath={`${constants.IMAGES_BASE_PATH}w500${personData.profile_path}`}
             />
           </div>
 

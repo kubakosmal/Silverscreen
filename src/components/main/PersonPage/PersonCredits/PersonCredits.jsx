@@ -77,7 +77,7 @@ export default function PersonCredits(props) {
                 <MoviePoster
                   type={"movies"}
                   prodId={prod.id}
-                  posterImageUrl={`${constants.IMAGES_BASE_PATH}w342${prod.poster_path}`}
+                  posterImageUrl={`${constants.IMAGES_BASE_PATH}w500${prod.poster_path}`}
                 />
               );
             }

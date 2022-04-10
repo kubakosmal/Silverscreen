@@ -57,7 +57,7 @@ export default function ModalShowsResults(props) {
                             className="rounded-md hover:scale-110 transition-all duration-200"
                             src={
                               constants.IMAGES_BASE_PATH +
-                              "w342" +
+                              "w500" +
                               show.poster_path
                             }
                           />

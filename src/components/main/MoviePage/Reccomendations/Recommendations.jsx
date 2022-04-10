@@ -23,7 +23,7 @@ export default function Recommendations(props) {
                     <div className="w-40 lg:w-36 cursor-pointer">
                       <img
                         className="rounded-md hover:scale-110 transition-all duration-200"
-                        src={`${constants.IMAGES_BASE_PATH}w342${prod.poster_path}`}
+                        src={`${constants.IMAGES_BASE_PATH}w500${prod.poster_path}`}
                       ></img>
                     </div>
                   </Link>

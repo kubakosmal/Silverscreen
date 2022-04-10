@@ -62,7 +62,7 @@ export default function TopRatedTVShows() {
                       <img
                         className="rounded-md"
                         src={
-                          constants.IMAGES_BASE_PATH + "w342" + show.poster_path
+                          constants.IMAGES_BASE_PATH + "w500" + show.poster_path
                         }
                       ></img>
                       <p>{show.name}</p>

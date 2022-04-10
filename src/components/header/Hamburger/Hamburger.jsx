@@ -2,6 +2,8 @@ import { useState } from "react";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { IconContext } from "react-icons/lib";
 import { Link } from "react-router-dom";
+import { LoggedContext } from "../../Context/Context";
+import { useContext } from "react";
 
 const HamburgerSpans = () => {
   return (
@@ -14,6 +16,7 @@ const HamburgerSpans = () => {
 };
 
 const Menu = () => {
+  const authContext = useContext(LoggedContext);
   return (
     <div className="z-10 text-gray-100 text-sm font-ibm absolute right-2 top-1 flex flex-col w-1/2 bg-neutral-900 rounded-md">
       <div className="relative rounded-md">
@@ -57,15 +60,46 @@ const Menu = () => {
             </li>
 
             <li className="odd:bg-slate-1000 px-3">
-              <Link to={"/login"}>
-                <div className="flex justify-between items-center py-1">
-                  <p className="font-bold text-crayola">LOG IN</p>
-                  <IconContext.Provider value={{ color: "#FFE66D" }}>
-                    <MdOutlineKeyboardArrowRight className="w-6 h-6" />
-                  </IconContext.Provider>
-                </div>
-              </Link>
+              {authContext.isLogged ? (
+                <Link to={"/user"}>
+                  <div className="flex justify-between items-center py-1">
+                    <p className="font-bold text-crayola">
+                      {authContext.userName.toUpperCase()}
+                    </p>
+                    <IconContext.Provider value={{ color: "#FFE66D" }}>
+                      <MdOutlineKeyboardArrowRight className="w-6 h-6" />
+                    </IconContext.Provider>
+                  </div>
+                </Link>
+              ) : (
+                <Link to={"/login"}>
+                  <div className="flex justify-between items-center py-1">
+                    <p className="font-bold text-crayola">LOG IN</p>
+                    <IconContext.Provider value={{ color: "#FFE66D" }}>
+                      <MdOutlineKeyboardArrowRight className="w-6 h-6" />
+                    </IconContext.Provider>
+                  </div>
+                </Link>
+              )}
             </li>
+
+            {authContext.isLogged ? (
+              <li
+                className="odd:bg-slate-1000 px-3 rounded-md"
+                onClick={() => authContext.setIsLogged(false)}
+              >
+                <Link to={"/"}>
+                  <div className="flex justify-between items-center py-1">
+                    <p className="font-bold text-pink-500">LOG OUT</p>
+                    <IconContext.Provider value={{ color: "#ec4899" }}>
+                      <MdOutlineKeyboardArrowRight className="w-6 h-6" />
+                    </IconContext.Provider>
+                  </div>
+                </Link>
+              </li>
+            ) : (
+              false
+            )}
           </ul>
         </div>
       </div>

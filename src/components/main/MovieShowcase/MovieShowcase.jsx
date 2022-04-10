@@ -54,7 +54,7 @@ export default function MovieShowcase() {
                     <div className="relative rounded-md ">
                       <img
                         className="rounded-md hover:scale-110 transition-all duration-200"
-                        src={`${constants.IMAGES_BASE_PATH}w342${prod.poster_path}`}
+                        src={`${constants.IMAGES_BASE_PATH}w500${prod.poster_path}`}
                       ></img>
                     </div>
                   </div>

@@ -65,7 +65,7 @@ export default function UserPage() {
 
     const fetchData = async (listToFetch, stateToUpdate) => {
       const data = await fetch(
-        `${constants.TMDB_BASE_PATH}account/${accountId}/${listToFetch}?api_key=${constants.API_KEY}&session_id=${authContext.sessionId}`
+        `${constants.TMDB_BASE_PATH}account/${accountId}/${listToFetch}?api_key=${constants.API_KEY}&session_id=${sessionId}`
       );
       const jsonData = await data.json();
 
@@ -81,7 +81,7 @@ export default function UserPage() {
     fetchData("rated/tv", setRatedShows);
 
     fetchAccountDetails();
-  }, []);
+  }, [sessionId]);
 
   useEffect(() => {
     let averageRating = 0;

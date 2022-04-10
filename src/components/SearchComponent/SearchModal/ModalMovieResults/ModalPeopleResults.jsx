@@ -53,7 +53,7 @@ export default function ModalPeopleResults(props) {
                         <Link to={`/person/${person.id}`}>
                           <img
                             className="rounded-md hover:scale-110 transition-all duration-200"
-                            src={`${constants.IMAGES_BASE_PATH}w342${person.profile_path}`}
+                            src={`${constants.IMAGES_BASE_PATH}w500${person.profile_path}`}
                           ></img>
                         </Link>
                       </div>

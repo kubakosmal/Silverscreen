@@ -55,14 +55,26 @@ export default function UserLoggedMain() {
       <Header noBackdrop={true} />
 
       <div className="max-w-4/5 mx-4 lg:mx-auto text-white">
-        <p>You should be logged now</p>
-
-        <p>Welcome {accountDetails.username}</p>
-        <Link to={"/user"}>
-          <div className="border p-2 px-4 rounded-md">
-            <p>COME ON CLICK ME!!!!</p>
+        <div className="my-5">
+          <h1 className="font-bold text-2xl">
+            Welcome{" "}
+            <span className="text-secondary">{accountDetails.username}</span>
+          </h1>
+          <div className="flex gap-3 mt-5">
+            <div className="border-2 p-2 px-4 hover:border-white bg-blue-600 text-whote transition-all duration-200 border-transparent rounded-md">
+              <Link to={`/`}>
+                <h2 className="font-bold">Homepage</h2>
+              </Link>
+            </div>
+            <div>
+              <Link to={"/user"}>
+                <div className="border-2 p-2 px-4 border-crayola text-crayola hover:text-white hover:border-white transition-all duration-200 rounded-md">
+                  <h2 className="font-bold">User Page</h2>
+                </div>
+              </Link>
+            </div>
           </div>
-        </Link>
+        </div>
       </div>
     </div>
   );

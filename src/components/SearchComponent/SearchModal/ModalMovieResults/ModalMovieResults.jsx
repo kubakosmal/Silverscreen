@@ -62,7 +62,7 @@ export default function ModalMovieResults(props) {
                               className="rounded-md hover:scale-110 transition-all duration-200"
                               src={
                                 constants.IMAGES_BASE_PATH +
-                                "w342" +
+                                "w500" +
                                 movie.poster_path
                               }
                             />

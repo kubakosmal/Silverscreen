@@ -3,7 +3,6 @@ import * as constants from "../../../../constants";
 import MoviePoster from "../PopularMoviesList/MoviePoster/MoviePoster";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
-import { Link } from "react-router-dom";
 
 export default function Upcoming() {
   const [data, setData] = useState([]);
@@ -57,7 +56,7 @@ export default function Upcoming() {
                   <div className="">
                     <MoviePoster
                       posterImageUrl={
-                        constants.IMAGES_BASE_PATH + "w342" + movie.poster_path
+                        constants.IMAGES_BASE_PATH + "w500" + movie.poster_path
                       }
                       movieTitle={movie.title}
                       prodId={movie.id}
