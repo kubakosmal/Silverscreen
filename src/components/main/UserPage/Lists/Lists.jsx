@@ -70,7 +70,7 @@ export default function Lists() {
                   <div className="relative">
                     <img
                       className="rounded-lg"
-                      src={`${constants.IMAGES_BASE_PATH}w342${movie.poster_path}`}
+                      src={`${constants.IMAGES_BASE_PATH}w500${movie.poster_path}`}
                     ></img>
                   </div>
                 </div>
