@@ -4,7 +4,6 @@ import { useContext, useEffect, useState } from "react";
 import * as constants from "../../../constants";
 import { Link } from "react-router-dom";
 import UserInfo from "./UserInfo/UserInfo";
-import ProductionDescription from "../MoviePage/ProductionDescription/ProductionDescription";
 
 export default function UserPage() {
   const authContext = useContext(LoggedContext);
@@ -228,9 +227,9 @@ export default function UserPage() {
                     }`}
                   >
                     <div className="flex border-b m-2 h-48 border-neutral-800 hover:border-secondary p-6">
-                      <div className="lg:w-64 w-80">
+                      <div className="lg:w-64 w-80 sm:w-48">
                         <img
-                          className="rounded-md lg:rounded-lg"
+                          className="rounded-md lg:w-64 w-80 sm:w-48 lg:rounded-lg border"
                           src={`${constants.IMAGES_BASE_PATH}w342${prod.poster_path}`}
                         ></img>
                       </div>
