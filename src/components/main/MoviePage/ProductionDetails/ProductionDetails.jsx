@@ -2,8 +2,6 @@ import { BsDot } from "react-icons/bs";
 import { IconContext } from "react-icons/lib";
 
 export default function ProductionDetails(props) {
-  const languageFormatter = new Intl.DisplayNames(["en"], { type: "language" });
-  const originalLanguage = languageFormatter.of(props.originalLanguage);
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
@@ -25,7 +23,7 @@ export default function ProductionDetails(props) {
             <div className="bg-neutral-900 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt className=" font-bold text-white">Language</dt>
               <dd className="mt-1  text-gray-300 sm:mt-0 sm:col-span-2">
-                {originalLanguage}
+                {props.originalLanguage}
               </dd>
             </div>
 
