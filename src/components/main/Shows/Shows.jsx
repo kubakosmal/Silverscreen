@@ -113,7 +113,7 @@ export default function Shows() {
                         title={prod.name}
                         voteAverage={prod.vote_average}
                         popularity={prod.popularity}
-                        posterPath={`${constants.IMAGES_BASE_PATH}w500${prod.poster_path}`}
+                        posterPath={`${constants.IMAGES_BASE_PATH}w342${prod.poster_path}`}
                         rankingType={currentSelectedList}
                         type="tvshows"
                         id={prod.id}

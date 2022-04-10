@@ -89,7 +89,7 @@ const MoviePage = () => {
       setBackdropPath(
         constants.IMAGES_BASE_PATH + "original" + jsonData.backdrop_path
       );
-      setPosterPath(constants.IMAGES_BASE_PATH + "w500" + jsonData.poster_path);
+      setPosterPath(constants.IMAGES_BASE_PATH + "w342" + jsonData.poster_path);
     };
 
     const fetchImagesUrls = async () => {
@@ -188,10 +188,10 @@ const MoviePage = () => {
               {mobileOrDesktop === "mobile" ? (
                 <MobileProductionOverview
                   backdropImageUrl={
-                    constants.IMAGES_BASE_PATH + "w500" + data.backdrop_path
+                    constants.IMAGES_BASE_PATH + "w342" + data.backdrop_path
                   }
                   posterImageUrl={
-                    constants.IMAGES_BASE_PATH + "w500" + data.poster_path
+                    constants.IMAGES_BASE_PATH + "w342" + data.poster_path
                   }
                   movieName={data.title}
                   movieInformation={data}

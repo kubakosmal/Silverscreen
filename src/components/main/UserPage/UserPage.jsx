@@ -115,7 +115,7 @@ export default function UserPage() {
               {avatarPath ? (
                 <img
                   className="rounded-full w-52 h-52 object-cover  border-neutral-800"
-                  src={`${constants.IMAGES_BASE_PATH}w500${avatarPath}`}
+                  src={`${constants.IMAGES_BASE_PATH}w342${avatarPath}`}
                 ></img>
               ) : (
                 <div className="w-40 h-40 rounded-full"></div>
@@ -231,7 +231,7 @@ export default function UserPage() {
                       <div className="lg:w-64 w-80">
                         <img
                           className="rounded-md lg:rounded-lg"
-                          src={`${constants.IMAGES_BASE_PATH}w500${prod.poster_path}`}
+                          src={`${constants.IMAGES_BASE_PATH}w342${prod.poster_path}`}
                         ></img>
                       </div>
                       <div className="mx-4">

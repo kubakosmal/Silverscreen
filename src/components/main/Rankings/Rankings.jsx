@@ -140,7 +140,7 @@ export default function Rankings() {
                     voteAverage={prod.vote_average}
                     voteCount={prod.vote_count}
                     popularity={prod.popularity}
-                    posterPath={`${constants.IMAGES_BASE_PATH}w500${prod.poster_path} `}
+                    posterPath={`${constants.IMAGES_BASE_PATH}w342${prod.poster_path} `}
                   />
                 );
               } else {

@@ -24,7 +24,7 @@ export default function MovieBackdrop(props) {
       <div className="w-full h-full">
         <div className="relative">
           <Link to={`/movies/${props.id}`}>
-            <div className="absolute top-64 -right-5 lg:right-0 rotate-[270deg] opacity-80 hover:opacity-100">
+            <div className="absolute top-48 lg:top-64 -right-5 lg:right-0 rotate-[270deg] opacity-80 hover:opacity-100">
               {props.title} ({props.releaseDate})
             </div>
           </Link>

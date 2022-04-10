@@ -1,12 +1,4 @@
-import TMDBLogo from "./tmdb.svg";
-import CommunityOverview from "./CommunityOverview/CommunityOverview";
-import BigSearchBar from "./BigSearchBar/BigSearchBar";
-import { AiOutlineArrowDown } from "react-icons/ai";
-import { BsSearch } from "react-icons/bs";
-import { IconContext } from "react-icons/lib";
-import SilverscreenOverview from "./SilverscreenOverview/SilverscreenOverview";
-import DataOverview from "./DataOverview/DataOverview";
-import { ReactComponent as TmdbSvg } from "./SilverscreenOverview/tmdblogo.svg";
+import { ReactComponent as TmdbSvg } from "./tmdblogo.svg";
 
 export default function SiteOverview() {
   return (
@@ -25,7 +17,10 @@ export default function SiteOverview() {
                     Silverscreen is a web app that provides User Interface to
                     The Movie Database API.
                   </p>
-                  <a href="#" className="block font-medium text-purple-600">
+                  <a
+                    href="https://www.themoviedb.org/"
+                    className="block font-medium text-secondary"
+                  >
                     Visit TMDB
                   </a>
                 </div>
@@ -48,8 +43,11 @@ export default function SiteOverview() {
                     TMDB provides information for over 700,00 Movies and over
                     120,000 TV Shows.
                   </p>
-                  <a href="#" className="block font-medium text-purple-600">
-                    Know more
+                  <a
+                    href="https://www.themoviedb.org/about"
+                    className="block font-medium text-secondary"
+                  >
+                    About TMDB
                   </a>
                 </div>
                 <div className="flex absolute bottom-5 right-5 lg:bottom-10 lg:right-5">
@@ -90,8 +88,11 @@ export default function SiteOverview() {
                     TMDB is used by over 400,000 developers and companies from
                     all over the world.
                   </p>
-                  <a href="#" className="block font-medium text-purple-600">
-                    Know more
+                  <a
+                    href="https://www.themoviedb.org/about"
+                    className="block font-medium text-secondary"
+                  >
+                    About TMDB
                   </a>
                 </div>
                 <div className="absolute bottom-5 lg:bottom-10 right-5 flex justify-end">

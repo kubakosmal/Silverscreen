@@ -63,7 +63,7 @@ export default function TopRatedTVmovies() {
                         className="rounded-md"
                         src={
                           constants.IMAGES_BASE_PATH +
-                          "w500" +
+                          "w342" +
                           movie.backdrop_path
                         }
                       ></img>

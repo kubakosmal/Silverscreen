@@ -3,7 +3,7 @@ import * as constants from "../../constants";
 import { useEffect, useState, useContext } from "react";
 import { LoggedContext } from "../Context/Context";
 import { Link } from "react-router-dom";
-import { ReactComponent as TmdbSvg } from "../main/SiteOverview/SilverscreenOverview/tmdblogo.svg";
+import { ReactComponent as TmdbSvg } from "../main/SiteOverview/tmdblogo.svg";
 
 export default function Login() {
   const [authToken, setAuthToken] = useState("");

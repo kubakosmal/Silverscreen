@@ -57,7 +57,7 @@ export default function Upcoming() {
                   <div className="">
                     <MoviePoster
                       posterImageUrl={
-                        constants.IMAGES_BASE_PATH + "w500" + movie.poster_path
+                        constants.IMAGES_BASE_PATH + "w342" + movie.poster_path
                       }
                       movieTitle={movie.title}
                       prodId={movie.id}

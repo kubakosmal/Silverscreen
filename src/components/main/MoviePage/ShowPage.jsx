@@ -124,7 +124,7 @@ export default function ShowPage() {
             <div className="lg:row-start-1 lg:col-start-1 lg:col-end-4 lg:row-span-2 lg:sticky lg:top-5 flex lg:block items-center justify-center">
               <MoviePagePoster
                 posterImageUrl={
-                  constants.IMAGES_BASE_PATH + "w500" + data.poster_path
+                  constants.IMAGES_BASE_PATH + "w342" + data.poster_path
                 }
               />
 
@@ -137,10 +137,10 @@ export default function ShowPage() {
               {mobileOrDesktop === "mobile" ? (
                 <MobileProductionOverview
                   backdropImageUrl={
-                    constants.IMAGES_BASE_PATH + "w500" + data.backdrop_path
+                    constants.IMAGES_BASE_PATH + "w342" + data.backdrop_path
                   }
                   posterImageUrl={
-                    constants.IMAGES_BASE_PATH + "w500" + data.poster_path
+                    constants.IMAGES_BASE_PATH + "w342" + data.poster_path
                   }
                   movieName={showName}
                   movieInformation={data}

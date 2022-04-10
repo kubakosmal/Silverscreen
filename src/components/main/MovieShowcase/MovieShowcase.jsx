@@ -32,7 +32,7 @@ export default function MovieShowcase() {
   }, []);
 
   return (
-    <div className="mx-auto max-w-4/5 lg:my-10 flex flex-wrap justify-between">
+    <div className="mx-auto max-w-4/5 my-5 lg:my-10 flex flex-wrap justify-between">
       {data.map((prod, i) => {
         if (i < numOfMovies && prod.poster_path) {
           return (
@@ -54,7 +54,7 @@ export default function MovieShowcase() {
                     <div className="relative rounded-md ">
                       <img
                         className="rounded-md hover:scale-110 transition-all duration-200"
-                        src={`${constants.IMAGES_BASE_PATH}w500${prod.poster_path}`}
+                        src={`${constants.IMAGES_BASE_PATH}w342${prod.poster_path}`}
                       ></img>
                     </div>
                   </div>

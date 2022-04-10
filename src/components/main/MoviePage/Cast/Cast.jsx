@@ -33,7 +33,7 @@ export default function Cast(props) {
                           <div className="w-20 h-20 overflow-hidden border-2 border-transparent group-hover:border-secondary transition-all duration-200 rounded-full">
                             <img
                               className="object-cover w-20 h-20  rounded-full "
-                              src={`${constants.IMAGES_BASE_PATH}w500${actor.profile_path}`}
+                              src={`${constants.IMAGES_BASE_PATH}w342${actor.profile_path}`}
                             ></img>
                           </div>
 

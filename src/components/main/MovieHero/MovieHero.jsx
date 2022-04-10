@@ -40,7 +40,7 @@ export default function MovieHero() {
         id={id}
       ></MovieBackdrop>
 
-      <div className="font-ibm inset-x-0 bottom-0 text-white font-bold drop-shadow-3xl text-lg sm:text-3xl lg:text-3xl leading-6 lg:leading-9 flex flex-col items-center -mt-32">
+      <div className="font-lato inset-x-0 bottom-0 text-white font-bold drop-shadow-3xl text-lg sm:text-3xl lg:text-3xl leading-6 lg:leading-9 flex flex-col items-center -mt-32">
         <h2 className="z-10">Discover new and trending TV Shows.</h2>
         <h2 className="z-10">Learn more about your favorite movies.</h2>
         <h2 className="z-10">Read popular users reviews.</h2>

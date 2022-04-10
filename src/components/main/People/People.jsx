@@ -38,7 +38,7 @@ export default function People() {
             if (i < 30) {
               return (
                 <PeoplePerson
-                  posterPath={`${constants.IMAGES_BASE_PATH}w500${person.profile_path}`}
+                  posterPath={`${constants.IMAGES_BASE_PATH}w342${person.profile_path}`}
                   name={person.name}
                   popularity={person.popularity}
                   id={person.id}

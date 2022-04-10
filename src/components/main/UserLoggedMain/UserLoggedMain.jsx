@@ -41,7 +41,7 @@ export default function UserLoggedMain() {
       authContext.setUserId(jsonData.id);
       authContext.setUserName(jsonData.username);
       authContext.setUserProfilePath(
-        `${constants.IMAGES_BASE_PATH}w500${jsonData.avatar.tmdb.avatar_path}`
+        `${constants.IMAGES_BASE_PATH}w342${jsonData.avatar.tmdb.avatar_path}`
       );
     };
 

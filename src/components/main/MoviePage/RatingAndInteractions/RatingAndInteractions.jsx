@@ -10,7 +10,7 @@ export default function RatingAndInteractions(props) {
   return (
     <div className="relative font-ibm drop-shadow-lg bg-slate-1000 flex flex-col items-center justify-around rounded-md">
       <div className="flex gap-x-5 lg:gap-x-0 lg:flex-col items-center p-4">
-        <p className="font-bold font-lato text-white text-md mb-2">
+        <p className="font-bold font-lato text-white text-xl lg:text-sm mb-2">
           USER SCORE
         </p>
         <div className="flex items-center ">
