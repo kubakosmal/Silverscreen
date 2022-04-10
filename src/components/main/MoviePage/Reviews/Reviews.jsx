@@ -58,7 +58,7 @@ export default function Reviews(props) {
       </div>
 
       <div className="flex items-center justify-center self-end text-secondary mt-2 mb-2">
-        <Link to={`/reviews/${props.movieId}`}>
+        <Link to={`/reviews/${props.prodId}/${props.type}`}>
           <button className=" font-bold font-lato  py-1 px-2 rounded-md hover:underline">
             Show all reviews
           </button>

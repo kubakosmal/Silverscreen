@@ -208,7 +208,7 @@ export default function RankingsInterface({
             </label>
           </div>
         </div>
-        <div className="lg:mt-5">
+        <div className="mt-5">
           <p className="text-lg font-lato font-bold border-b-2 border-neutral-800 text-gray-300">
             Order
           </p>

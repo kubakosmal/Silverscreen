@@ -1,18 +1,17 @@
 export default function MobileSearchBar(props) {
   return (
-    <div className="relative">
-      <div className="absolute rounded-full bg-gradient-to-tr from-pink-600 to-purple-600 inset-0 blur-sm"></div>
+    <div className="absolute top-2 right-12">
       <div
-        className="relative rounded-xl p-1 px-2 flex items-center bg-neutral-900"
+        className="relative rounded-xl p-1 px-2 flex items-center bg-transparent border-2 border-slate-1100 bg-gradient-to-tr from-crayola to-pink-600"
         onClick={props.openModal}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5 text-gray-400"
+          className="h-4 w-4 text-slate-1100"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
-          strokeWidth="2"
+          strokeWidth="4"
         >
           <path
             strokeLinecap="round"

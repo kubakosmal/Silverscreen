@@ -6,9 +6,7 @@ export default function DesktopProductionOverview(props) {
         {props.releaseDate.slice(0, 4)}
       </h3>
       <div className="flex font-lato text-lg">
-        <h3 className="mx-1">
-          {props.type == "movie" ? "Directed" : "Created"} by
-        </h3>
+        <h3 className="mx-1">Directed by</h3>
         <p className="text-secondary font-bold">
           {props.directors.map((director, i) => {
             if (i + 1 === props.directors.length) {

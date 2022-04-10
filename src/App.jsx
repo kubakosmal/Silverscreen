@@ -1,8 +1,8 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Header from "./components/header/Header.jsx";
 import Main from "./components/main/Main.jsx";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import { useLocation } from "react-router-dom";
 import { ModalContext } from "./components/Context/Context.jsx";
 
 // Import Swiper styles
@@ -10,11 +10,16 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-const App = () => {
+export default function App() {
   const modalContext = useContext(ModalContext);
   const isModalOpen = modalContext.isModalOpen;
+  const location = useLocation();
   console.log("IS MODAL OPEN?");
   console.log(modalContext.isModalOpen);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   const [isUserLogged, setIsUserLogged] = useState(false);
   const [sessionId, setSessionId] = useState("");
@@ -32,6 +37,4 @@ const App = () => {
       </div>
     </div>
   );
-};
-
-export default App;
+}

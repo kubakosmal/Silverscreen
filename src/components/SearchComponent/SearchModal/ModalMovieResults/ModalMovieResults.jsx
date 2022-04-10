@@ -2,7 +2,7 @@ import MoviePoster from "../../../main/Collections/PopularMoviesList/MoviePoster
 import * as constants from "../../../../constants";
 import { useEffect, useState } from "react";
 import ModalNoResults from "./ModalNoResults";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function ModalMovieResults(props) {
   const [moviesData, setMoviesData] = useState([]);
@@ -30,11 +30,18 @@ export default function ModalMovieResults(props) {
       ) : (
         <div className="flex flex-col items-center my-4 font-lato">
           <div className="flex flex-col text-left border-secondary w-full">
-            <h3 className="text-2xl font-bold">
-              {moviesData.length < 1 ? false : "Movies"}
-            </h3>
+            <div className="flex items-center">
+              <h3 className="text-md font-bold whitespace-nowrap text-secondary">
+                {moviesData.length < 1 ? false : "MOVIES"}
+              </h3>
+              <div className="ml-2 w-full h-1 bg-secondary rounded-full"></div>
+            </div>
 
-            <div className="flex w-full flex-wrap">
+            <div
+              className={`flex w-full flex-wrap gap-y-4 mt-2 ${
+                moviesData.length >= 6 ? "justify-between" : "gap-4"
+              }`}
+            >
               {moviesData.map((movie, i) => {
                 if (i < 6) {
                   if (!movie.poster_path) {
@@ -42,22 +49,28 @@ export default function ModalMovieResults(props) {
                   } else {
                     return (
                       <div
-                        className="w-28 lg:w-32"
+                        className="w-[6.5rem] lg:w-28"
                         key={movie.id.toString()}
                         onClick={props.closeModal}
                       >
-                        <MoviePoster
-                          posterImageUrl={
-                            constants.IMAGES_BASE_PATH +
-                            "w500" +
-                            movie.poster_path
-                          }
-                          movieTitle={movie.title}
-                          movieId={movie.id}
-                          key={movie.id}
-                          type={"movies"}
-                          origin={"modal"}
-                        />
+                        <Link to={`/movies/${movie.id}`}>
+                          <div
+                            className="w-[6.5rem] lg:w-28 overflow-hidden rounded-md border-2 border-neutral-700 transition-all duration-200 hover:border-secondary"
+                            key={movie.id.toString()}
+                          >
+                            <img
+                              className="rounded-md hover:scale-110 transition-all duration-200"
+                              src={
+                                constants.IMAGES_BASE_PATH +
+                                "w500" +
+                                movie.poster_path
+                              }
+                            />
+                          </div>
+                        </Link>
+                        <p className="font-bold text-sm truncate lg:text-md text-gray-100 mt-1">
+                          {movie.title}
+                        </p>
                       </div>
                     );
                   }
@@ -65,11 +78,11 @@ export default function ModalMovieResults(props) {
               })}
             </div>
 
-            <div className=" text-sm">
+            {/*  <div className=" text-sm">
               <Link to={`/results/${props.searchValue}`}>
                 <button className="border m-2 px-4 py-1">Show more</button>
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       )}

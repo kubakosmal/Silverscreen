@@ -100,7 +100,7 @@ export default function RankingsProduction(props) {
   }, [props, revenue]);
 
   return (
-    <Link to={`/movies/${props.id}`}>
+    <Link to={`/${props.type}/${props.id}`}>
       <motion.div
         animate={{ opacity: [0, 1], scale: [0.8, 1] }}
         transition={{
@@ -109,26 +109,30 @@ export default function RankingsProduction(props) {
           delay: props.place * 0.04,
         }}
       >
-        <div className="relative rounded-lg mb-6 w-28 lg:w-40 cursor-pointer border-2 border-neutral-500">
-          <div className="bg-black absolute inset-0 blur-sm rounded-md"></div>
-          <div className="relative bg-neutral-900 flex flex-col outline-2 border-neutral-800 rounded-md">
-            <img className="rounded-md" src={props.posterPath}></img>
+        <div className="relative">
+          <div className="relative rounded-lg mb-6 w-28 lg:w-40 cursor-pointer border-2 hover:border-secondary transition-all duration-200 overflow-hidden border-neutral-500">
+            <div className="bg-black absolute inset-0 blur-sm rounded-md"></div>
+            <div className="relative bg-neutral-900 flex flex-col outline-2 border-neutral-800 rounded-md">
+              <img
+                className="rounded-md hover:scale-110 transition-all duration-200"
+                src={props.posterPath}
+              ></img>
 
-            <motion.div
-              animate={{ opacity: [0, 1] }}
-              transition={{ ease: "linear", duration: 0.5, delay: 0.8 }}
-            >
-              <div className="flex justify-between mx-1 font-lato">
-                {/* <div className="absolute -top-0 -left-0 bg-black rounded-md  border-neutral-700">
+              <motion.div
+                animate={{ opacity: [0, 1] }}
+                transition={{ ease: "linear", duration: 0.5, delay: 0.8 }}
+              >
+                <div className="flex justify-between mx-1 font-lato">
+                  {/* <div className="absolute -top-0 -left-0 bg-black rounded-md  border-neutral-700">
                   <p className="font-bold text-sm">{props.place}</p>
                 </div> */}
-
-                <div className="absolute bg-opacity-70 justify-center -bottom-3 right-0 bg-black px-2 text-xs rounded-lg p-1 flex items-center">
-                  {rankingIconElement}
-                  {rankingValueElement}
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
+          </div>
+          <div className="absolute bg-opacity-70 justify-center -bottom-3 right-0 bg-black px-2 text-xs rounded-lg p-1 flex items-center">
+            {rankingIconElement}
+            {rankingValueElement}
           </div>
         </div>
       </motion.div>

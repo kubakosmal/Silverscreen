@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import * as constants from "../../../constants";
 import MobileProductionOverview from "./MobileProductionOverview/MobileProductionOverview";
 import DesktopProductionOverview from "./DesktopProductionOverview/DesktopProductionOverview";
@@ -23,7 +23,8 @@ import Collection from "./Collection/Collection";
 
 const MoviePage = () => {
   const params = useParams();
-  const movieId = params.movieId;
+  const prodId = params.prodId;
+  const location = useLocation();
 
   const [screenSize, setScreenSize] = useState(window.innerWidth);
   const mobileOrDesktop = screenSize >= 768 ? "desktop" : "mobile";
@@ -55,6 +56,10 @@ const MoviePage = () => {
   const [posterPath, setPosterPath] = useState("");
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  useEffect(() => {
     window.addEventListener("resize", () => {
       setScreenSize(window.innerWidth);
     });
@@ -63,7 +68,7 @@ const MoviePage = () => {
   useEffect(() => {
     const fetchData = async () => {
       const movieData = await fetch(
-        `${constants.TMDB_BASE_PATH}/movie/${movieId}?api_key=${constants.API_KEY}`
+        `${constants.TMDB_BASE_PATH}/movie/${prodId}?api_key=${constants.API_KEY}`
       );
       const jsonData = await movieData.json();
       setData(jsonData);
@@ -89,7 +94,7 @@ const MoviePage = () => {
 
     const fetchImagesUrls = async () => {
       const fetchedUrls = await fetch(
-        `${constants.TMDB_BASE_PATH}/movie/${movieId}/images?api_key=${constants.API_KEY}`
+        `${constants.TMDB_BASE_PATH}/movie/${prodId}/images?api_key=${constants.API_KEY}`
       );
       const jsonUrls = await fetchedUrls.json();
       setImagesUrls(jsonUrls.backdrops);
@@ -97,7 +102,7 @@ const MoviePage = () => {
 
     const fetchCrew = async () => {
       const getCrew = await fetch(
-        `${constants.TMDB_BASE_PATH}/movie/${movieId}/credits?api_key=${constants.API_KEY}`
+        `${constants.TMDB_BASE_PATH}/movie/${prodId}/credits?api_key=${constants.API_KEY}`
       );
       const jsonCrew = await getCrew.json();
       setCrew(jsonCrew);
@@ -128,7 +133,7 @@ const MoviePage = () => {
 
     const fetchReviews = async () => {
       const getReviews = await fetch(
-        `${constants.TMDB_BASE_PATH}/movie/${movieId}/reviews?api_key=${constants.API_KEY}`
+        `${constants.TMDB_BASE_PATH}/movie/${prodId}/reviews?api_key=${constants.API_KEY}`
       );
 
       const jsonData = await getReviews.json();
@@ -137,7 +142,7 @@ const MoviePage = () => {
 
     const fetchRecommendations = async () => {
       const data = await fetch(
-        `${constants.TMDB_BASE_PATH}movie/${movieId}/recommendations?api_key=${constants.API_KEY}`
+        `${constants.TMDB_BASE_PATH}movie/${prodId}/recommendations?api_key=${constants.API_KEY}`
       );
 
       const jsonData = await data.json();
@@ -150,7 +155,7 @@ const MoviePage = () => {
     fetchData();
     fetchImagesUrls();
     fetchCrew();
-  }, [movieId]);
+  }, [prodId]);
 
   return (
     <div className="">
@@ -223,12 +228,12 @@ const MoviePage = () => {
                     <RatingAndInteractions
                       rating={rating}
                       type={"movies"}
-                      prodId={movieId}
+                      prodId={prodId}
                     />
-                    <Indicators type="movies" prodId={movieId} />
+                    <Indicators type="movies" prodId={prodId} />
                   </div>
 
-                  {/* <Indicators type="movies" prodId={movieId}></Indicators> */}
+                  {/* <Indicators type="movies" prodId={prodId}></Indicators> */}
                 </div>
               </div>
             </div>
@@ -284,12 +289,12 @@ const MoviePage = () => {
             {/* <MovieImages imagesUrls={imagesUrls} /> */}
 
             <div className="lg:col-start-4 lg:col-end-12  lg:row-start-4 lg:row-end-5">
-              <Cast actors={actors} prodId={movieId} type="movie"></Cast>
+              <Cast actors={actors} prodId={prodId} type="movie"></Cast>
             </div>
 
             {reviews.length > 0 ? (
               <div className="lg:col-start-4 lg:col-end-12  lg:row-start-5 lg:row-end-6">
-                <Reviews reviews={reviews} movieId={movieId} />
+                <Reviews reviews={reviews} prodId={prodId} type="movie" />
               </div>
             ) : (
               false

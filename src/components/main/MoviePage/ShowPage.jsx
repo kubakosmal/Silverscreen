@@ -1,6 +1,6 @@
 import Header from "../../header/Header";
 import * as constants from "../../../constants";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import { LoggedContext } from "../../Context/Context";
 import { useContext, useEffect, useState } from "react";
 import MoviePagePoster from "./MoviePagePoster.jsx/MoviePagePoster";
@@ -19,7 +19,8 @@ import Recommendations from "./Reccomendations/Recommendations";
 
 export default function ShowPage() {
   const params = useParams();
-  const showId = params.showId;
+  const prodId = params.prodId;
+  const location = useLocation();
 
   const [screenSize, setScreenSize] = useState(window.innerWidth);
   const mobileOrDesktop = screenSize >= 768 ? "desktop" : "mobile";
@@ -49,6 +50,10 @@ export default function ShowPage() {
   const [recommendations, setRecommendations] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  useEffect(() => {
     window.addEventListener("resize", () => {
       setScreenSize(window.innerWidth);
     });
@@ -57,7 +62,7 @@ export default function ShowPage() {
   useEffect(() => {
     const fetchShowData = async () => {
       const data = await fetch(
-        `${constants.TMDB_BASE_PATH}tv/${showId}?api_key=${constants.API_KEY}`
+        `${constants.TMDB_BASE_PATH}tv/${prodId}?api_key=${constants.API_KEY}`
       );
       const jsonData = await data.json();
       console.log(jsonData);
@@ -85,16 +90,26 @@ export default function ShowPage() {
 
     const fetchActors = async () => {
       const data = await fetch(
-        `${constants.TMDB_BASE_PATH}tv/${showId}/credits?api_key=${constants.API_KEY}`
+        `${constants.TMDB_BASE_PATH}tv/${prodId}/credits?api_key=${constants.API_KEY}`
       );
       const jsonData = await data.json();
 
       setActors(jsonData.cast);
     };
 
+    const fetchReviews = async () => {
+      const getReviews = await fetch(
+        `${constants.TMDB_BASE_PATH}/tv/${prodId}/reviews?api_key=${constants.API_KEY}`
+      );
+
+      const jsonData = await getReviews.json();
+      setReviews(jsonData.results);
+    };
+
+    fetchReviews();
     fetchActors();
     fetchShowData();
-  }, [showId]);
+  }, [prodId]);
   return (
     <div>
       <Header></Header>
@@ -114,7 +129,7 @@ export default function ShowPage() {
               />
 
               <div className="mt-5 hidden lg:block">
-                <Providers id={showId} type="tv" />
+                <Providers id={prodId} type="tv" />
               </div>
             </div>
 
@@ -162,12 +177,12 @@ export default function ShowPage() {
                     <RatingAndInteractions
                       rating={rating}
                       type={"tv"}
-                      prodId={showId}
+                      prodId={prodId}
                     />
-                    <Indicators type="tv" prodId={showId} />
+                    <Indicators type="tv" prodId={prodId} />
                   </div>
 
-                  {/* <Indicators type="movies" prodId={movieId}></Indicators> */}
+                  {/* <Indicators type="movies" prodId={prodId}></Indicators> */}
                 </div>
               </div>
             </div>
@@ -222,12 +237,12 @@ export default function ShowPage() {
             </div>
 
             <div className="lg:col-start-4 lg:col-end-12  lg:row-start-4 lg:row-end-5">
-              <Cast actors={actors}></Cast>
+              <Cast actors={actors} type="tv" prodId={prodId}></Cast>
             </div>
 
             {reviews.length > 0 ? (
               <div className="lg:col-start-4 lg:col-end-12  lg:row-start-5 lg:row-end-6">
-                <Reviews reviews={reviews} movieId={showId} />
+                <Reviews reviews={reviews} prodId={prodId} type="tv" />
               </div>
             ) : (
               false

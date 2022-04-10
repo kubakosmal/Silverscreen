@@ -7,11 +7,6 @@ export default function SearchComponent(props) {
   const mobile = props.mobile;
   const [isModalActive, setIsModalActive] = useState(false);
 
-  useEffect(() => {
-    console.log("IS MODAL ACTIVE????");
-    console.log(isModalActive);
-  }, [isModalActive]);
-
   return (
     <div className="">
       {isModalActive ? (

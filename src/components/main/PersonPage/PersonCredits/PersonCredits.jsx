@@ -65,7 +65,7 @@ export default function PersonCredits(props) {
       <div className="mb-10">
         <div className="flex items-center">
           <h3 className="font-bold font-lato text-secondary whitespace-nowrap mb-1">
-            BEST KNOWN FOR
+            KNOWN FOR
           </h3>
           <div className="h-1 w-full rounded-full bg-secondary ml-2"></div>
         </div>
@@ -76,7 +76,7 @@ export default function PersonCredits(props) {
               return (
                 <MoviePoster
                   type={"movies"}
-                  movieId={prod.id}
+                  prodId={prod.id}
                   posterImageUrl={`${constants.IMAGES_BASE_PATH}w500${prod.poster_path}`}
                 />
               );

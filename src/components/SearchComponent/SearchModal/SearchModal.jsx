@@ -21,7 +21,7 @@ export default function SearchModal(props) {
   });
 
   return reactDom.createPortal(
-    <div className=" absolute w-full h-100 text-white inset-0 bg-neutral-900 z-50 font-lato">
+    <div className="absolute w-full overflow-auto text-white inset-0 bg-neutral-900 z-50 font-lato">
       <div className="mt-5">
         <div className="m-3 max-w-3xl mx-4 lg:mx-auto">
           <div className="flex justify-between items-center text-white">
@@ -46,6 +46,7 @@ export default function SearchModal(props) {
 
           <div className="mt-4 text-4xl lg:text-5xl">
             <input
+              autoFocus={true}
               onChange={(e) => setSearchValue(e.target.value)}
               type="text"
               placeholder="Search"
@@ -61,7 +62,7 @@ export default function SearchModal(props) {
                 closeModal={props.closeModal}
                 searchValue={searchValue}
               />
-              <div className="flex flex-wrap">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <ModalShowsResults
                   closeModal={props.closeModal}
                   searchValue={searchValue}

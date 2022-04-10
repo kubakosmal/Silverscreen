@@ -2,7 +2,6 @@ import Header from "../../header/Header";
 import { LoggedContext } from "../../Context/Context";
 import { useContext, useEffect, useState } from "react";
 import * as constants from "../../../constants";
-import Atropos from "atropos/react";
 import { Link } from "react-router-dom";
 import UserInfo from "./UserInfo/UserInfo";
 import ProductionDescription from "../MoviePage/ProductionDescription/ProductionDescription";

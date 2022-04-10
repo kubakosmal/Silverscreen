@@ -66,7 +66,7 @@ const PopularMoviesList = () => {
                       constants.IMAGES_BASE_PATH + "w500" + movie.poster_path
                     }
                     movieTitle={movie.title}
-                    movieId={movie.id}
+                    prodId={movie.id}
                     key={movie.id}
                     type={"movies"}
                   />

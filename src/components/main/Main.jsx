@@ -6,25 +6,16 @@ import SiteOverview from "./SiteOverview/SiteOverview";
 import MovieShowcase from "./MovieShowcase/MovieShowcase";
 import Collections from "./Collections/Collections";
 import { LoggedContext } from "../Context/Context";
-import { useContext } from "react";
-
-/* class Main extends React.Component {
-  render() {
-    return (
-      <div className="mx-auto mb-10 text-primary">
-        <MovieHero></MovieHero>
-        <div className="max-w-4/5 mx-auto">
-          <MovieShowcase />
-          <SiteOverview />
-          <Collections />
-        </div>
-      </div>
-    );
-  }
-} */
+import { useContext, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function Main() {
   const authContext = useContext(LoggedContext);
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
   return (
     <div className="mx-auto mb-10 text-primary">
       {authContext.isLogged ? <MovieHeroLogged /> : <MovieHero />}

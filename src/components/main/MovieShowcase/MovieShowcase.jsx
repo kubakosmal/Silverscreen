@@ -49,11 +49,11 @@ export default function MovieShowcase() {
                     delay: i * 0.3,
                   }}
                 >
-                  <div className="relative my-3 w-28 lg:w-40 cursor-pointer rounded-md">
-                    <div className="absolute bg-black inset-0 blur rounded-lg"></div>
-                    <div className="relative rounded-md border-2 border-neutral-800">
+                  <div className="relative my-3 w-28 lg:w-40 cursor-pointer rounded-md overflow-clip border-2 border-neutral-700 hover:border-secondary transition-all duration-200">
+                    <div className="absolute bg-black inset-0 blur rounded-lg "></div>
+                    <div className="relative rounded-md ">
                       <img
-                        className="rounded-md"
+                        className="rounded-md hover:scale-110 transition-all duration-200"
                         src={`${constants.IMAGES_BASE_PATH}w500${prod.poster_path}`}
                       ></img>
                     </div>

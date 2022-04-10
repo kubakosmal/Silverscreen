@@ -10,6 +10,8 @@ export default function FullCast(props) {
   const prodId = useParams().prodId;
   console.log(prodId);
   const type = useLocation().pathname.split("/")[3];
+  console.log("HERES TYPE");
+  console.log(type);
   const [productionData, setProductionData] = useState([]);
   const [actors, setActors] = useState([]);
 
@@ -76,17 +78,17 @@ export default function FullCast(props) {
             </h3>
           </div>
         </Link>
-        <div className="flex flex-wrap gap-5 justify-between font-lato my-5">
+        <div className="flex flex-wrap justify-evenly gap-5 font-lato my-5">
           {actors.map((actor) => {
             if (actor.profile_path) {
               return (
                 <Link to={`/person/${actor.id}`}>
-                  <div className="w-24 lg:w-40 bg-neutral-900">
+                  <div className="w-24 lg:w-40">
                     <div className="relative">
                       <div className="bg-black absolute inset-0 blur-sm rounded-md"></div>
-                      <div className="relative border-2 rounded-md border-neutral-700">
+                      <div className="relative w-24 lg:w-40 bg-neutral-900 overflow-hidden border-2 hover:border-secondary transition-all duration-200 rounded-md border-neutral-700">
                         <img
-                          className=" rounded-md"
+                          className="rounded-md hover:scale-110 transition-all duration-200"
                           src={`${constants.IMAGES_BASE_PATH}w500${actor.profile_path}`}
                         ></img>
                       </div>

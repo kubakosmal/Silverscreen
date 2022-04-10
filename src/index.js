@@ -66,7 +66,7 @@ const Index = () => {
             <Route path="/" element={<App />}></Route>
             <Route path="/movies">
               <Route
-                path=":movieId"
+                path=":prodId"
                 element={<MoviePage key={window.location.pathname} />}
               ></Route>
             </Route>
@@ -77,14 +77,14 @@ const Index = () => {
               <Route path=":prodId/tv" element={<FullCast />}></Route>
             </Route>
             <Route path="/tvshows">
-              <Route path=":showId" element={<ShowPage />}></Route>
+              <Route path=":prodId" element={<ShowPage />}></Route>
             </Route>
             <Route path="/reviews">
               <Route
-                exact
-                path=":reviewMovieId"
+                path=":reviewProdId/movie"
                 element={<AllReviews />}
               ></Route>
+              <Route path=":reviewProdId/tv" element={<AllReviews />}></Route>
             </Route>
             <Route path="/person">
               <Route path=":personId" element={<PersonPage />}></Route>

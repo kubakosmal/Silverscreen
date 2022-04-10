@@ -115,6 +115,8 @@ export default function Shows() {
                         popularity={prod.popularity}
                         posterPath={`${constants.IMAGES_BASE_PATH}w500${prod.poster_path}`}
                         rankingType={currentSelectedList}
+                        type="tvshows"
+                        id={prod.id}
                       />
                     </div>
                   );

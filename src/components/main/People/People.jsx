@@ -9,10 +9,16 @@ export default function People() {
   useEffect(() => {
     const fetchPeople = async () => {
       const data = await fetch(
-        `${constants.TMDB_BASE_PATH}person/popular?api_key=${constants.API_KEY}`
+        `${constants.TMDB_BASE_PATH}person/popular?api_key=${constants.API_KEY}&page=1`
       );
       const jsonData = await data.json();
-      setPopularPeople(jsonData.results);
+
+      const data2 = await fetch(
+        `${constants.TMDB_BASE_PATH}person/popular?api_key=${constants.API_KEY}&page=2`
+      );
+      const jsonData2 = await data2.json();
+
+      setPopularPeople(jsonData.results.concat(jsonData2.results));
     };
 
     fetchPeople();
@@ -28,15 +34,17 @@ export default function People() {
           <div className="w-full h-2 ml-2 bg-crayola rounded-full"></div>
         </div>
         <div className="flex flex-wrap gap-5 lg:gap-7 justify-between">
-          {popularPeople.map((person) => {
-            return (
-              <PeoplePerson
-                posterPath={`${constants.IMAGES_BASE_PATH}w500${person.profile_path}`}
-                name={person.name}
-                popularity={person.popularity}
-                id={person.id}
-              />
-            );
+          {popularPeople.map((person, i) => {
+            if (i < 30) {
+              return (
+                <PeoplePerson
+                  posterPath={`${constants.IMAGES_BASE_PATH}w500${person.profile_path}`}
+                  name={person.name}
+                  popularity={person.popularity}
+                  id={person.id}
+                />
+              );
+            }
           })}
         </div>
       </div>
