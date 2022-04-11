@@ -51,7 +51,7 @@ export default function WholeCollection() {
             </h3>
           </div>
         </Link>
-        <div className="flex gap-5 my-5">
+        <div className="flex gap-5 my-5 flex-wrap">
           {collectionData?.parts?.map((prod) => {
             return (
               <Link to={`/movies/${prod.id}`}>

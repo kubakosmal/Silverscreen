@@ -4,7 +4,6 @@ import * as constants from "../../../constants";
 import MobileProductionOverview from "./MobileProductionOverview/MobileProductionOverview";
 import DesktopProductionOverview from "./DesktopProductionOverview/DesktopProductionOverview";
 import ProductionDescription from "./ProductionDescription/ProductionDescription";
-import MovieImages from "./MovieImages/MovieImages";
 import MovieBackdrop from "./MovieBackdrop/MovieBackdrop";
 import Header from "../../header/Header";
 import Cast from "./Cast/Cast";
@@ -13,10 +12,7 @@ import ProductionDetails from "./ProductionDetails/ProductionDetails";
 import MoviePagePoster from "./MoviePagePoster.jsx/MoviePagePoster";
 import Recommendations from "./Reccomendations/Recommendations";
 import Indicators from "./Indicators/Indicators.jsx";
-import Score from "./Score/Score";
 import RatingAndInteractions from "./RatingAndInteractions/RatingAndInteractions";
-import Genres from "./Genres/Genres";
-import Keywords from "./Keywords/Keywords";
 import Providers from "./Providers/Providers";
 import { LoggedContext } from "../../Context/Context";
 import Collection from "./Collection/Collection";
@@ -35,7 +31,7 @@ const MoviePage = () => {
   const [imagesUrls, setImagesUrls] = useState(["url"]);
   const [crew, setCrew] = useState([]);
   const [directors, setDirectors] = useState(["director"]);
-  const [overview, setOverview] = useState("overview");
+  const [overview, setOverview] = useState("");
   const [popularity, setPopularity] = useState("popularity");
   const [rating, setRating] = useState("rating");
   const [runtime, setRuntime] = useState("runtime");
@@ -87,7 +83,9 @@ const MoviePage = () => {
       setId(jsonData.id);
       setCollection(jsonData.belongs_to_collection);
       setBackdropPath(
-        constants.IMAGES_BASE_PATH + "original" + jsonData.backdrop_path
+        jsonData.backdrop_path
+          ? constants.IMAGES_BASE_PATH + "original" + jsonData.backdrop_path
+          : false
       );
       setPosterPath(constants.IMAGES_BASE_PATH + "w500" + jsonData.poster_path);
     };
@@ -159,11 +157,20 @@ const MoviePage = () => {
 
   return (
     <div className="overflow-hidden">
-      <Header></Header>
+      <Header noBackdrop={backdropPath ? false : true}></Header>
       <div className="">
-        <MovieBackdrop opacity={1} backdropImageUrl={backdropPath} />
+        {backdropPath ? (
+          <MovieBackdrop opacity={1} backdropImageUrl={backdropPath} />
+        ) : (
+          false
+        )}
+
         <div className="relative">
-          <div className="relative max-w-4/5 mx-4 gap-y-5 gap-x-12 mb-10 -mt-12 grid grid-cols-1 lg:grid-cols-11 lg:mx-auto lg:grid-rows-[auto_auto]">
+          <div
+            className={`relative max-w-4/5 mx-4 gap-y-5 gap-x-12 mb-10 ${
+              backdropPath ? "-mt-12" : "mt-10"
+            } grid grid-cols-1 lg:grid-cols-11 lg:mx-auto lg:grid-rows-[auto_auto]`}
+          >
             <div className="lg:row-start-1 lg:col-start-1 lg:col-end-4 lg:row-span-2 lg:sticky lg:top-5 flex lg:block items-center justify-center">
               <MoviePagePoster posterImageUrl={posterPath} />
               <div className="hidden lg:block"></div>
@@ -239,28 +246,32 @@ const MoviePage = () => {
             </div>
 
             <div className="lg:col-start-4  lg:col-end-9 lg:row-start-2 lg:row-end-3 flex flex-col gap-10">
-              <div>
-                <div className="flex items-center mb-2">
-                  <h3 className="text-secondary text-md font-bold font-lato">
-                    OVERVIEW
-                  </h3>
-                  <div className="w-full h-1 ml-2 bg-secondary rounded-full"></div>
-                </div>
+              {overview ? (
+                <div>
+                  <div className="flex items-center mb-2">
+                    <h3 className="text-secondary text-md font-bold font-lato">
+                      OVERVIEW
+                    </h3>
+                    <div className="w-full h-1 ml-2 bg-secondary rounded-full"></div>
+                  </div>
 
-                <div className="relative bg-neutral-900 rounded-lg">
-                  <div className="absolute bg-black inset-0 blur-sm rounded-lg"></div>
                   <div className="relative bg-neutral-900 rounded-lg">
-                    <div className="rounded-lg">
-                      <div className="p-5 rounded-lg bg-neutral-900">
-                        <ProductionDescription
-                          overview={overview}
-                          tagline={tagline}
-                        />
+                    <div className="absolute bg-black inset-0 blur-sm rounded-lg"></div>
+                    <div className="relative bg-neutral-900 rounded-lg">
+                      <div className="rounded-lg">
+                        <div className="p-5 rounded-lg bg-neutral-900">
+                          <ProductionDescription
+                            overview={overview}
+                            tagline={tagline}
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                false
+              )}
 
               <div>
                 <div className="flex items-center mb-2">

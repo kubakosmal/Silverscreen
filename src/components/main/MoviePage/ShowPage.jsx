@@ -11,7 +11,6 @@ import DesktopProductionOverview from "./DesktopProductionOverview/DesktopProduc
 import MobileProductionOverview from "./MobileProductionOverview/MobileProductionOverview";
 import RatingAndInteractions from "./RatingAndInteractions/RatingAndInteractions";
 import ProductionDescription from "./ProductionDescription/ProductionDescription";
-import Keywords from "./Keywords/Keywords";
 import ShowDetails from "./ShowDetails/ShowDetails";
 import Cast from "./Cast/Cast";
 import Reviews from "./Reviews/Reviews";

@@ -42,7 +42,7 @@ export default function Login() {
                 <div className="absolute inset-0 rounded-lg bg-black blur-sm"></div>
 
                 <a
-                  href={`https://www.themoviedb.org/authenticate/${authToken}?redirect_to=http://localhost:3000/logged`}
+                  href={`https://www.themoviedb.org/authenticate/${authToken}?redirect_to=http://silverscreen.jkosmal.com/logged`}
                   className="relative text-sm font-bold font-lato p-2 px-4 rounded-lg bg-blue-600 text-white hover:border-white border border-transparent transition-all duration-200"
                 >
                   LOG IN WITH TMDB
