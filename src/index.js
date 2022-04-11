@@ -15,6 +15,7 @@ import { LoggedContext, ModalContext } from "./components/Context/Context";
 import UserPage from "./components/main/UserPage/UserPage";
 import ShowPage from "./components/main/MoviePage/ShowPage";
 import FullCast from "./components/main/MoviePage/FullCast/FullCast";
+import WholeCollection from "./components/main/MoviePage/WholeCollection/WholeCollection";
 
 const Index = () => {
   const [sessionId, setSessionId] = useState("id here");
@@ -72,6 +73,12 @@ const Index = () => {
             </Route>
             <Route path="/cast">
               <Route path=":prodId/movie" element={<FullCast />}></Route>
+            </Route>
+            <Route path="/collection">
+              <Route
+                path=":collectionId/:prodId"
+                element={<WholeCollection />}
+              ></Route>
             </Route>
             <Route path="/cast">
               <Route path=":prodId/tv" element={<FullCast />}></Route>

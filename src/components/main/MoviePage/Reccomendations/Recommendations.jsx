@@ -13,7 +13,11 @@ export default function Recommendations(props) {
         <div className="w-full h-1 ml-2 rounded-full bg-secondary"></div>
       </div>
 
-      <div className="py-2 relative flex justify-around flex-wrap gap-y-4  bg-neutral-900 rounded-lg">
+      <div
+        className={`py-2 relative flex ${
+          props.productions.length >= 4 ? "justify-between" : "gap-4"
+        } flex-wrap gap-y-4  bg-neutral-900 rounded-lg`}
+      >
         {props.productions.map((prod, i) => {
           if (prod.poster_path && i < 4) {
             return (

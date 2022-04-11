@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import * as constants from "../../../../constants";
+import { Link } from "react-router-dom";
 
-export default function Collection({ backdropPath, title, id }) {
+export default function Collection({ backdropPath, title, id, prodId }) {
   const [collectionDetails, setCollectionDetails] = useState({});
   const [productions, setProductions] = useState([]);
 
@@ -19,7 +20,7 @@ export default function Collection({ backdropPath, title, id }) {
     fetchDetails();
   }, []);
   return (
-    <div className="mb-5 lg:mb-10">
+    <div className="mb-5 lg:mb-10 flex flex-col">
       <div className="flex items-center mb-2">
         <h3 className="text-secondary text-md font-bold font-lato whitespace-nowrap">
           BELONGS TO
@@ -29,22 +30,27 @@ export default function Collection({ backdropPath, title, id }) {
       <div className="relative">
         <div className="absolute inset-0 bg-black rounded-lg blur-sm"></div>
         <div className="relative">
-          <div className="absolute bg-gradient-to-tr from-blue-900 to-black inset-0 rounded-lg"></div>
+          <div className="absolute bg-gradient-to-tr from-neutral to-black inset-0 rounded-lg"></div>
           <img
-            className="w-full h-40 lg:h-64 object-cover rounded-lg opacity-50"
+            className="w-full h-40 lg:h-64 object-cover rounded-lg opacity-40"
             src={backdropPath}
           />
-          <div className="absolute inset-x-0 top-0 left-0 z-30">
-            <h3 className="text-white text-xl lg:text-3xl p-2 font-bold font-lato drop-shadow-2xl">
+          <div className="absolute inset-x-0 bottom-0 lg:bottom-5 z-30">
+            <h3 className="text-crayola text-xl lg:text-4xl px-6 font-bold font-lato drop-shadow-2xl">
               {title}
             </h3>
-            <div className="mt-2 p-2 text-white font-bold flex flex-wrap items-center">
-              <h4 className="text-lg">Includes</h4>
+            <div className="mt-2 px-6 py-3 text-white font-bold flex flex-wrap items-center">
+              <h4 className="text-sm lg:text-xl text-crayola">
+                Includes:&nbsp;
+              </h4>
               {productions.map((prod, i) => {
                 if (i < 3) {
                   return (
                     <div>
-                      <p className="text-lg">{prod.title},&nbsp;</p>
+                      <p className="text-sm lg:text-lg">
+                        {prod.title}
+                        {i == 2 ? false : ","}&nbsp;
+                      </p>
                     </div>
                   );
                 }
@@ -52,6 +58,13 @@ export default function Collection({ backdropPath, title, id }) {
             </div>
           </div>
         </div>
+      </div>
+      <div className="flex items-center justify-center self-end text-secondary mt-2 mb-2">
+        <Link to={`/collection/${id}/${prodId}`}>
+          <button className=" font-bold font-lato  py-1 px-2 rounded-md hover:underline">
+            Show collection
+          </button>
+        </Link>
       </div>
     </div>
   );

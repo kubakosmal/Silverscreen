@@ -306,6 +306,7 @@ const MoviePage = () => {
                   backdropPath={`${constants.IMAGES_BASE_PATH}original${collection.backdrop_path}`}
                   title={collection.name}
                   id={collection.id}
+                  prodId={prodId}
                 />
               </div>
             ) : (
