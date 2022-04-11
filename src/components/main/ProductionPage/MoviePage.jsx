@@ -174,18 +174,6 @@ const MoviePage = () => {
             <div className="lg:row-start-1 lg:col-start-1 lg:col-end-4 lg:row-span-2 lg:sticky lg:top-5 flex lg:block items-center justify-center">
               <MoviePagePoster posterImageUrl={posterPath} />
               <div className="hidden lg:block"></div>
-
-              {/* <div>
-                <ProductionDetails
-                  genres={genres}
-                  originalTitle={originalTitle}
-                  originalLanguage={originalLanguage}
-                  revenue={revenue}
-                  releaseDate={releaseDate}
-                  budget={budget}
-                ></ProductionDetails>
-              </div> */}
-
               <div className="mt-5 hidden lg:block">
                 <Providers type="movie" id={id} />
               </div>
@@ -239,8 +227,6 @@ const MoviePage = () => {
                     />
                     <Indicators type="movies" prodId={prodId} />
                   </div>
-
-                  {/* <Indicators type="movies" prodId={prodId}></Indicators> */}
                 </div>
               </div>
             </div>
@@ -280,7 +266,6 @@ const MoviePage = () => {
                   </h3>
                   <div className="w-full h-1 ml-2 rounded-full bg-secondary"></div>
                 </div>
-                {/* 32414295 */}
                 <div className="relative rounded-lg">
                   <div className="absolute bg-black inset-0 blur-sm rounded-lg"></div>
                   <div className="relative rounded-lg">
@@ -297,8 +282,6 @@ const MoviePage = () => {
               </div>
             </div>
 
-            {/* <MovieImages imagesUrls={imagesUrls} /> */}
-
             <div className="lg:col-start-4 lg:col-end-12  lg:row-start-4 lg:row-end-5">
               <Cast actors={actors} prodId={prodId} type="movie"></Cast>
             </div>
@@ -314,7 +297,13 @@ const MoviePage = () => {
             {collection ? (
               <div className="lg:col-start-4 lg:col-end-12  lg:row-start-6 lg:row-end-7">
                 <Collection
-                  backdropPath={`${constants.IMAGES_BASE_PATH}original${collection.backdrop_path}`}
+                  backdropPath={
+                    collection.backdrop_path
+                      ? constants.IMAGES_BASE_PATH +
+                        "original" +
+                        collection.backdrop_path
+                      : false
+                  }
                   title={collection.name}
                   id={collection.id}
                   prodId={prodId}

@@ -8,10 +8,7 @@ import * as constants from "../../../../constants";
 
 export default function FullCast(props) {
   const prodId = useParams().prodId;
-  console.log(prodId);
   const type = useLocation().pathname.split("/")[3];
-  console.log("HERES TYPE");
-  console.log(type);
   const [productionData, setProductionData] = useState([]);
   const [actors, setActors] = useState([]);
 

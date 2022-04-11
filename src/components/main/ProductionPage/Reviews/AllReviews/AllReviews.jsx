@@ -61,12 +61,7 @@ export default function AllReviews() {
             {reviews.map((review, i) => {
               let avatarPath = "";
               let hasAvatar = false;
-              {
-                /* if (review.author_details.avatar_path) {
-                avatarPath = review.author_details.avatar_path.substring(1);
-                hasAvatar = true;
-              } */
-              }
+
               return (
                 <li className="odd:bg-slate-1000 rounded-lg">
                   <Review

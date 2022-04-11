@@ -1,4 +1,3 @@
-import AppLogo from "./logos/AppLogo";
 import Navbar from "./Navbar/Navbar";
 import Hamburger from "./Hamburger/Hamburger";
 import { useState, useEffect } from "react";

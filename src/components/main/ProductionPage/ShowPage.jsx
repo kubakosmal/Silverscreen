@@ -64,9 +64,7 @@ export default function ShowPage() {
         `${constants.TMDB_BASE_PATH}tv/${prodId}?api_key=${constants.API_KEY}`
       );
       const jsonData = await data.json();
-      console.log(jsonData);
 
-      console.log(jsonData);
       setData(jsonData);
       setShowName(jsonData.name);
       setOriginalName(jsonData.original_name);
@@ -180,8 +178,6 @@ export default function ShowPage() {
                     />
                     <Indicators type="tv" prodId={prodId} />
                   </div>
-
-                  {/* <Indicators type="movies" prodId={prodId}></Indicators> */}
                 </div>
               </div>
             </div>

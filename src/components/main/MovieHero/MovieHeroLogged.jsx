@@ -1,6 +1,6 @@
 import * as constants from "../../../constants";
 import { useState, useEffect, useContext } from "react";
-import MovieBackdrop from "../MoviePage/MovieBackdrop/MovieBackdrop";
+import MovieBackdrop from "../ProductionPage/MovieBackdrop/MovieBackdrop";
 import { LoggedContext } from "../../Context/Context";
 
 export default function MovieHeroLogged() {

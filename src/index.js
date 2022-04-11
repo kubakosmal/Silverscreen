@@ -3,9 +3,9 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App.jsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import MoviePage from "./components/main/MoviePage/MoviePage";
-import AllReviews from "./components/main/MoviePage/Reviews/AllReviews/AllReviews";
-import Rankings from "./components/main/Rankings/Rankings";
+import MoviePage from "./components/main/ProductionPage/MoviePage";
+import AllReviews from "./components/main/ProductionPage/Reviews/AllReviews/AllReviews";
+import Films from "./components/main/Films/Films";
 import PersonPage from "./components/main/PersonPage/PersonPage";
 import People from "./components/main/People/People";
 import Shows from "./components/main/Shows/Shows";
@@ -13,9 +13,9 @@ import Login from "./components/Login/Login";
 import UserLoggedMain from "./components/main/UserLoggedMain/UserLoggedMain";
 import { LoggedContext, ModalContext } from "./components/Context/Context";
 import UserPage from "./components/main/UserPage/UserPage";
-import ShowPage from "./components/main/MoviePage/ShowPage";
-import FullCast from "./components/main/MoviePage/FullCast/FullCast";
-import WholeCollection from "./components/main/MoviePage/WholeCollection/WholeCollection";
+import ShowPage from "./components/main/ProductionPage/ShowPage";
+import FullCast from "./components/main/ProductionPage/FullCast/FullCast";
+import WholeCollection from "./components/main/ProductionPage/WholeCollection/WholeCollection";
 
 const Index = () => {
   const [sessionId, setSessionId] = useState("id here");
@@ -96,7 +96,7 @@ const Index = () => {
             <Route path="/person">
               <Route path=":personId" element={<PersonPage />}></Route>
             </Route>
-            <Route path="/films" element={<Rankings />}></Route>
+            <Route path="/films" element={<Films />}></Route>
             <Route path="/people" element={<People />}></Route>
             <Route path="/shows" element={<Shows></Shows>}></Route>
             <Route path="/login" element={<Login />} />

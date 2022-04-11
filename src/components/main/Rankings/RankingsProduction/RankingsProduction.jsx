@@ -122,11 +122,7 @@ export default function RankingsProduction(props) {
                 animate={{ opacity: [0, 1] }}
                 transition={{ ease: "linear", duration: 0.5, delay: 0.8 }}
               >
-                <div className="flex justify-between mx-1 font-lato">
-                  {/* <div className="absolute -top-0 -left-0 bg-black rounded-md  border-neutral-700">
-                  <p className="font-bold text-sm">{props.place}</p>
-                </div> */}
-                </div>
+                <div className="flex justify-between mx-1 font-lato"></div>
               </motion.div>
             </div>
           </div>

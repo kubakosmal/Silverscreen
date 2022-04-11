@@ -1,5 +1,4 @@
 import Header from "../../header/Header";
-import Rankings from "../Rankings/Rankings";
 import * as constants from "../../../constants";
 import { useEffect, useState } from "react";
 import RankingsProduction from "../Rankings/RankingsProduction/RankingsProduction";

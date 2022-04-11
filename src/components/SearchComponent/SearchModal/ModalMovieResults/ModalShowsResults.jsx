@@ -71,10 +71,6 @@ export default function ModalShowsResults(props) {
                 }
               })}
             </div>
-
-            {/* <div className=" text-sm">
-              <button className="border m-2 px-4 py-1">Show more</button>
-            </div> */}
           </div>
         </div>
       )}

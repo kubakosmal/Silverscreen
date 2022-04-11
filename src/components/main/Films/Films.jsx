@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import Header from "../../header/Header";
 import * as constants from "../../../constants";
-import RankingsProduction from "./RankingsProduction/RankingsProduction";
-import RankingsInterface from "./RankingsInterface/RankingsInterface";
+import RankingsInterface from "../Rankings/RankingsInterface/RankingsInterface";
+import RankingsProduction from "../Rankings/RankingsProduction/RankingsProduction";
 import { IconContext } from "react-icons/lib";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 

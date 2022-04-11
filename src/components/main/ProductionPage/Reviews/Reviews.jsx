@@ -25,18 +25,6 @@ export default function Reviews(props) {
               if (i < numOfReviewsToShow) {
                 let avatarPath = "";
                 let hasAvatar = false;
-                {
-                  /* if (review.author_details.avatar_path) {
-                  {
-                     avatarPath = review.author_details.avatar_path.substring(1); 
-                  }
-
-                  if (!avatarPath.includes("https")) {
-                    avatarPath = `${constants.IMAGES_BASE_PATH}original/${avatarPath}`;
-                  }
-                  hasAvatar = true;
-                } */
-                }
                 return (
                   <li className="odd:bg-slate-1000 rounded-lg">
                     <Review

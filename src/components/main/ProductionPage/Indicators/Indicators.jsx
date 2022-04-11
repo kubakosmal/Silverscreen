@@ -23,7 +23,6 @@ export default function Indicators(props) {
       );
       const jsonData = await data.json();
 
-      console.log(jsonData.results);
       stateToUpdate(jsonData.results);
     };
 
@@ -76,7 +75,6 @@ export default function Indicators(props) {
     if (jsonResponse.success) {
       stateToUpdate(addOrDelete);
     }
-    console.log(jsonResponse);
   };
 
   return (

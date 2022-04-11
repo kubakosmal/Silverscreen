@@ -12,7 +12,6 @@ export default function Collection({ backdropPath, title, id, prodId }) {
         `${constants.TMDB_BASE_PATH}collection/${id}?api_key=${constants.API_KEY}`
       );
       const jsonData = await data.json();
-      console.log(jsonData);
       setCollectionDetails(jsonData);
       setProductions(jsonData.parts);
     };
@@ -29,12 +28,17 @@ export default function Collection({ backdropPath, title, id, prodId }) {
       </div>
       <div className="relative">
         <div className="absolute inset-0 bg-black rounded-lg blur-sm"></div>
-        <div className="relative">
+        <div className="relative h-40 lg:h-64 bg-neutral-900 rounded-lg">
           <div className="absolute bg-gradient-to-tr from-neutral to-black inset-0 rounded-lg"></div>
-          <img
-            className="w-full h-40 lg:h-64 object-cover rounded-lg opacity-40"
-            src={backdropPath}
-          />
+          {backdropPath ? (
+            <img
+              className="w-full h-40 lg:h-64 object-cover rounded-lg opacity-40"
+              src={backdropPath}
+            />
+          ) : (
+            false
+          )}
+
           <div className="absolute inset-x-0 bottom-0 lg:bottom-5 z-30">
             <h3 className="text-crayola text-xl lg:text-4xl px-6 font-bold font-lato drop-shadow-2xl">
               {title}

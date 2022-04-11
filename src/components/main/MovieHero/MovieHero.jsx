@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useState, useEffect } from "react";
-import MovieBackdrop from "../MoviePage/MovieBackdrop/MovieBackdrop";
+import MovieBackdrop from "../ProductionPage/MovieBackdrop/MovieBackdrop";
 import * as constants from "../../../constants";
 import { LoggedContext } from "../../Context/Context";
 import { Link } from "react-router-dom";

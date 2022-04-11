@@ -77,12 +77,6 @@ export default function ModalMovieResults(props) {
                 }
               })}
             </div>
-
-            {/*  <div className=" text-sm">
-              <Link to={`/results/${props.searchValue}`}>
-                <button className="border m-2 px-4 py-1">Show more</button>
-              </Link>
-            </div> */}
           </div>
         </div>
       )}

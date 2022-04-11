@@ -14,8 +14,6 @@ export default function App() {
   const modalContext = useContext(ModalContext);
   const isModalOpen = modalContext.isModalOpen;
   const location = useLocation();
-  console.log("IS MODAL OPEN?");
-  console.log(modalContext.isModalOpen);
 
   useEffect(() => {
     window.scrollTo(0, 0);
