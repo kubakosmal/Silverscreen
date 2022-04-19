@@ -31,7 +31,6 @@ export default function Login() {
             <div>
               <TmdbSvg className="w-40 my-4"></TmdbSvg>
             </div>
-            {/* <h1 className="text-center font-bold lg:text-3xl">Log In</h1> */}
             <div>
               <p className="lg:text-lg p-6 text-center">
                 You can log in to Silverscreen using Your TMDB account.

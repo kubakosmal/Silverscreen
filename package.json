@@ -1,7 +1,9 @@
 {
-  "name": "react-tailwind",
-  "version": "0.1.0",
+  "name": "silverscreen",
+  "version": "1.0.0",
+  "author": "Jakub Kosmal",
   "private": true,
+  "license": "MIT",
   "dependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@testing-library/jest-dom": "^5.16.1",

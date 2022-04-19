@@ -85,40 +85,7 @@ body {
   margin-bottom: 20px;
 }
 
-/* .swiper-slide {
-  opacity: 0.5;
-  scale: 0.1;
-}
 
-.swiper-slide-active {
-  animation: nextSlide 1s forwards;
-}
-
-.swiper-slide-prev {
-  animation: prevSlide 1s forwards;
-}
-
-@keyframes nextSlide {
-  0% {
-    opacity: 0.5;
-    scale: 0.1;
-  }
-  100% {
-    opacity: 1;
-    scale: 1;
-  }
-}
-
-@keyframes prevSlide {
-  0% {
-    opacity: 1;
-    scale: 1;
-  }
-  100% {
-    opacity: 0.5;
-    scale: 0.1;
-  }
-} */
 
 /* width */
 ::-webkit-scrollbar {
