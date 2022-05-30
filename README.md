@@ -1,3 +1,14 @@
+
 # Silverscreen
-A web application that provides User Interface to The Movie Database API.
+
+A web app that provides UI to The Movie Database
+
+## Website
 https://silverscreen.jkosmal.com/
+
+
+
+## Tech Stack
+
+**Client:** React, Tailwind
+
